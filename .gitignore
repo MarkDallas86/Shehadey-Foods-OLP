@@ -1,0 +1,12 @@
+# Never commit credentials
+.env
+*.env
+*.pem
+*.key
+*id_rsa*
+*credentials*
+*password*
+# OS / editor
+.DS_Store
+Thumbs.db
+~$*

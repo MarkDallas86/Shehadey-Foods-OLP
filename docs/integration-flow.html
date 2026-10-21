@@ -1,0 +1,255 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Shehadey Foods Integration Flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: two phase "swimlane" flows, left = Shehadey systems, right = trading partners, then a side-by-side comparison and open questions */
+:root{
+  --bg:#f6f7f8; --surface:#ffffff; --fg:#1b2430; --muted:#5b6675; --line:#d8dde3;
+  --cust:#8a5a12; --cust-bg:#fbf1e1;
+  --conc:#0f6b78; --conc-bg:#e2f3f5;
+  --ord:#4b46b8; --ord-bg:#ebeafb;
+  --tp:#3d6b2f; --tp-bg:#e8f2e3;
+  --warn:#a3361f; --warn-bg:#fbe9e5;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12161c; --surface:#1a2029; --fg:#e6eaef; --muted:#9aa5b3; --line:#2c3440;
+  --cust:#e8b464; --cust-bg:#2e2416; --conc:#5cc8d6; --conc-bg:#132a2e;
+  --ord:#a9a5f5; --ord-bg:#22213d; --tp:#9bd38a; --tp-bg:#1b2a17;
+  --warn:#f09a85; --warn-bg:#331b16; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12161c; --surface:#1a2029; --fg:#e6eaef; --muted:#9aa5b3; --line:#2c3440;
+  --cust:#e8b464; --cust-bg:#2e2416; --conc:#5cc8d6; --conc-bg:#132a2e;
+  --ord:#a9a5f5; --ord-bg:#22213d; --tp:#9bd38a; --tp-bg:#1b2a17;
+  --warn:#f09a85; --warn-bg:#331b16; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:28px 48px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+h1{font-size:28px;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:19px;margin:0;text-wrap:balance}
+h3{font-size:14px;margin:0}
+p{margin:0}
+.sub{color:var(--muted);max-width:70ch;margin-top:6px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:13px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:3px;border:2px solid}
+.sw.c{background:var(--cust-bg);border-color:var(--cust)} .sw.k{background:var(--conc-bg);border-color:var(--conc)}
+.sw.o{background:var(--ord-bg);border-color:var(--ord)} .sw.t{background:var(--tp-bg);border-color:var(--tp)}
+
+.phase{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.phase-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;align-items:baseline}
+.tag{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.flow{display:grid;grid-template-columns:minmax(0,1.15fr) 72px minmax(0,1fr) 72px minmax(0,1.15fr) 72px minmax(0,1fr) 72px minmax(0,1fr);align-items:stretch}
+.node{border:2px solid;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.node .who{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.node ul{margin:0;padding-left:16px;font-size:13px;color:var(--fg)}
+.node li+li{margin-top:2px}
+.n-c{background:var(--cust-bg);border-color:var(--cust)} .n-c .who{color:var(--cust)}
+.n-k{background:var(--conc-bg);border-color:var(--conc)} .n-k .who{color:var(--conc)}
+.n-o{background:var(--ord-bg);border-color:var(--ord)} .n-o .who{color:var(--ord)}
+.n-t{background:var(--tp-bg);border-color:var(--tp)} .n-t .who{color:var(--tp)}
+.n-dash{border-style:dashed}
+.arrow{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;font-family:var(--mono);font-size:10.5px;color:var(--muted);text-align:center;padding:0 4px}
+.arrow .ln{width:100%;height:2px;background:var(--muted);position:relative}
+.arrow .r::after,.arrow .l::before{content:"";position:absolute;top:-4px;border:5px solid transparent}
+.arrow .r::after{right:-2px;border-left:7px solid var(--muted);border-right:0}
+.arrow .l::before{left:-2px;border-right:7px solid var(--muted);border-left:0}
+.fmt{font-family:var(--mono);font-size:10.5px;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:1px 5px;color:var(--fg)}
+.docs{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:13px}
+.docs b{font-weight:600}
+.callout{background:var(--warn-bg);border-left:3px solid var(--warn);padding:10px 12px;border-radius:0 6px 6px 0;font-size:13.5px}
+.callout b{color:var(--warn)}
+
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+thead th{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500}
+tbody th{font-weight:600;width:20%}
+tr:last-child td,tr:last-child th{border-bottom:0}
+td.diff{background:var(--warn-bg)}
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.q .p{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.foot{font-size:12.5px;color:var(--muted)}
+
+@media (max-width:900px){
+  .flow{grid-template-columns:1fr}
+  .arrow{flex-direction:row;padding:6px 0;justify-content:flex-start;gap:10px}
+  .arrow .ln{width:2px;height:34px;flex:none;margin-left:24px}
+  .arrow .r::after{right:auto;left:-4px;top:auto;bottom:-2px;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+  .arrow .l::before{left:-4px;top:-2px;border:5px solid transparent;border-bottom:7px solid var(--muted);border-top:0}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Concurrent-led · Orderful onboarding · Kickoff prep</div>
+    <h1>Shehadey Foods integration flow</h1>
+    <p class="sub">How EDI documents will move between Shehadey's plants and their trading partners once Aptean is replaced. Concurrent builds the Tray.ai layer between Shehadey's flat files and the Orderful API. Orderful handles X12, 997s, and partner connectivity.</p>
+    <div class="legend">
+      <span><i class="sw c"></i>Shehadey (customer)</span>
+      <span><i class="sw k"></i>Concurrent builds</span>
+      <span><i class="sw o"></i>Orderful</span>
+      <span><i class="sw t"></i>Trading partners</span>
+    </div>
+  </header>
+
+  <!-- PHASE 1 -->
+  <section class="phase" aria-labelledby="p1">
+    <div class="phase-head">
+      <h2 id="p1">Phase 1: four ERMS plants</h2>
+      <span class="tag">Target: off Aptean VAN by Jan/Feb 2027</span>
+    </div>
+    <div class="flow">
+      <div class="node n-c">
+        <div class="who">Shehadey · ERMS</div>
+        <h3>ERMS (on-prem iSeries)</h3>
+        <ul>
+          <li>Producers Dairy (Fresno), Berryfield, Umpqua (Roseburg OR), Model (NV)</li>
+          <li>Vendor package, no source access</li>
+          <li>Writes / reads pipe-delimited flat files</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">flat file</span><span class="ln l"></span></div>
+      <div class="node n-c n-dash">
+        <div class="who">File drop · host TBC</div>
+        <h3>SFTP / BizLink folder-watch</h3>
+        <ul>
+          <li>Outbound: ERMS pushes files here</li>
+          <li>Inbound: ERMS picks up 850s (today pulled from Aptean)</li>
+          <li>Who hosts it after Aptean is open</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">SFTP</span><span class="ln l"></span></div>
+      <div class="node n-k">
+        <div class="who">Concurrent · Tray.ai</div>
+        <h3>Tray translator</h3>
+        <ul>
+          <li>Poll SFTP, parse ERMS layouts</li>
+          <li>Map flat file ↔ Orderful JSON, per doc type</li>
+          <li>Logic: order split/reassembly, 810 template carrying 880/894</li>
+          <li>Error alerting (ERMS fails silently today)</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">REST / JSON</span><span class="ln l"></span></div>
+      <div class="node n-o">
+        <div class="who">Orderful</div>
+        <h3>Orderful platform</h3>
+        <ul>
+          <li>JSON ↔ X12 per partner guideline</li>
+          <li>Automated 997s, validation</li>
+          <li>AS2 / SFTP / VAN to partners</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">X12</span><span class="ln l"></span></div>
+      <div class="node n-t">
+        <div class="who">Trading partners</div>
+        <h3>~35–37 ISA relationships</h3>
+        <ul>
+          <li>Costco (2 ISAs), Raley's (+DC), Walmart (Umpqua), Safeway, Grocery Outlet, WinCo, others</li>
+        </ul>
+      </div>
+    </div>
+    <div class="docs">
+      <span><b>Inbound:</b> 850 (confirmed), 875</span>
+      <span><b>Outbound:</b> 810, 856 (confirmed), 880, 894, 855 (origin unclear), 945</span>
+    </div>
+    <p class="callout"><b>Watch:</b> most ERMS 856s have no pallet/SSCC data. Costco and Raley's now need accurate ASNs, and label/ASN capture isn't in scope yet.</p>
+  </section>
+
+  <!-- PHASE 2 -->
+  <section class="phase" aria-labelledby="p2">
+    <div class="phase-head">
+      <h2 id="p2">Phase 2: Mid Valley (Turlock, CA)</h2>
+      <span class="tag">Start ~April 2027 · fully live ~May 2027</span>
+    </div>
+    <div class="flow">
+      <div class="node n-c">
+        <div class="who">Shehadey · Mid Valley</div>
+        <h3>Dynamics AX 2009</h3>
+        <ul>
+          <li>Separate ERP from the ERMS plants</li>
+          <li>Own EDI team and processes</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">flat file</span><span class="ln l"></span></div>
+      <div class="node n-c n-dash">
+        <div class="who">In-house today</div>
+        <h3>Gentran on AS/400</h3>
+        <ul>
+          <li>Does translation and comms today, not Aptean</li>
+          <li>Open: keep Gentran as the file source, or extract straight from AX</li>
+          <li>File-drop location TBD</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">SFTP</span><span class="ln l"></span></div>
+      <div class="node n-k">
+        <div class="who">Concurrent · Tray.ai</div>
+        <h3>Second set of Tray maps</h3>
+        <ul>
+          <li>New file layouts, new mappings</li>
+          <li>Reuses the Tray / Orderful plumbing from Phase 1</li>
+          <li>Dropship / 3rd-party haul flows (940/945 likely)</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">REST / JSON</span><span class="ln l"></span></div>
+      <div class="node n-o">
+        <div class="who">Orderful</div>
+        <h3>Same Orderful org</h3>
+        <ul>
+          <li>Same platform, more relationships</li>
+          <li>ISA choice may differ from Phase 1</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">X12</span><span class="ln l"></span></div>
+      <div class="node n-t">
+        <div class="who">Trading partners</div>
+        <h3>~10 relationships</h3>
+        <ul>
+          <li>Partner list not yet provided</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="cmp">
+    <h2 id="cmp">What changes between Phase 1 and Phase 2</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col">Phase 1 · ERMS plants</th><th scope="col">Phase 2 · Mid Valley</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Sites</th><td>Four plants: Fresno, Berryfield, Roseburg OR, NV</td><td>One plant: Turlock, CA</td></tr>
+          <tr><th scope="row">System of record</th><td>ERMS (vendor package on iSeries, no source access)</td><td class="diff">Microsoft Dynamics AX 2009</td></tr>
+          <tr><th scope="row">EDI today</th><td>Aptean VAN + mapping (month-to-month)</td><td class="diff">In-house Gentran on AS/400</td></tr>
+          <tr><th scope="row">File format</th><td>ERMS pipe-delimited flat files</td><td class="diff">Gentran / AX flat files (different layouts)</td></tr>
+          <tr><th scope="row">Partners</th><td>~35–37 ISA relationships, some split by plant</td><td>~10</td></tr>
+          <tr><th scope="row">Fulfillment</th><td>DSD from plants; Fresno WMS for one account</td><td class="diff">Dropship / third-party haul</td></tr>
+          <tr><th scope="row">Cutover driver</th><td>Aptean VAN shut-off, cost overlap</td><td class="diff">Retiring Gentran; no VAN contract driving the date</td></tr>
+          <tr><th scope="row">Concurrent build</th><td>First Tray workflows + ERMS maps</td><td>New maps on the same Tray / Orderful plumbing</td></tr>
+          <tr><th scope="row">Timing</th><td>Build ~6–8 wks, test 2–4 months, Jan/Feb 2027</td><td>Start ~April 2027, live ~May 2027</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="qs">
+    <h2 id="qs">Settle at kickoff</h2>
+    <div class="qs">
+      <div class="q"><span class="p">Both phases</span>Who hosts the SFTP once Aptean goes away: Shehadey (BizLink), Concurrent/Tray, or Orderful?</div>
+      <div class="q"><span class="p">Both phases</span>Keep existing ISAs or move to the new Orderful ISA? Plan for the split plant ISAs.</div>
+      <div class="q"><span class="p">Phase 1</span>Get current ERMS file specs and samples, plus the Aptean partner/ISA list (sent to the rep, not in the org).</div>
+      <div class="q"><span class="p">Phase 1</span>Confirm direction for every doc type, where the 855 comes from, and how ASN/label gaps get scoped.</div>
+      <div class="q"><span class="p">Phase 2</span>Does Gentran stay as the file producer, or does Tray pull from AX 2009 directly?</div>
+      <div class="q"><span class="p">Commercial</span>Orderful to confirm the outgoing rep's commitments (9-day partner go-live, pricing, 997s).</div>
+    </div>
+  </section>
+
+  <p class="foot">Source: Orderful customer intake brief (2026-09-30) and internal Slack thread. Partner counts and timelines are sales estimates, not confirmed.</p>
+</div>
+
+</body></html>
