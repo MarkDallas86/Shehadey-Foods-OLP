@@ -15,6 +15,11 @@ You are helping Mark (Concurrent PM) and John (Concurrent integration architect)
 - Keep customer contact details (emails, phone numbers) out of this repo. Refer to people by role.
 - Do not mix in data from other Concurrent clients.
 - When new info arrives (call notes, emails, files): add a meeting file or source doc, then update `decisions.md`, `open-questions.md`, and `action-items.md`.
+- Filing: specs and samples go in `specs/<doc type>/` (`layout/`, `samples/`); other received files go in `source-docs/from-client/`, `source-docs/from-orderful/`, or `source-docs/internal/`; anything Claude or Mark produces goes in `outputs/`. Never edit files in `source-docs/`.
+- File names: lowercase-with-hyphens, no spaces; dated files start with `YYYY-MM-DD-`.
+- Mapping work: draft in `specs/<doc type>/mapping.md`; log anything unclear in `specs/<doc type>/questions.md` rather than guessing.
+- Do not run git commands; Mark commits and pushes in GitHub Desktop.
+- Never write credentials (SFTP passwords, keys) into any file.
 
 ## Vocabulary
 - ERMS: Numeric Computer Systems dairy ERP (four plants), on-prem iSeries, no source access.

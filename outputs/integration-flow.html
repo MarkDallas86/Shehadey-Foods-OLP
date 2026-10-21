@@ -1,4 +1,5 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shehadey Foods Integration Flow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -43,6 +44,7 @@ p{margin:0}
 .phase-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;align-items:baseline}
 .tag{font-family:var(--mono);font-size:12px;color:var(--muted)}
 .flow{display:grid;grid-template-columns:minmax(0,1.15fr) 72px minmax(0,1fr) 72px minmax(0,1.15fr) 72px minmax(0,1fr) 72px minmax(0,1fr);align-items:stretch}
+.flow.six{grid-template-columns:minmax(0,1fr) 60px minmax(0,1fr) 60px minmax(0,1fr) 60px minmax(0,1.15fr) 60px minmax(0,1fr) 60px minmax(0,1fr)}
 .node{border:2px solid;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .node .who{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .node ul{margin:0;padding-left:16px;font-size:13px;color:var(--fg)}
@@ -76,7 +78,7 @@ td.diff{background:var(--warn-bg)}
 .foot{font-size:12.5px;color:var(--muted)}
 
 @media (max-width:900px){
-  .flow{grid-template-columns:1fr}
+  .flow,.flow.six{grid-template-columns:1fr}
   .arrow{flex-direction:row;padding:6px 0;justify-content:flex-start;gap:10px}
   .arrow .ln{width:2px;height:34px;flex:none;margin-left:24px}
   .arrow .r::after{right:auto;left:-4px;top:auto;bottom:-2px;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
@@ -88,7 +90,8 @@ td.diff{background:var(--warn-bg)}
   <header>
     <div class="eyebrow">Concurrent-led · Orderful onboarding · Kickoff prep</div>
     <h1>Shehadey Foods integration flow</h1>
-    <p class="sub">How EDI documents will move between Shehadey's plants and their trading partners once Aptean is replaced. Concurrent builds the Tray.ai layer between Shehadey's flat files and the Orderful API. Orderful handles X12, 997s, and partner connectivity.</p>
+    <p class="sub">How EDI documents will move between Shehadey's plants and their trading partners once Aptean is replaced. Shehadey's BizLink moves files to and from an SFTP server (host still to be decided). Concurrent's Tray.ai layer translates between those flat files and the Orderful API. Orderful handles X12, 997s, and partner connectivity.</p>
+    <p class="sub"><b>Decided at kickoff (Oct 13):</b> Costco is the pilot partner · net new Orderful ISA IDs · ~45 partners, ~6-month rollout. <b>Open:</b> who hosts the SFTP (Shehadey or Concurrent) — John to decide after weighing cost and upkeep.</p>
     <div class="legend">
       <span><i class="sw c"></i>Shehadey (customer)</span>
       <span><i class="sw k"></i>Concurrent builds</span>
@@ -103,7 +106,7 @@ td.diff{background:var(--warn-bg)}
       <h2 id="p1">Phase 1: four ERMS plants</h2>
       <span class="tag">Target: off Aptean VAN by Jan/Feb 2027</span>
     </div>
-    <div class="flow">
+    <div class="flow six">
       <div class="node n-c">
         <div class="who">Shehadey · ERMS</div>
         <h3>ERMS (on-prem iSeries)</h3>
@@ -114,13 +117,23 @@ td.diff{background:var(--warn-bg)}
         </ul>
       </div>
       <div class="arrow"><span class="ln r"></span><span class="fmt">flat file</span><span class="ln l"></span></div>
-      <div class="node n-c n-dash">
-        <div class="who">File drop · host TBC</div>
-        <h3>SFTP / BizLink folder-watch</h3>
+      <div class="node n-c">
+        <div class="who">Shehadey · BizLink</div>
+        <h3>BizLink folder-watch</h3>
         <ul>
-          <li>Outbound: ERMS pushes files here</li>
-          <li>Inbound: ERMS picks up 850s (today pulled from Aptean)</li>
-          <li>Who hosts it after Aptean is open</li>
+          <li>Watches ERMS folders, pushes outbound files to the SFTP</li>
+          <li>Pulls inbound files (850s) down to the ERMS import folder</li>
+          <li>Repointed from Aptean to the new SFTP</li>
+        </ul>
+      </div>
+      <div class="arrow"><span class="ln r"></span><span class="fmt">SFTP</span><span class="ln l"></span></div>
+      <div class="node n-c n-dash">
+        <div class="who">SFTP server · host TBD</div>
+        <h3>Shehadey or Concurrent?</h3>
+        <ul>
+          <li>Both options were raised at kickoff</li>
+          <li>John (Concurrent) to decide: cost, setup, who maintains it</li>
+          <li>Sandbox + production folders either way</li>
         </ul>
       </div>
       <div class="arrow"><span class="ln r"></span><span class="fmt">SFTP</span><span class="ln l"></span></div>
@@ -128,7 +141,7 @@ td.diff{background:var(--warn-bg)}
         <div class="who">Concurrent · Tray.ai</div>
         <h3>Tray translator</h3>
         <ul>
-          <li>Poll SFTP, parse ERMS layouts</li>
+          <li>Tray picks up files, parses ERMS layouts</li>
           <li>Map flat file ↔ Orderful JSON, per doc type</li>
           <li>Logic: order split/reassembly, 810 template carrying 880/894</li>
           <li>Error alerting (ERMS fails silently today)</li>
@@ -147,9 +160,11 @@ td.diff{background:var(--warn-bg)}
       <div class="arrow"><span class="ln r"></span><span class="fmt">X12</span><span class="ln l"></span></div>
       <div class="node n-t">
         <div class="who">Trading partners</div>
-        <h3>~35–37 ISA relationships</h3>
+        <h3>35 partners · 39 connections</h3>
         <ul>
-          <li>Costco (2 ISAs), Raley's (+DC), Walmart (Umpqua), Safeway, Grocery Outlet, WinCo, others</li>
+          <li><b>Pilot: Costco</b> (4 relationships, incl. SPS Commerce and Park City Group)</li>
+          <li>Walmart, Safeway, Raley's, Kroger, WinCo, US Foods, PFG, others</li>
+          <li>Net new Orderful ISA IDs</li>
         </ul>
       </div>
     </div>
@@ -182,7 +197,7 @@ td.diff{background:var(--warn-bg)}
         <ul>
           <li>Does translation and comms today, not Aptean</li>
           <li>Open: keep Gentran as the file source, or extract straight from AX</li>
-          <li>File-drop location TBD</li>
+          <li>Sends to the same SFTP as Phase 1 (own folders)</li>
         </ul>
       </div>
       <div class="arrow"><span class="ln r"></span><span class="fmt">SFTP</span><span class="ln l"></span></div>
@@ -201,7 +216,7 @@ td.diff{background:var(--warn-bg)}
         <h3>Same Orderful org</h3>
         <ul>
           <li>Same platform, more relationships</li>
-          <li>ISA choice may differ from Phase 1</li>
+          <li>Net new Orderful ISA IDs, same as Phase 1</li>
         </ul>
       </div>
       <div class="arrow"><span class="ln r"></span><span class="fmt">X12</span><span class="ln l"></span></div>
@@ -240,16 +255,16 @@ td.diff{background:var(--warn-bg)}
   <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="qs">
     <h2 id="qs">Settle at kickoff</h2>
     <div class="qs">
-      <div class="q"><span class="p">Both phases</span>Who hosts the SFTP once Aptean goes away: Shehadey (BizLink), Concurrent/Tray, or Orderful?</div>
-      <div class="q"><span class="p">Both phases</span>Keep existing ISAs or move to the new Orderful ISA? Plan for the split plant ISAs.</div>
-      <div class="q"><span class="p">Phase 1</span>Get current ERMS file specs and samples, plus the Aptean partner/ISA list (sent to the rep, not in the org).</div>
-      <div class="q"><span class="p">Phase 1</span>Confirm direction for every doc type, where the 855 comes from, and how ASN/label gaps get scoped.</div>
+      <div class="q"><span class="p">SFTP</span>Who hosts it: Shehadey or Concurrent? John to decide (added cost, setup, upkeep). Either way: IPs to whitelist, key or password, folders per plant, file naming, and how BizLink polls.</div>
+      <div class="q"><span class="p">SFTP</span>Can BizLink send one file to two destinations, so we can shadow-test against Aptean output?</div>
+      <div class="q"><span class="p">Costco pilot</span>Which of the four Costco relationships are in the pilot? How do we close the ASN (pallet/SSCC) gap?</div>
+      <div class="q"><span class="p">Net new ISA</span>Every partner must update to the new Orderful ID. Who sends partner notices, and in what order?</div>
+      <div class="q"><span class="p">Specs (critical)</span>Outbound layouts (810, 855, 856, 852, 880/894) and 850 production files. Concurrent maps and tests offline, then brings back only the questions.</div>
       <div class="q"><span class="p">Phase 2</span>Does Gentran stay as the file producer, or does Tray pull from AX 2009 directly?</div>
-      <div class="q"><span class="p">Commercial</span>Orderful to confirm the outgoing rep's commitments (9-day partner go-live, pricing, 997s).</div>
     </div>
   </section>
 
   <p class="foot">Source: Orderful customer intake brief (2026-09-30) and internal Slack thread. Partner counts and timelines are sales estimates, not confirmed.</p>
 </div>
 
-</body></html>
+</html>

@@ -32,3 +32,7 @@
 ## Aptean pain points (ask on next call)
 - Biggest frustration with Aptean today? What does success look like?
 - Known from docs: ~$8K/mo, confusing kilo-character billing, two separate EDI setups, weak error visibility (no 997s, silent failures).
+
+## From the 2026-10-20 follow-up
+- Aptean access offered by the client (unconfirmed): what access, and can we view existing maps and cross-references there?
+- Park City Group files don't come through EDI (per client). Does Park City stay fully outside Orderful? Does Tray still need to produce the fixed-width format?

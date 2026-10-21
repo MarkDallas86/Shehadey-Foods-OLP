@@ -3,20 +3,34 @@
 Single source of context for the Shehadey Foods (Producers Dairy) Orderful onboarding.
 Concurrent-led: Concurrent builds the Tray.ai integration between Shehadey's flat files and the Orderful API.
 
-## Where things live
-| Folder / file | What goes there |
-|---|---|
-| `CLAUDE.md` | Instructions Claude reads first |
-| `context/` | Stable project facts: overview, systems/flow, partners, decisions, open questions |
-| `meetings/` | One file per call: `YYYY-MM-DD-topic.md` (paste Gemini/Zoom notes, then a cleaned summary) |
-| `action-items.md` | Running tracker of who owes what |
-| `specs/` | Flat file layouts and mapping notes per doc type |
-| `process/` | Concurrent's Orderful-led onboarding steps |
-| `docs/` | Integration flow diagram (offline copy) |
-| `source-docs/` | Original files from client/Orderful (brief, partner inventory, mapping templates) |
-| `build-log.md` | Tray build and testing progress, dated entries |
-| `chats/` | Summaries of Claude conversations worth keeping |
+## Folder map
+```
+README.md            guide for people
+CLAUDE.md            guide for Claude (read first)
+action-items.md      who owes what
+build-log.md         dated build/testing progress
+context/             living project facts: overview, systems/flow, partners, decisions, open questions
+meetings/            one file per call: YYYY-MM-DD-topic.md
+specs/<doc type>/    850, 810, 855, 856, 852, 880-894
+  layout/            client spec documents
+  samples/           raw EDI + matching flat files
+  mapping.md         ERMS field -> Orderful JSON path
+  questions.md       open mapping questions for Shehadey
+source-docs/         originals, never edited
+  from-client/
+  from-orderful/
+  internal/          Mark's notes, Concurrent process docs
+outputs/             things we produce: agendas, diagrams, recap drafts
+chats/               summaries of Claude conversations
+```
+
+## Two rules
+1. Specs and sample files go in `specs/<doc type>/`. Everything else received goes in `source-docs/<who sent it>/`.
+2. Start dated files with the date: `2026-10-21-...`. Use lowercase-with-hyphens names, no spaces.
+
+## Working with Git
+Pull before you start → make changes (yourself or with Claude) → review in GitHub Desktop → commit → push. Never commit credentials.
 
 ## Links
 - Asana: https://app.asana.com/1/1210548484131647/project/1219659554232276
-- Workflow diagram (Claude artifact): https://claude.ai/artifact/75Ue3X9eWdQNKP5GEEKA8u
+- Workflow diagram (live): https://claude.ai/artifact/75Ue3X9eWdQNKP5GEEKA8u (offline copy in `outputs/`)

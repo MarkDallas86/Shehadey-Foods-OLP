@@ -13,4 +13,6 @@
 | Shehadey (ERMS lead) | Flat file specs for all transaction types, incl. missing element definitions | Open | |
 | Shehadey (ERMS lead + IT) | Representative 850 production files | Open | |
 | Shehadey (ERMS lead) | Share SPS testing portal credentials | Open | |
-| Shehadey (IT) | BizLink IPs, auth preference, folder layout for the Concurrent SFTP | Open | |
+| Shehadey (IT) | BizLink IPs, auth preference, folder layout for the SFTP (host TBD) | Open | |
+| Mark / John | Confirm Aptean access offer and use it to review existing maps/cross-references | Open | |
+| Shehadey | Share flat files (as many as needed) with matching raw EDI, per doc type | Open | |
