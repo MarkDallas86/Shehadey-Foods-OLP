@@ -28,6 +28,9 @@ chats/               summaries of Claude conversations
 1. Specs and sample files go in `specs/<doc type>/`. Everything else received goes in `source-docs/<who sent it>/`.
 2. Start dated files with the date: `2026-10-21-...`. Use lowercase-with-hyphens names, no spaces.
 
+## Recordings
+Call recordings (.mp4/.m4a) are kept in SharePoint, not in Git (too large; GitHub rejects files over 100 MB). Transcripts go in `source-docs/internal/`.
+
 ## Working with Git
 Pull before you start → make changes (yourself or with Claude) → review in GitHub Desktop → commit → push. Never commit credentials.
 

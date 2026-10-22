@@ -10,3 +10,8 @@
 .DS_Store
 Thumbs.db
 ~$*
+# Recordings stay in SharePoint
+*.mp4
+*.m4a
+*.mov
+*.wav

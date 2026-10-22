@@ -1,0 +1,29 @@
+HDR|20261013|1202|8688304O|621418185|8688304O|20261013||||20261021||||||||||0.000|0.000|||||36||0||30|||A USF purchase order number must be supplied on the bill of lading or shipping manifest for any shipment to USF.  USF assumes no freight liability on prepaid shipments.  Vendors shipping prepaid to USF are responsible for,||||
+HST||097017016|US FOODS, INC - SAN FRANCISCO/4O|300 LAWRENCE DRIVE||LIVERMORE|CA|945510000||
+HBT||||||||||
+HCM|A USF purchase order number must be supplied on the bill of lading or shipping manifest for any shipment to USF.  USF assumes no freight liability on prepaid shipments.  Vendors shipping prepaid to USF are responsible for,|
+HCM|and guarantee payment of, any and all charges, including all assessorial charges billed by vendor's LTL carrier, which charges may include, but not be limited to, sort and segregate charges,|
+HCM|notification/delivery appointment charges, inside delivery, fuel surcharges, and re-delivery charges.  Merchandise will be received by USF on pallets only, broken down by item and delivered to USF docks.|
+HCM|U.S. Foods is an equal employment opportunity employer and is a federal contractor. Consequently, the parties agree that, to the extent applicable, they will comply with Executive Order 11246, the Vietnam Era Veterans Readjustment Assistance Act of|
+HCM|1974 and Section 503 of the Vocational Rehabilitation Act of 1973, and the regulations interpreting such provisions, including but not limited to 41 C.F.R. Section 60.1-4, 41 C.F.R. Section 60-250.5 and 41 C.F.R. Section 60.741.5, with respect to|
+HCM|affirmative action program and plan requirements and also agree that these laws and regulations are incorporated herein by this reference.  The contractor also agrees to comply with the provisions of Executive Order 13201 Compliance (29 CFR Part 470),|
+HCM|relating to the notice of employee rights concerning payment of union dues.|
+LDT|1055799|1055799|PI|1055799|CA|CA|MILK, BUTTERMILK 1% BUTTERFAT LOW FAT PASTEURIZED PLASTIC JUG REF HOMOGENIZ||||195.000|||||||17.2998|||||MG|1055799|0|||||
+LDT|4869940|4869940|PI|28897|CA|CA|MILK, 1% LOW FAT PASTEURIZED VITAMIN A & D GRADE A GABLE TOP CARTON REF HOM||||768.000|||||||18.3700|||||MG|28897|0|||||
+TOT
+HDR|20261013|1202|205756|8022574371|205756|20261013||||20261027||||||||||0.000|0.000|||||01|2|0||14|||THIS PURCHASE ORDER INCORPORATES BY REFERENCE THE C&S VENDOR CONDITIONS OF SALE||||
+HST||0018424670072|C&S WHOLESALE GROCERS|2400 W LOUISE AVE||LATHROP|CA|95330||
+HBT||0018424670001|C&S WHOLESALE GROCERS|OLD FERRY ROAD||BRATTLEBORO|VT|05301||
+HCM|THIS PURCHASE ORDER INCORPORATES BY REFERENCE THE C&S VENDOR CONDITIONS OF SALE|GEN
+LDT|297789|087825504170|IN||CA|CA|PRODCR VANILLA||||117.000|||||||18.9600|||||||0|||||
+LDT|297809|087825504174|IN||CA|CA|PRODCR NEAPOLITAN||||91.000|||||||18.9600|||||||0|||||
+LDT|297823|087825504177|IN||CA|CA|PRODCR COOKIES N CREAM||||91.000|||||||18.9600|||||||0|||||
+LDT|297863|087825504184|IN||CA|CA|PRODCR STRAWBERRY||||39.000|||||||18.9600|||||||0|||||
+LDT|297867|087825504185|IN||CA|CA|PRODCR CHOC BRWNI SUNDAE||||26.000|||||||18.9600|||||||0|||||
+LDT|506257|007825504032|IN||CA|CA|SQUOIA ICE CREAM NEAPOLITAN||||450.000|||||||14.4000|||||||0|||||
+LDT|508554|007825504035|IN||CA|CA|SQUOIA STRAWBERRY SWIRL 4QT||||150.000|||||||14.4000|||||||0|||||
+LDT|509518|007825504039|IN||CA|CA|SQUOIA CHOCOLATE 4QT||||150.000|||||||14.4000|||||||0|||||
+LDT|515798|007825504033|IN||CA|CA|SQUOIA CHOC SWIRL 4QT||||150.000|||||||14.4000|||||||0|||||
+LDT|515964|007825504037|IN||CA|CA|SQUOIA IC CKI N CRM||||300.000|||||||14.4000|||||||0|||||
+LDT|515975|007825504031|IN||CA|CA|SQUOIA ICE CREAM VANILLA||||300.000|||||||14.4000|||||||0|||||
+TOT

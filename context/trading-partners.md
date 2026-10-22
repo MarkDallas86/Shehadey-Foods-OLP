@@ -19,3 +19,8 @@ Full detail: `source-docs/EDI_VAN_Migration_Trading_Partners.xlsx`.
 - Walgreens, Saladinos: verify still active
 - Cross-plant routing: Dollar General, Harbor Foods, Safeway, Walmart
 - Mid Valley list: not yet received
+
+## Costco channels (confirmed 2026-10-20)
+- **Umpqua (Oregon):** direct EDI via SPS (sender COSTCOEDIUSA). 850 in, 810 out, 856 in testing with SPS. 2 products, ~twice a week. No WMS. Needs 850 mapping before go-live.
+- **Park City VMI (Fresno, Fairfield, Model):** 852 carbon copy to Park City; Park City creates the 850, which Shehadey downloads directly (not EDI). 856 now required: Fresno via WMS; Fairfield (~10 Costcos, ~10/day) and Model manual via WebEDI. Park City's EDI provider is ReposiTrak.
+- Walmart and Sam's also come through Park City VMI for the California/Nevada plants; Umpqua trades with Walmart directly.

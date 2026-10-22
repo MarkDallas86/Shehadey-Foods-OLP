@@ -1,0 +1,9 @@
+HDR|20261013|1730|001721007157|COSTCOEDIUSA|001721007157|20261007||||20261015||||||||||0.000|0.000||NA|PP|ZZ|01|2|0||16|||1 PALLET MIN- ANY DAY- NEVADA SUFFIX||||
+HST||1033918430172|COSTCO TRACY WET|25501 GATEWAY BLVD BLDG C||TRACY|CA|95377||
+HBT||||||||||
+HCM|1 PALLET MIN- ANY DAY- NEVADA SUFFIX|
+HCM|This order incorporates the Costco Wholesale Standard Terms,|
+HCM|as they may be amended from time to time, and any applicable|
+HCM|signed agreements between us.|
+LDT||1268246|||EA|EA|ORGANIC WHOLE MILK 2-1GAL PRODUCERS  SL13 P120||||240.000|||||||11.3300|||||||0|||||
+TOT

@@ -1,0 +1,35 @@
+HDR|20261013|0901|8666794R|621418185|8666794R|20261013||||20261020||||||||||0.000|0.000|||||36||0||30|||A USF purchase order number must be supplied on the bill of lading or shipping manifest for any shipment to USF.  USF assumes no freight liability on prepaid shipments.  Vendors shipping prepaid to USF are responsible for,||||
+HST||959764242|US FOODS, INC - RENO/4R|850 N. HILLS BLVD.||RENO|NV|895060000||
+HBT||||||||||
+HCM|A USF purchase order number must be supplied on the bill of lading or shipping manifest for any shipment to USF.  USF assumes no freight liability on prepaid shipments.  Vendors shipping prepaid to USF are responsible for,|
+HCM|and guarantee payment of, any and all charges, including all assessorial charges billed by vendor's LTL carrier, which charges may include, but not be limited to, sort and segregate charges,|
+HCM|notification/delivery appointment charges, inside delivery, fuel surcharges, and re-delivery charges.  Merchandise will be received by USF on pallets only, broken down by item and delivered to USF docks.|
+HCM|U.S. Foods is an equal employment opportunity employer and is a federal contractor. Consequently, the parties agree that, to the extent applicable, they will comply with Executive Order 11246, the Vietnam Era Veterans Readjustment Assistance Act of|
+HCM|1974 and Section 503 of the Vocational Rehabilitation Act of 1973, and the regulations interpreting such provisions, including but not limited to 41 C.F.R. Section 60.1-4, 41 C.F.R. Section 60-250.5 and 41 C.F.R. Section 60.741.5, with respect to|
+HCM|affirmative action program and plan requirements and also agree that these laws and regulations are incorporated herein by this reference.  The contractor also agrees to comply with the provisions of Executive Order 13201 Compliance (29 CFR Part 470),|
+HCM|relating to the notice of employee rights concerning payment of union dues.|
+LDT|1055778|1055778|PI|1055778|CA|CA|MILK, 2% REDUCED FAT PASTEURIZED VITAMIN A & D GRADE A JUG REF HOMOGENIZED||||5.000|||||||15.6972|||||MG|1055778|0|||||
+LDT|1055799|1055799|PI|1055799|CA|CA|MILK, BUTTERMILK 1% BUTTERFAT LOW FAT PASTEURIZED PLASTIC JUG REF HOMOGENIZ||||40.000|||||||15.3690|||||MG|1055799|0|||||
+LDT|1055849|1055849|PI|1055849|CA|CA|MILK, WHOLE PASTEURIZED RBST FREE VITAMIN D GRADE A JUG REF HOMOGENIZED||||15.000|||||||15.9810|||||MG|1055849|0|||||
+LDT|4668703|4668703|PI|264449|CA|CA|MILK, WHOLE RBST FREE VITAMIN D PLASTIC JUG REF HOMOGENIZED||||84.000|||||||17.4028|||||MG|264449|0|||||
+LDT|4668810|4668810|PI|264473|CA|CA|MILK, SKIM RBST FREE VITAMIN A & D PLASTIC JUG REF FAT-FREE||||6.000|||||||15.0728|||||MG|264473|0|||||
+LDT|4668869|4668869|PI|264478|CA|CA|MILK, 2% REDUCED FAT RBST FREE VITAMIN A & D PLASTIC JUG REF CALIFORNIA STA||||120.000|||||||17.5528|||||MG|264478|0|||||
+LDT|4681193|4681193|PI|268555|CA|CA|MILK, 2% REDUCED FAT RBST FREE VITAMIN A & D BAG-IN-BOX REF CALIFORNIA||||45.000|||||||21.3532|||||MG|268555|0|||||
+TOT
+HDR|20261013|0901|8666884R|621418185|8666884R|20261013||||20261020||||||||||0.000|0.000|||||36||0||30|||A USF purchase order number must be supplied on the bill of lading or shipping manifest for any shipment to USF.  USF assumes no freight liability on prepaid shipments.  Vendors shipping prepaid to USF are responsible for,||||
+HST||959764242|US FOODS, INC - RENO/4R|850 N. HILLS BLVD.||RENO|NV|895060000||
+HBT||||||||||
+HCM|A USF purchase order number must be supplied on the bill of lading or shipping manifest for any shipment to USF.  USF assumes no freight liability on prepaid shipments.  Vendors shipping prepaid to USF are responsible for,|
+HCM|and guarantee payment of, any and all charges, including all assessorial charges billed by vendor's LTL carrier, which charges may include, but not be limited to, sort and segregate charges,|
+HCM|notification/delivery appointment charges, inside delivery, fuel surcharges, and re-delivery charges.  Merchandise will be received by USF on pallets only, broken down by item and delivered to USF docks.|
+HCM|U.S. Foods is an equal employment opportunity employer and is a federal contractor. Consequently, the parties agree that, to the extent applicable, they will comply with Executive Order 11246, the Vietnam Era Veterans Readjustment Assistance Act of|
+HCM|1974 and Section 503 of the Vocational Rehabilitation Act of 1973, and the regulations interpreting such provisions, including but not limited to 41 C.F.R. Section 60.1-4, 41 C.F.R. Section 60-250.5 and 41 C.F.R. Section 60.741.5, with respect to|
+HCM|affirmative action program and plan requirements and also agree that these laws and regulations are incorporated herein by this reference.  The contractor also agrees to comply with the provisions of Executive Order 13201 Compliance (29 CFR Part 470),|
+HCM|relating to the notice of employee rights concerning payment of union dues.|
+LDT|2721963|2721963|PI|2721963|CA|CA|MILK, CHOCOLATE SKIM PASTEURIZED VITAMIN A & D GABLE TOP CARTON REF HOMOGEN||||12.000|||||||15.2800|||||MG|2721963|0|||||
+LDT|3420367|3420367|PI|3420367|CA|CA|MILK, SKIM PASTEURIZED VITAMIN A & D GRADE A GABLE TOP CARTON REF HOMOGENIZ||||5.000|||||||14.7400|||||MG|3420367|0|||||
+LDT|4605146|4605146|PI|28895|CA|CA|MILK, WHOLE PASTEURIZED VITAMIN D GRADE A GABLE TOP CARTON REF HOMOGENIZED||||36.000|||||||16.1000|||||MG|28895|0|||||
+LDT|4869940|4869940|PI|28897|CA|CA|MILK, 1% LOW FAT PASTEURIZED VITAMIN A & D GRADE A GABLE TOP CARTON REF HOM||||36.000|||||||16.4300|||||MG|28897|0|||||
+LDT|6513261|6513261|PI||CA|CA|MILK, BUTTERMILK LOW FAT REF CARTON||||5.000|||||||35.5776|||||||0|||||
+LDT|9824568|9824568|PI|9824568|CA|CA|MILK, 2% REDUCED FAT PASTEURIZED VITAMIN A & D GRADE A GABLE TOP CARTON REF||||60.000|||||||16.2200|||||MG|9824568|0|||||
+TOT

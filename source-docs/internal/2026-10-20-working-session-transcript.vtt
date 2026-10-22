@@ -1,0 +1,2790 @@
+WEBVTT
+
+1
+00:00:11.200 --> 00:00:12.250
+Mark Dallas: Hey, everybody.
+
+2
+00:00:20.730 --> 00:00:24.219
+Mark Dallas: So it's Becky and… is it Narvel? Am I saying that right?
+
+3
+00:00:25.040 --> 00:00:26.400
+Mark Dallas: Okay, great.
+
+4
+00:00:30.550 --> 00:00:32.979
+Mark Dallas: Remind me, what time zone are you guys in?
+
+5
+00:00:33.430 --> 00:00:34.410
+Becky.Keller: Pacific.
+
+6
+00:00:36.230 --> 00:00:36.990
+Mark Dallas: Say again?
+
+7
+00:00:37.610 --> 00:00:39.579
+Becky.Keller: Pacific, it's 9.30 right now.
+
+8
+00:00:39.580 --> 00:00:41.860
+Mark Dallas: Pacific, okay. So, good morning then.
+
+9
+00:00:42.430 --> 00:00:43.340
+Becky.Keller: What the hell?
+
+10
+00:00:44.040 --> 00:00:45.680
+Mark Dallas: I'm in Eastern, so it's,
+
+11
+00:00:45.680 --> 00:00:47.699
+Becky.Keller: It says you must be back east, okay.
+
+12
+00:00:47.700 --> 00:00:54.110
+Mark Dallas: Yeah, that's right, just now, after dead, so… And there's Adam.
+
+13
+00:00:54.280 --> 00:00:55.720
+Mark Dallas: And John, hey Adam.
+
+14
+00:00:58.380 --> 00:01:00.469
+John Weathers: Hey Adam, how's it going? Been a little while.
+
+15
+00:01:11.270 --> 00:01:14.049
+John Weathers: He's in the, Zoom mute loop.
+
+16
+00:01:16.950 --> 00:01:20.729
+Mark Dallas: Becky, is there anybody else from your team that you'd expect to join?
+
+17
+00:01:21.440 --> 00:01:27.829
+Becky.Keller: I don't think so. The only other person that would possibly be jumping in is Steve, and I don't believe he's coming in today. Is that correct, Adam?
+
+18
+00:01:28.220 --> 00:01:31.169
+Adam.Chaddock: Correct, sorry, my… I have a…
+
+19
+00:01:31.880 --> 00:01:36.470
+Adam.Chaddock: I don't know, some update happened with Teams, and every time I join a new meeting, it mutes me.
+
+20
+00:01:37.340 --> 00:01:39.560
+John Weathers: I have the feeling.
+
+21
+00:01:39.560 --> 00:01:42.489
+Adam.Chaddock: I'm not… old dog, I can't learn new tricks.
+
+22
+00:01:44.020 --> 00:01:44.820
+John Weathers: Exactly.
+
+23
+00:01:45.740 --> 00:01:54.090
+Mark Dallas: Okay, well, Becky was just saying that should be everybody, so I think we'll get started. I am going to record, just so we can make sure we capture everything here, if that's alright.
+
+24
+00:01:54.630 --> 00:01:57.030
+Mark Dallas: So…
+
+25
+00:01:57.890 --> 00:02:04.129
+Mark Dallas: I think, you know, kind of where we left it last time, Adam, was we're gonna start with Costco, they're gonna be our first trading partner.
+
+26
+00:02:04.440 --> 00:02:08.630
+Mark Dallas: And…
+
+27
+00:02:08.770 --> 00:02:16.850
+Mark Dallas: you did share that… I can't remember what the name of this document was, but the Word document, the mapping template, right, for the 850 to JSON.
+
+28
+00:02:17.380 --> 00:02:25.130
+Mark Dallas: Mosaic, that's helpful, right? But to really begin in earnest, you know, kind of what we really need is those specs.
+
+29
+00:02:25.400 --> 00:02:31.269
+Mark Dallas: For each document type and a… matching… Edi.
+
+30
+00:02:32.040 --> 00:02:33.160
+Mark Dallas: transaction.
+
+31
+00:02:33.460 --> 00:02:37.129
+John Weathers: And I think what we're talking about here, Adam, is, like, the files that you and I discussed.
+
+32
+00:02:37.130 --> 00:02:54.029
+John Weathers: interacting with in terms of the SFTP, basically being able to obviously replicate the files that you're consuming today. So, I think really what we're asking for is probably just, like, a sample file for any given batch for each of the document types, and I think these could include
+
+33
+00:02:54.260 --> 00:03:01.539
+John Weathers: I don't know if you have them segmented by training partner, if they end up getting included, but maybe we can talk about it for a minute and just kind of align them.
+
+34
+00:03:01.660 --> 00:03:03.310
+John Weathers: What this is that we need, you know?
+
+35
+00:03:09.090 --> 00:03:10.710
+John Weathers: Does that make sense, in terms of…
+
+36
+00:03:11.850 --> 00:03:16.209
+Adam.Chaddock: Well, so we have a flat file that comes out, and I thought I included that in the email.
+
+37
+00:03:16.370 --> 00:03:17.349
+Adam.Chaddock: And then the…
+
+38
+00:03:17.710 --> 00:03:24.420
+Adam.Chaddock: translation piece is a piece that says, based on our flat file, this is what it would look like in JSON.
+
+39
+00:03:25.140 --> 00:03:27.520
+Adam.Chaddock: So I did that for the 850, the 810.
+
+40
+00:03:28.350 --> 00:03:29.889
+Adam.Chaddock: Are you, like.
+
+41
+00:03:29.890 --> 00:03:32.280
+John Weathers: But just to make sure I'm on the same page, like, when you say…
+
+42
+00:03:34.190 --> 00:03:42.759
+John Weathers: Well, let's just… like, just backing up to the… all the way to the… to the actual requirement, right? Like, we're replicating a file format that you already have, no?
+
+43
+00:03:43.960 --> 00:03:47.070
+Adam.Chaddock: Correct. So, here, let me get logged in, hang on.
+
+44
+00:03:49.420 --> 00:04:05.370
+John Weathers: Because I know, kind of, before we… as we were getting this signed and everything, we had a couple exchanges where you showed me example files, and I guess I'm not… I wasn't treating what I've already seen as, like, kind of the final example that we're going to build to, but if that's the case, I can go kind of pull those back.
+
+45
+00:04:07.050 --> 00:04:13.360
+Adam.Chaddock: So, we have… So, during this, I figured out we have two different
+
+46
+00:04:13.570 --> 00:04:18.080
+Adam.Chaddock: paths in two different formats for our 850, so that's…
+
+47
+00:04:18.089 --> 00:04:20.159
+Mark Dallas: Yeah, is that… is that the…
+
+48
+00:04:20.359 --> 00:04:22.309
+Mark Dallas: The pipe delineated in the Park City.
+
+49
+00:04:23.350 --> 00:04:30.920
+Adam.Chaddock: Yeah, so when it comes through Park City, it comes through, I believe this… This file here…
+
+50
+00:04:31.580 --> 00:04:31.930
+Becky.Keller: I know.
+
+51
+00:04:31.930 --> 00:04:32.589
+Adam.Chaddock: The wall art.
+
+52
+00:04:32.590 --> 00:04:34.229
+Becky.Keller: Oh, there you go. Okay, thanks.
+
+53
+00:04:34.230 --> 00:04:39.099
+Adam.Chaddock: Yeah, it's coming over. So all these files,
+
+54
+00:04:42.940 --> 00:04:49.550
+Adam.Chaddock: you know, like, there's Costco, so you can see them by the file name. So then this file is basically…
+
+55
+00:04:51.330 --> 00:04:53.950
+Adam.Chaddock: A set format with different…
+
+56
+00:04:54.280 --> 00:05:01.150
+Adam.Chaddock: fields. I can send you as many of these as you want. The JSON mapping took one of these flat files.
+
+57
+00:05:02.210 --> 00:05:06.929
+Adam.Chaddock: And so this is many pieces to the Costco, there's many Costcos in here.
+
+58
+00:05:07.070 --> 00:05:08.239
+Adam.Chaddock: So we basically…
+
+59
+00:05:08.240 --> 00:05:10.599
+John Weathers: For… for one second here, so…
+
+60
+00:05:10.730 --> 00:05:18.089
+John Weathers: what I'm looking at on the screen are these… this is, the actual format that you are receiving and processing
+
+61
+00:05:18.450 --> 00:05:26.639
+John Weathers: Today, right? Like, so you would… so you would want us to replicate this format back to the SFTP inbound folder, for example, for an 850?
+
+62
+00:05:26.860 --> 00:05:27.690
+Adam.Chaddock: Correct.
+
+63
+00:05:28.500 --> 00:05:31.249
+Adam.Chaddock: So this is how our system takes it in.
+
+64
+00:05:31.770 --> 00:05:32.600
+John Weathers: Okay, perfect.
+
+65
+00:05:32.600 --> 00:05:33.300
+Adam.Chaddock: out.
+
+66
+00:05:34.730 --> 00:05:35.440
+John Weathers: Out in the sky.
+
+67
+00:05:35.440 --> 00:05:35.790
+Adam.Chaddock: Which…
+
+68
+00:05:35.790 --> 00:05:36.780
+John Weathers: Oh, yeah.
+
+69
+00:05:36.780 --> 00:05:38.849
+Adam.Chaddock: Yeah, depending on which way you're going.
+
+70
+00:05:39.100 --> 00:05:39.750
+John Weathers: Yeah.
+
+71
+00:05:40.000 --> 00:05:41.100
+Adam.Chaddock: This was,
+
+72
+00:05:41.100 --> 00:05:43.439
+John Weathers: what is this? Is this an 850N from Costco?
+
+73
+00:05:44.320 --> 00:05:46.659
+Adam.Chaddock: This, I believe I was in the 850 folder.
+
+74
+00:05:46.890 --> 00:05:49.080
+Adam.Chaddock: No, sorry, I went in the wrong folder.
+
+75
+00:05:49.080 --> 00:05:52.400
+John Weathers: That's why I would be out, yeah, because it's an invoice.
+
+76
+00:05:54.380 --> 00:05:56.329
+Adam.Chaddock: And let me get to…
+
+77
+00:05:59.340 --> 00:06:02.710
+Adam.Chaddock: They put it in two different spots, so,
+
+78
+00:06:06.290 --> 00:06:10.040
+Adam.Chaddock: Okay, so… so they come back in as a text file for the 850.
+
+79
+00:06:13.240 --> 00:06:32.900
+John Weathers: And I guess while we're on the out for conversation for 2 seconds, like, let's take an invoice like we were just looking at, for example. We would consume… like, you're not planning on changing your outbound processes, right? Like, we would consume the file that I saw there as an example, and then we would turn that into an invoice and overflowing back to the trading partner, right?
+
+80
+00:06:33.110 --> 00:06:37.369
+Adam.Chaddock: Yeah, so what I'm anticipating is this flat file comes out with the same elements.
+
+81
+00:06:37.530 --> 00:06:46.699
+Adam.Chaddock: No matter what customer it is. And so when it's an 810, all the elements align, that's why I was translating them, to show, like, this is… this is what the elements mean.
+
+82
+00:06:47.510 --> 00:06:54.060
+Adam.Chaddock: And then, so anytime I push out an A10, that's what you're gonna get, and then you would translate that to whatever we need.
+
+83
+00:06:54.250 --> 00:06:54.650
+John Weathers: Yeah.
+
+84
+00:06:54.650 --> 00:06:58.440
+Adam.Chaddock: sent out. Inbound, I guess it's a text file.
+
+85
+00:06:58.740 --> 00:07:02.700
+Adam.Chaddock: These are different formats, so this is the Costco format.
+
+86
+00:07:04.250 --> 00:07:05.710
+John Weathers: This is the inbound again, right?
+
+87
+00:07:05.870 --> 00:07:06.480
+John Weathers: This is…
+
+88
+00:07:06.480 --> 00:07:09.810
+Adam.Chaddock: now we're inbound, yeah. And so it's pretty basic.
+
+89
+00:07:12.060 --> 00:07:13.439
+John Weathers: Yeah, extremely. Okay.
+
+90
+00:07:15.810 --> 00:07:16.310
+Adam.Chaddock: I've never…
+
+91
+00:07:16.310 --> 00:07:19.050
+Mark Dallas: This is all you would need from Costco, that's it.
+
+92
+00:07:20.000 --> 00:07:24.830
+Adam.Chaddock: That's not what we get from Costco, that's… Basically, what,
+
+93
+00:07:25.630 --> 00:07:29.350
+Adam.Chaddock: what is… so this goes through Aptian… so, hang on.
+
+94
+00:07:29.770 --> 00:07:30.430
+Adam.Chaddock: Hmm.
+
+95
+00:07:32.230 --> 00:07:33.049
+Adam.Chaddock: Hang on.
+
+96
+00:07:34.870 --> 00:07:40.169
+John Weathers: Because just to kind of… Mark, just to kind of, like, from a… and Adam, correct me if I'm off on anything that I've kind of…
+
+97
+00:07:40.390 --> 00:07:53.210
+John Weathers: this is what I've told my team, right? Like, so we're… so you already have an interface into the system that's consuming and producing flat files, right? So, if we get an example of an 810, an 850, 856, etc, right?
+
+98
+00:07:53.210 --> 00:08:02.049
+John Weathers: We would just take, literally, the example that you're giving us that your system's either producing or expecting, and replicate that via…
+
+99
+00:08:02.110 --> 00:08:03.870
+John Weathers: The orderful platform, right?
+
+100
+00:08:04.100 --> 00:08:07.350
+John Weathers: And as long as we can do that, like, that would be success.
+
+101
+00:08:08.040 --> 00:08:11.350
+Adam.Chaddock: Yeah, because our main… our main system's called ERMS, and it's…
+
+102
+00:08:11.790 --> 00:08:18.509
+Adam.Chaddock: I mean, there's no real nice way to say this, but it's a really stupid system. So it… it basically takes very basic files.
+
+103
+00:08:19.200 --> 00:08:28.920
+Adam.Chaddock: And so, Aptian has, translated these. Now, this SPS is probably UMQAS, so it's gonna be under the… a different format, but I'll just show you…
+
+104
+00:08:32.900 --> 00:08:36.830
+Adam.Chaddock: So this is what Aptian would get, is a standard 850.
+
+105
+00:08:37.419 --> 00:08:38.589
+Mark Dallas: Yep, X12.
+
+106
+00:08:39.700 --> 00:08:45.869
+John Weathers: Now, everything above this is just an apti and, like, some sort of header that's not to be considered, right?
+
+107
+00:08:45.870 --> 00:09:00.839
+Adam.Chaddock: It's just their dumb report. I can't… they're… Yeah, okay. I would rather… when I see raw EDI, I'd rather see from line… this… this line, gone, and just see where it starts the ISA. This is what I consider raw, but…
+
+108
+00:09:00.840 --> 00:09:01.710
+John Weathers: Okay.
+
+109
+00:09:01.710 --> 00:09:07.839
+Adam.Chaddock: They don't… they don't make it easy. I did give you login credentials to get into this site if you want, what the raw…
+
+110
+00:09:08.530 --> 00:09:12.339
+Adam.Chaddock: Or I can get them for you, either way,
+
+111
+00:09:14.800 --> 00:09:24.580
+John Weathers: Mark, I'm guessing it would be, like, as long as Adam's offering it, it can't hurt for us to be able to, as we get into this, like, insert testing, for us to be able to go access this, so…
+
+112
+00:09:24.790 --> 00:09:29.060
+Mark Dallas: Oh, yeah, for sure, if that's what you're offering, Adam, that would be great, yeah.
+
+113
+00:09:29.060 --> 00:09:29.899
+Adam.Chaddock: Yeah, these are…
+
+114
+00:09:29.900 --> 00:09:30.450
+John Weathers: They're going…
+
+115
+00:09:30.450 --> 00:09:31.100
+Adam.Chaddock: True.
+
+116
+00:09:31.530 --> 00:09:38.009
+Adam.Chaddock: Yeah, these are in the credential manager, and it's, it's a really aggravating site, but it, I'm not sure what…
+
+117
+00:09:38.990 --> 00:09:42.379
+Adam.Chaddock: So we have, let me see if it's under here…
+
+118
+00:09:44.220 --> 00:09:46.900
+Adam.Chaddock: Not under there, hang on, I just have to find where…
+
+119
+00:09:47.680 --> 00:09:56.530
+Adam.Chaddock: I'm not sure… oh, you know what it is? Is Park City doesn't come through EDI. That's why I'm not seeing this, so I won't see the… the only 850s I'll see for Costco here would be,
+
+120
+00:09:58.690 --> 00:10:02.989
+Adam.Chaddock: would be, UMQA, because UMQA does it through SPS.
+
+121
+00:10:03.560 --> 00:10:06.380
+Adam.Chaddock: And so we have 2 different channels for Costco, so…
+
+122
+00:10:06.490 --> 00:10:10.670
+Adam.Chaddock: One channel is SPS, one channel is… we log directly into
+
+123
+00:10:11.680 --> 00:10:14.109
+Adam.Chaddock: Park City and grab the 850.
+
+124
+00:10:14.610 --> 00:10:20.390
+Adam.Chaddock: The issue there is, is if we have to… do the 856,
+
+125
+00:10:20.990 --> 00:10:27.070
+Adam.Chaddock: We don't have a warehouse management system in every plant, so we were thinking of doing orderfuls
+
+126
+00:10:27.360 --> 00:10:29.309
+Adam.Chaddock: 8.56 through the portal.
+
+127
+00:10:31.000 --> 00:10:34.399
+Adam.Chaddock: So we have to figure out how we're gonna get the,
+
+128
+00:10:35.240 --> 00:10:37.420
+John Weathers: Well, how's that getting there today, for these trucks?
+
+129
+00:10:37.920 --> 00:10:39.309
+John Weathers: For this, path.
+
+130
+00:10:39.310 --> 00:10:44.050
+Adam.Chaddock: So, we just started 856, and we're not actually… we're in testing with SPS, so…
+
+131
+00:10:44.320 --> 00:10:50.560
+Adam.Chaddock: What we've found so far this is just a direct login to Park City.
+
+132
+00:10:50.680 --> 00:10:58.730
+Adam.Chaddock: this is. But what we found is Repositrack is what's doing… the…
+
+133
+00:10:59.130 --> 00:11:02.020
+Adam.Chaddock: EDI portion for Park City, so…
+
+134
+00:11:03.110 --> 00:11:05.860
+Adam.Chaddock: Ideally, we want to eventually get this all in orderful, but…
+
+135
+00:11:06.680 --> 00:11:15.889
+Adam.Chaddock: we're starting to set up and see if SPS can take it from repositrack, get a copy of the 850, so then we can build an 856 manually, is what we're trying to head to.
+
+136
+00:11:19.520 --> 00:11:23.949
+John Weathers: So if I'm in Park City, like, in terms of, I have an 850 come in, like.
+
+137
+00:11:24.910 --> 00:11:28.209
+John Weathers: I'm pick-packing in which system?
+
+138
+00:11:28.470 --> 00:11:30.129
+John Weathers: On the pick-pack side.
+
+139
+00:11:30.350 --> 00:11:46.489
+Adam.Chaddock: It depends which plant it is. So, in Fresno, I'm packing out of a warehouse management system, and everything's automated. If I'm packing out of Fairfield, I'm logging into a portal, not yet to set up, because we just got told we need to do the 856, so…
+
+140
+00:11:46.670 --> 00:11:50.890
+Adam.Chaddock: We're trying to set this up, that's why I want to do Costco first, so we can get this all into orderful.
+
+141
+00:11:51.140 --> 00:11:54.519
+Adam.Chaddock: But basically, yeah, it just…
+
+142
+00:11:54.710 --> 00:12:00.160
+Adam.Chaddock: Some way for them to manually generate an 856 with the least amount of pain possible.
+
+143
+00:12:01.200 --> 00:12:04.760
+John Weathers: How many shipments per day, or week, or month are we talking, roughly?
+
+144
+00:12:06.650 --> 00:12:13.579
+Adam.Chaddock: So, for… for Fairfield, I think it's 10 Costcos, and I think we do probably 10 a day, at least.
+
+145
+00:12:13.820 --> 00:12:18.029
+Adam.Chaddock: Elmqua is just, two products, and…
+
+146
+00:12:18.980 --> 00:12:24.639
+Adam.Chaddock: twice a week, maybe? So, I'm not really concerned about Fairfield, I'm not sure,
+
+147
+00:12:25.090 --> 00:12:25.860
+John Weathers: Okay.
+
+148
+00:12:26.170 --> 00:12:27.499
+Adam.Chaddock: You know, but the warehouse.
+
+149
+00:12:27.500 --> 00:12:30.230
+Mark Dallas: And neither of those? Neither of those have a WMS?
+
+150
+00:12:30.810 --> 00:12:31.389
+Adam.Chaddock: Not yet.
+
+151
+00:12:31.390 --> 00:12:32.510
+Mark Dallas: Okay, gotcha.
+
+152
+00:12:32.510 --> 00:12:36.030
+Adam.Chaddock: We're working on that next year, but it's not gonna be anytime soon.
+
+153
+00:12:38.670 --> 00:12:44.820
+John Weathers: Okay, so Mark, I guess, yeah, let's… let's focus on, I think, probably just rounding out each, like, a working…
+
+154
+00:12:45.600 --> 00:12:56.109
+John Weathers: model for Costco for each document type, and then I think we can come back and, like, help put some design around the edges for these gaps. I've got some thoughts and…
+
+155
+00:12:56.820 --> 00:13:01.610
+John Weathers: I'm guessing today is probably not the right day to actually talk through the details of those around the edge cases, but…
+
+156
+00:13:01.760 --> 00:13:13.119
+John Weathers: I think if we can… I think if we can get access to this, and then we get sample payloads for each of the document types for Costco, then I think that gives us enough to kind of get things moving on our side pretty decently.
+
+157
+00:13:14.120 --> 00:13:20.419
+Adam.Chaddock: Yeah, and I can… I can download a bunch of these raw files, but… so this is the different format,
+
+158
+00:13:22.170 --> 00:13:31.200
+Mark Dallas: And I guess, so for each of these raw files, right? So, number one, like John's saying, if we can get access to APTN, APTN, sorry, however you say that.
+
+159
+00:13:31.550 --> 00:13:35.029
+Mark Dallas: And download those for ourselves, great, or you share them with us.
+
+160
+00:13:35.370 --> 00:13:38.129
+Mark Dallas: But then, I guess I would expect to have…
+
+161
+00:13:38.240 --> 00:13:43.720
+Mark Dallas: a mapping spec for each of these, right? Where you say,
+
+162
+00:13:44.530 --> 00:13:51.850
+Mark Dallas: you know, for the current… for the current files that you have, you know, the 850s, how they're mapping to that. I guess, you know, if it was.
+
+163
+00:13:51.850 --> 00:14:04.910
+John Weathers: We're just mapping to the… we're just mapping to this file format, Mark. So basically, like, obviously the Costco trading guidelines will be in order full, and then we'll be extracting that over the API, right? And then we'll have the translator create the output file to basically this exact…
+
+164
+00:14:05.500 --> 00:14:10.140
+John Weathers: format as our specification, unless I'm… unless I'm…
+
+165
+00:14:10.380 --> 00:14:11.400
+Mark Dallas: Yep.
+
+166
+00:14:11.400 --> 00:14:16.809
+John Weathers: Makes sense, I guess. Is that what you understand also, Jason? Or, sorry, not Jason, Adam.
+
+167
+00:14:17.470 --> 00:14:21.690
+Adam.Chaddock: Yeah, so, basically what I sent you guys is, this is saying Field 2…
+
+168
+00:14:22.190 --> 00:14:32.089
+Adam.Chaddock: in that… this, I'd have to find out which format this is, but basically, field 2 is gonna be this field in your JSON. I didn't realize…
+
+169
+00:14:32.090 --> 00:14:35.350
+John Weathers: October 20th in that example here, on row 1, right?
+
+170
+00:14:36.000 --> 00:14:36.790
+Adam.Chaddock: Yeah.
+
+171
+00:14:37.450 --> 00:14:38.399
+Adam.Chaddock: Up here.
+
+172
+00:14:38.710 --> 00:14:42.650
+John Weathers: And then the PO number is the second 1236, right? Et cetera, et cetera.
+
+173
+00:14:43.050 --> 00:14:45.760
+Adam.Chaddock: Yeah, and so this is… this is just saying…
+
+174
+00:14:45.960 --> 00:14:50.999
+Adam.Chaddock: Because you don't… you guys won't know what this is. Now, I can give you many examples of these,
+
+175
+00:14:51.130 --> 00:14:54.249
+Adam.Chaddock: So this one is… I have to, like, find the,
+
+176
+00:14:55.850 --> 00:15:05.350
+Adam.Chaddock: to find out how Costco is mapped, because I didn't realize it was two different formats with Park City, so I have to make sure that I've got that. But basically, it's just going down…
+
+177
+00:15:05.950 --> 00:15:10.820
+Adam.Chaddock: you know, here's the LDT line, and so when you go over here and you see the LDT,
+
+178
+00:15:11.170 --> 00:15:15.509
+Adam.Chaddock: it basically is just telling you what field 2 means in the J song.
+
+179
+00:15:15.510 --> 00:15:16.200
+Mark Dallas: Okay.
+
+180
+00:15:17.240 --> 00:15:26.530
+John Weathers: Yeah, and Mark, like, I think this should be defined in the guidelines also, right? Digitized from an overflow perspective, so we should be able to do… now, I could be totally off on this, and we need.
+
+181
+00:15:26.530 --> 00:15:33.150
+Mark Dallas: Well, it'll… no, it'll have, right, it'll have the Costco with what they're sending on the $850 side, we just have to know…
+
+182
+00:15:33.570 --> 00:15:39.379
+Mark Dallas: What that's gonna map to, which, of course, we can probably figure a lot of this out ourselves, you know, but…
+
+183
+00:15:39.500 --> 00:15:45.570
+Mark Dallas: on the flat file side, right? And then we can… we could just do it that way, right? If you don't have a spec.
+
+184
+00:15:45.770 --> 00:15:48.890
+Mark Dallas: Adam. More so than this, but this is helpful.
+
+185
+00:15:49.420 --> 00:15:52.860
+Mark Dallas: Especially with your description here. So…
+
+186
+00:15:52.860 --> 00:15:56.200
+Adam.Chaddock: And so… it's… You and I…
+
+187
+00:15:56.470 --> 00:16:01.319
+Adam.Chaddock: Yeah, so I inherited all this, so let's go… let's see if I can find it,
+
+188
+00:16:01.980 --> 00:16:05.019
+Adam.Chaddock: And I think I uploaded some of this, but, let's see, it's…
+
+189
+00:16:05.380 --> 00:16:07.029
+Adam.Chaddock: Gotta figure out where they put it.
+
+190
+00:16:08.940 --> 00:16:20.190
+John Weathers: And, just while you're looking for this, to kind of button down the SFTP piece, Adam, like, you wanted us to give you, like, provision, basically kind of just give you an SFTP to connect to that you're not managing, right, as a part of…
+
+191
+00:16:20.190 --> 00:16:25.330
+Adam.Chaddock: Correct. That's way easier for us, so if… yeah, that would be awesome.
+
+192
+00:16:26.380 --> 00:16:33.350
+John Weathers: Okay, and so we can organize the folder structure like we generally discussed around inbound documents, outbound documents, and then…
+
+193
+00:16:33.470 --> 00:16:43.209
+John Weathers: on your side, I'm assuming you'll have a little bit of wiring up to do to connect to this SFTP, and when you download a document, to put it in the downloaded folder, that kind of stuff, which we can give you
+
+194
+00:16:43.380 --> 00:16:49.060
+John Weathers: A guideline around, or instructions around, in terms of how we see it working, if that kind of works for you.
+
+195
+00:16:49.330 --> 00:16:58.329
+Adam.Chaddock: Yeah, so I use BizLink, but I don't use the transformation side of BizLink, I just use it as a file mover. So I'm capable of moving files.
+
+196
+00:16:58.850 --> 00:16:59.610
+John Weathers: Perfect.
+
+197
+00:16:59.610 --> 00:16:59.930
+Adam.Chaddock: inner.
+
+198
+00:16:59.930 --> 00:17:02.880
+John Weathers: And you can define what to do after you move one, that kind of stuff.
+
+199
+00:17:03.460 --> 00:17:08.949
+Adam.Chaddock: Yeah, I mean, we do lots of diff… we do a ton of stuff with files, so…
+
+200
+00:17:09.079 --> 00:17:12.509
+Adam.Chaddock: Okay. We have a whole bunch of different flavors, so I'm sure we can…
+
+201
+00:17:13.470 --> 00:17:19.620
+Adam.Chaddock: figure out a way to make it, you know, the best. So I believe I uploaded this to the,
+
+202
+00:17:20.670 --> 00:17:25.230
+Adam.Chaddock: site, but this is basically the docu… this is all the document. This is, like, a PICCO example.
+
+203
+00:17:25.440 --> 00:17:32.020
+Adam.Chaddock: So when I go into Park City, like, documentation…
+
+204
+00:17:32.290 --> 00:17:37.789
+Adam.Chaddock: I believe I uploaded this to the website, so there's some… it's not great documentation.
+
+205
+00:17:38.440 --> 00:17:41.390
+Adam.Chaddock: But I thought there was one in here that had…
+
+206
+00:17:41.390 --> 00:17:43.390
+Mark Dallas: And when you say the website, you mean the orderful UI?
+
+207
+00:17:43.900 --> 00:17:49.039
+Adam.Chaddock: Yeah, the… so into order full, and then, historical data, I put it up.
+
+208
+00:17:49.040 --> 00:17:49.510
+Mark Dallas: Yep.
+
+209
+00:17:49.510 --> 00:17:54.969
+Adam.Chaddock: There. But this is basically, like, what Park City is saying.
+
+210
+00:17:55.440 --> 00:18:03.230
+Adam.Chaddock: Costco Inbound Park City, and so I believe I zipped that up and just put it out there. So there's multiple ways of, you know.
+
+211
+00:18:04.040 --> 00:18:16.020
+Adam.Chaddock: This was the very basic one that we were looking at earlier that was, here… Still…
+
+212
+00:18:16.130 --> 00:18:18.290
+Adam.Chaddock: I don't know why this doesn't window, right?
+
+213
+00:18:22.320 --> 00:18:27.639
+Adam.Chaddock: So, I just have to figure out… Purchase order number…
+
+214
+00:18:29.210 --> 00:18:36.129
+Adam.Chaddock: see if it lines up. I'd have to see if it lines up. Customer name would be an easy one, position 4, but see, I don't have…
+
+215
+00:18:36.430 --> 00:18:48.779
+Adam.Chaddock: To see this… this is the problem with documentation. I don't know if it's good or bad, so just… they didn't… the previous person did not take good notes, so this doesn't look like it lines up to Costco.
+
+216
+00:18:51.060 --> 00:18:58.260
+Adam.Chaddock: So this is… I'll… I'll keep trying to find… Data, but…
+
+217
+00:19:00.250 --> 00:19:03.020
+Adam.Chaddock: This… these are the issues we have.
+
+218
+00:19:03.460 --> 00:19:05.439
+Adam.Chaddock: That's just an example.
+
+219
+00:19:10.850 --> 00:19:21.259
+John Weathers: And I mean, Mark, tell me if I'm off on this, but, like, this is not specific to She80, right? Like, and maybe, Adam, you know this, right? But, like, this… this file format's effectively…
+
+220
+00:19:21.680 --> 00:19:26.050
+John Weathers: In this case, Costco's EDI standard, right? So, like, from a.
+
+221
+00:19:26.050 --> 00:19:31.190
+Mark Dallas: Yes, that's on the… but that's on the one side, right, of the mapping. The other side of the mapping
+
+222
+00:19:31.330 --> 00:19:34.230
+Mark Dallas: we… that's where we need Adam's help.
+
+223
+00:19:34.950 --> 00:19:48.749
+Adam.Chaddock: Yeah, so it's… so the Aptian side is what you guys would… standard X12, but then it turns into this piece, which is what… this is what our system accepts, and that's where we have to try to figure out what all these mean.
+
+224
+00:19:49.480 --> 00:19:54.869
+Adam.Chaddock: So all I'm saying is there's limited documentation, so I'm trying to use AI to try to
+
+225
+00:19:55.590 --> 00:19:57.189
+Adam.Chaddock: Coordinate these together.
+
+226
+00:19:58.950 --> 00:20:15.920
+John Weathers: And just to make sure we're all on the same page, like, so what I'm looking at on the screen, like, because we looked at a couple different things, right? Like, I looked at a format that you showed me, which was basically NX12, and that's what you said the system was expecting, but you're saying there's a transformation layer now between these two, right? Like…
+
+227
+00:20:15.920 --> 00:20:21.130
+Adam.Chaddock: Well, so… So the X12 comes into Aptian, Aptian maps it to this file.
+
+228
+00:20:21.440 --> 00:20:25.519
+Adam.Chaddock: And we download this file and take it in and process it. So this is…
+
+229
+00:20:25.520 --> 00:20:26.660
+John Weathers: system do you think.
+
+230
+00:20:27.180 --> 00:20:32.590
+Adam.Chaddock: Yeah, you had produced this for my inbound 850s, for… Costco.
+
+231
+00:20:33.020 --> 00:20:33.420
+John Weathers: Right.
+
+232
+00:20:33.420 --> 00:20:38.429
+Adam.Chaddock: There's two different flavors, so we have to… there's 2 different 850 flavors, so…
+
+233
+00:20:38.920 --> 00:20:40.579
+Adam.Chaddock: Just have to be aware of that.
+
+234
+00:20:41.470 --> 00:20:58.169
+John Weathers: And just so… just so I'm clear, like, let's just say that we can get the definitions for each of these columns, which is what Mark's asking for. But, like, the reason I don't see, like, a ship-to address, I assume, is because there's a customer code and probably a ship-to-address code in one of these columns, right? Just as an example.
+
+235
+00:20:59.770 --> 00:21:08.239
+Adam.Chaddock: Well, in the X trial, there might be, but our system, it's just a bare minimum that it needs to take it in. System does the rest of the work.
+
+236
+00:21:09.090 --> 00:21:16.709
+John Weathers: Right, right. So, for example, one of these columns is going to tell you which customer to put this under, and which ship to address, for example, right?
+
+237
+00:21:17.330 --> 00:21:26.270
+Adam.Chaddock: It's… yeah, so it would, it would tell us, But, yeah.
+
+238
+00:21:26.800 --> 00:21:31.809
+Adam.Chaddock: figure out what it… I just have to figure out which one that is. This might be Store 482.
+
+239
+00:21:32.120 --> 00:21:33.200
+John Weathers: Yeah, yeah, okay.
+
+240
+00:21:33.200 --> 00:21:33.670
+Adam.Chaddock: Mmm…
+
+241
+00:21:33.670 --> 00:21:34.040
+John Weathers: Perfect.
+
+242
+00:21:34.040 --> 00:21:38.459
+Adam.Chaddock: And I see 482 in here, and then we have a translation, so…
+
+243
+00:21:38.590 --> 00:21:43.089
+Adam.Chaddock: This number is probably what's in… we have a cross-reference table in our main system.
+
+244
+00:21:43.960 --> 00:21:49.740
+Adam.Chaddock: So it's potential that this is that… I'm not sure where it would… I mean, it might be this whole number.
+
+245
+00:21:50.130 --> 00:21:53.090
+Adam.Chaddock: I'd have to, I mean, I can look, our system…
+
+246
+00:21:53.090 --> 00:22:11.229
+John Weathers: That's okay. I mean, that might be the ship to address your point, or whatever. Like, that's okay. Like, I think if we get… so, to your point, Mark, like, I think the biggest thing we need from Adam is, you know, exactly, here's the file that we need you to produce on the outbound side, and here's what we do produce on the outbound side, and then we can map that to the order full and X12, right?
+
+247
+00:22:12.260 --> 00:22:15.010
+John Weathers: We just need to know the definition of these columns.
+
+248
+00:22:15.640 --> 00:22:20.760
+Adam.Chaddock: And that's what the… that's what the JSON Mosaic stuff was doing, was trying to say, this is…
+
+249
+00:22:21.430 --> 00:22:21.980
+John Weathers: Okay.
+
+250
+00:22:21.980 --> 00:22:26.200
+Adam.Chaddock: this is what this field and this means, but I have to double check because…
+
+251
+00:22:28.800 --> 00:22:31.420
+Adam.Chaddock: Halfway into this, I didn't realize there was,
+
+252
+00:22:32.010 --> 00:22:44.170
+Adam.Chaddock: two formats going on, so I think I sent you guys the format that's the standard, what we'll call the standard, which is not Walmart, not via… not Park City, but I need to get you a Park City,
+
+253
+00:22:44.780 --> 00:22:48.540
+Adam.Chaddock: translation, basically, and I might have that, I just have to look at my…
+
+254
+00:22:48.890 --> 00:22:52.669
+Adam.Chaddock: AI. I dumped a bunch of the raw X12s into AI.
+
+255
+00:22:52.780 --> 00:22:59.159
+Adam.Chaddock: And a bunch of these… Flat files into AI, and just said, marry them up, so it…
+
+256
+00:22:59.520 --> 00:23:02.809
+Adam.Chaddock: I compared them all and put all the fields together.
+
+257
+00:23:02.950 --> 00:23:04.380
+Adam.Chaddock: I should have it somewhere.
+
+258
+00:23:04.870 --> 00:23:06.389
+Adam.Chaddock: But I can get that to you.
+
+259
+00:23:06.820 --> 00:23:13.369
+Mark Dallas: Yeah, so you sent the… Mapping template is what you called it.
+
+260
+00:23:13.780 --> 00:23:21.030
+Adam.Chaddock: Yeah, and I don't know, I have to see if Costco's in that, because, it was basically this…
+
+261
+00:23:21.920 --> 00:23:24.900
+Adam.Chaddock: I don't know if I put Costco in here.
+
+262
+00:23:26.310 --> 00:23:31.389
+Mark Dallas: Yeah, it calls out Costco a few times. I was reading over it before the meeting,
+
+263
+00:23:33.630 --> 00:23:37.780
+Adam.Chaddock: So that's Umpqua, Stairs, Park City…
+
+264
+00:23:44.400 --> 00:23:49.510
+Adam.Chaddock: Yeah, so it con- this has both in it, so I'm just not sure how… I'd have to see…
+
+265
+00:23:53.920 --> 00:23:55.900
+Adam.Chaddock: So that's the one that has the…
+
+266
+00:24:03.440 --> 00:24:04.700
+Adam.Chaddock: release.
+
+267
+00:24:19.900 --> 00:24:23.700
+Adam.Chaddock: Somewhere… I thought I threw Costco in here, but I just want to make sure…
+
+268
+00:24:27.810 --> 00:24:29.630
+Adam.Chaddock: Dude, this is the standard…
+
+269
+00:24:31.300 --> 00:24:35.780
+Adam.Chaddock: Yeah, there's a lot to chew on, so if you need this a little bit more simplified, I could try to get more simple.
+
+270
+00:24:36.530 --> 00:24:39.860
+Adam.Chaddock: But this is basically what every field maps to.
+
+271
+00:24:40.190 --> 00:24:40.850
+Mark Dallas: Okay.
+
+272
+00:24:41.610 --> 00:24:43.539
+Mark Dallas: So here's what I would say we could do.
+
+273
+00:24:43.820 --> 00:24:57.289
+Mark Dallas: You're right, I didn't realize this was specific for Costco, and now that you explained how the flat file position works a little bit more, what we can do is, I don't see in your email, but if you can send us
+
+274
+00:24:57.570 --> 00:25:02.309
+Mark Dallas: a few 850s, right, for Costco, from your production.
+
+275
+00:25:05.030 --> 00:25:15.100
+Mark Dallas: Then we can… we can try to start on… on just with what you have here, and see how the… how far we can get on the mapping, and then kind of come back to you with… with questions on any holes.
+
+276
+00:25:15.580 --> 00:25:18.869
+Adam.Chaddock: Yeah, I would check the parks… I mean, the orderful portal, because I upload.
+
+277
+00:25:18.870 --> 00:25:19.859
+Mark Dallas: Oh, that's right, yeah.
+
+278
+00:25:19.860 --> 00:25:24.659
+Adam.Chaddock: a bunch of stuff under… but it doesn't name the file, it renames the file, so I…
+
+279
+00:25:25.150 --> 00:25:29.520
+Adam.Chaddock: went back to look at what I uploaded, I'm like, oh, it's renamed the file, so I can't tell…
+
+280
+00:25:30.570 --> 00:25:33.230
+Mark Dallas: Where did you upload this again? You said…
+
+281
+00:25:33.230 --> 00:25:35.030
+Adam.Chaddock: It's under historical data?
+
+282
+00:25:35.410 --> 00:25:36.609
+Adam.Chaddock: on the portal.
+
+283
+00:25:37.270 --> 00:25:38.560
+Adam.Chaddock: It's,
+
+284
+00:25:41.250 --> 00:25:43.029
+Mark Dallas: Show me that…
+
+285
+00:25:45.950 --> 00:25:56.360
+John Weathers: Hey, Mark, I'll, I'm gonna drop here, I've gotta open another call, but, Adam, it was good to reconnect on this, and Mark, we can touch base in the background, and I think I'm on the same page.
+
+286
+00:25:56.510 --> 00:25:59.560
+John Weathers: With everything that we just talked about, so I think we're in a good spot.
+
+287
+00:26:01.030 --> 00:26:01.660
+Mark Dallas: Nope.
+
+288
+00:26:01.660 --> 00:26:06.949
+Adam.Chaddock: Yeah, I just think we'd… It's kind of confusing, but I think we… I think we're getting there.
+
+289
+00:26:08.640 --> 00:26:12.180
+Mark Dallas: That's right. Yeah, thanks for joining, John. We'll, we'll be in touch.
+
+290
+00:26:13.120 --> 00:26:14.869
+John Weathers: No worries. Take care, Adam.
+
+291
+00:26:15.150 --> 00:26:16.139
+John Weathers: See you, Becky.
+
+292
+00:26:19.000 --> 00:26:20.960
+Mark Dallas: Yep. Okay, got it.
+
+293
+00:26:28.400 --> 00:26:32.090
+Adam.Chaddock: Yeah, so here's a bunch of the… Yeah.
+
+294
+00:26:32.090 --> 00:26:35.099
+Mark Dallas: I just didn't realize you'd done that, so that's great.
+
+295
+00:26:36.240 --> 00:26:46.980
+Mark Dallas: And so, you know, what we're trying to do is take an 850, Compare it to your… Mapping.
+
+296
+00:26:47.330 --> 00:26:59.690
+Mark Dallas: document, and then also, if we had a few of the flat file examples, we could compare it to that, to those, right? I think even having an 850 and the flat file that was produced for that 850
+
+297
+00:27:01.700 --> 00:27:07.460
+Mark Dallas: I think would be great, because then we could marry the two up, and then with the…
+
+298
+00:27:07.890 --> 00:27:15.589
+Mark Dallas: mapping file that you do have, we can use those three to hopefully triangulate, so to speak, where we need to be.
+
+299
+00:27:15.980 --> 00:27:17.370
+Mark Dallas: So,
+
+300
+00:27:18.180 --> 00:27:23.410
+Mark Dallas: Yeah, so these are 850s, what we have here. This looks like 3 of them. Is that right?
+
+301
+00:27:26.100 --> 00:27:27.429
+Adam.Chaddock: Yeah,
+
+302
+00:27:27.430 --> 00:27:31.919
+Mark Dallas: And so if I could get a… if I could get a flat file for each of those that matched it, that would be… that would be gold.
+
+303
+00:27:35.320 --> 00:27:39.809
+Adam.Chaddock: Yeah, so for the Fresno… for the… Park City side…
+
+304
+00:27:40.470 --> 00:27:46.059
+Adam.Chaddock: It's a download and rep… they… it's just, they're sending us that exact form out.
+
+305
+00:27:47.800 --> 00:27:52.399
+Mark Dallas: Okay, so yeah, I guess… so Park City, just help me out here. This is… when you're saying…
+
+306
+00:27:52.400 --> 00:27:54.050
+Adam.Chaddock: You're managing inventory?
+
+307
+00:27:54.050 --> 00:27:56.970
+Mark Dallas: Okay, vendor managed inventory, and that's for Walmart?
+
+308
+00:27:57.480 --> 00:28:00.310
+Adam.Chaddock: Walmart, Sam's Club, Costco…
+
+309
+00:28:00.700 --> 00:28:09.489
+Adam.Chaddock: Not for Umpqua, though. Umpqua is different, but for the rest of the plants, Park City is under Model, Fairfield, and Fresno Producers. Okay, okay.
+
+310
+00:28:09.490 --> 00:28:13.660
+Mark Dallas: I think… I think I remember you mentioning something on the kickoff call about this, too, yeah.
+
+311
+00:28:14.030 --> 00:28:18.869
+Mark Dallas: So, Park City manages that inventory for you guys for…
+
+312
+00:28:19.140 --> 00:28:22.670
+Mark Dallas: Walmart, Sam's, Club, etc, and so then they're gonna…
+
+313
+00:28:23.140 --> 00:28:25.759
+Mark Dallas: And then they send new orders in.
+
+314
+00:28:27.590 --> 00:28:31.550
+Mark Dallas: That don't come through… Aptian?
+
+315
+00:28:32.420 --> 00:28:41.200
+Adam.Chaddock: Correct, they… we log directly… we actually pull it from their site directly into our system. Like, it doesn't even go through an EDI channel. I would like it to…
+
+316
+00:28:41.330 --> 00:28:45.450
+Adam.Chaddock: It'd be better, I think, to go through an EDI channel, but, right now it's not.
+
+317
+00:28:45.490 --> 00:28:51.800
+Mark Dallas: So, I guess Park City, this is interesting, yeah, because obviously Walmart and Sam's Club do…
+
+318
+00:28:52.240 --> 00:28:55.350
+Mark Dallas: business via EDI, right? So…
+
+319
+00:28:55.480 --> 00:29:09.340
+Mark Dallas: what I was thinking, kind of initially, and I know, you know, again, we're re-litigating some of this, but what I should have realized off the last call was you're not getting EDI transactions directly from Sam's Club and Walmart.
+
+320
+00:29:09.920 --> 00:29:10.610
+Mark Dallas: Is that right?
+
+321
+00:29:10.610 --> 00:29:18.049
+Adam.Chaddock: Well, if you say… so exclude Umpqua, it's up in Oregon, the rest of them are doing vendor management.
+
+322
+00:29:18.050 --> 00:29:18.420
+Mark Dallas: I said.
+
+323
+00:29:18.420 --> 00:29:19.260
+Adam.Chaddock: inventory.
+
+324
+00:29:19.260 --> 00:29:22.939
+Mark Dallas: So there's two… two… two… I want to call them stores.
+
+325
+00:29:22.940 --> 00:29:32.510
+Adam.Chaddock: two streams, two streams. Oregon takes… if we just simplify it, Oregon… Is direct to the vendor?
+
+326
+00:29:32.770 --> 00:29:39.209
+Adam.Chaddock: in all circumstances, they don't do any vendor-managed inventory, and then all the rest of the plants, California and the Nevada, are…
+
+327
+00:29:39.510 --> 00:29:42.250
+Adam.Chaddock: VMI for those,
+
+328
+00:29:42.380 --> 00:29:47.460
+Adam.Chaddock: It might be Pitco, I'm not sure yet, I'm trying to figure that one out, but it's definitely Costco.
+
+329
+00:29:47.590 --> 00:29:49.459
+Adam.Chaddock: And Walmart and Sam's.
+
+330
+00:29:49.460 --> 00:29:51.570
+Mark Dallas: And what does VMI mean? That means,
+
+331
+00:29:51.570 --> 00:29:53.070
+Adam.Chaddock: Vendor-managed inventory.
+
+332
+00:29:53.070 --> 00:29:54.820
+Mark Dallas: Okay, so, and that's Park City.
+
+333
+00:29:55.490 --> 00:29:59.110
+Adam.Chaddock: And that's who we… yeah, Park City's who we're using. So we take that…
+
+334
+00:29:59.600 --> 00:30:07.330
+Adam.Chaddock: there's that carbon copy 852 that comes direct X12, and it's just pushed over to Park City. Then they…
+
+335
+00:30:07.480 --> 00:30:17.190
+Adam.Chaddock: take that and create an 850 that we direct download directly into our system. I mean, it doesn't even go through… it's just a direct download, so that file…
+
+336
+00:30:17.680 --> 00:30:21.010
+Adam.Chaddock: Is what we're getting from Park City, and I can try to get,
+
+337
+00:30:21.500 --> 00:30:32.199
+Adam.Chaddock: I could see if Narvel has a login to Park City, so if I could see if those files… I'm assuming they're, like, verbatim copies, because we pull it in, so…
+
+338
+00:30:32.200 --> 00:30:36.799
+Mark Dallas: Yeah, and this is probably a really dumb question, but why wouldn't we just bring that
+
+339
+00:30:37.180 --> 00:30:39.569
+Mark Dallas: If we're just trying to get the payload.
+
+340
+00:30:39.740 --> 00:30:46.219
+Mark Dallas: into ERMS, why wouldn't we just have Walmart
+
+341
+00:30:46.660 --> 00:30:52.119
+Mark Dallas: for example, send that directly to Orderful, and then we bring it into ERMS from there, instead of going through
+
+342
+00:30:52.450 --> 00:30:52.990
+Mark Dallas: sweet.
+
+343
+00:30:53.360 --> 00:30:57.660
+Adam.Chaddock: Orderful's not creating that. I mean… Walmart's not creating the 850.
+
+344
+00:30:58.770 --> 00:31:01.720
+Mark Dallas: Okay, you said an 850 was going to Park City, I thought.
+
+345
+00:31:02.290 --> 00:31:04.130
+Adam.Chaddock: No, an 8.52.
+
+346
+00:31:04.780 --> 00:31:07.110
+Mark Dallas: 0852, okay.
+
+347
+00:31:07.110 --> 00:31:10.539
+Adam.Chaddock: Yeah, so, I mean, the more I think about this, I don't know,
+
+348
+00:31:12.750 --> 00:31:20.000
+Adam.Chaddock: You know, I mean, we could just leave it as is, and not worry about… You know,
+
+349
+00:31:20.000 --> 00:31:23.419
+Mark Dallas: It could be a way to simplify things to start with.
+
+350
+00:31:24.430 --> 00:31:33.449
+Adam.Chaddock: I mean, we can leave the as-is process, that means we don't have to map an 850 for Costco and Park… and Walmart, and just… but the issue becomes then, how do I get
+
+351
+00:31:34.450 --> 00:31:38.369
+Adam.Chaddock: I have to be able to create an 856, so that's kind of why I was going down this path.
+
+352
+00:31:42.910 --> 00:31:45.699
+Adam.Chaddock: So it's kinda… it's kinda tricky.
+
+353
+00:31:45.700 --> 00:31:52.400
+Mark Dallas: Right, so, well, but, so if you don't… Yeah, so I'm assuming…
+
+354
+00:31:52.850 --> 00:32:01.650
+Mark Dallas: you're saying the only reason that you would bring the orders in is to get into ERMS, is to get an 856? Because it seems like you would need to have that
+
+355
+00:32:02.420 --> 00:32:06.090
+Mark Dallas: You know, order data, from Park City.
+
+356
+00:32:06.770 --> 00:32:10.790
+Mark Dallas: coming into ERMS, regardless, right, of anything else.
+
+357
+00:32:12.910 --> 00:32:13.959
+Adam.Chaddock: Yeah, so the…
+
+358
+00:32:13.960 --> 00:32:18.020
+Mark Dallas: ERP, right? So you need to have every order that's… Yes.
+
+359
+00:32:18.020 --> 00:32:18.570
+Adam.Chaddock: Yeah, we have to…
+
+360
+00:32:18.570 --> 00:32:19.730
+Mark Dallas: Coming in, so…
+
+361
+00:32:19.910 --> 00:32:31.090
+Adam.Chaddock: So if we leave the as-is process, and just say, we'll just let Park City keep doing this, the only disconnect is, how do I generate an 856 manually in order full?
+
+362
+00:32:31.090 --> 00:32:31.680
+Mark Dallas: Okay.
+
+363
+00:32:32.410 --> 00:32:33.910
+Adam.Chaddock: these orders.
+
+364
+00:32:33.910 --> 00:32:37.729
+Mark Dallas: Now I'm tracking. I understand. You're saying, yeah, you could… if you left it as is.
+
+365
+00:32:38.420 --> 00:32:41.110
+Mark Dallas: then the only hole is that one. Okay.
+
+366
+00:32:41.640 --> 00:32:50.289
+Adam.Chaddock: Yeah, and the only reason I'm… so we were looking at SPS temporarily until order falls online, and they were saying…
+
+367
+00:32:54.300 --> 00:33:04.270
+Adam.Chaddock: they were saying that they needed to generate an 856 manually off of an 850, so this is why we went down this path of, like, well, maybe we need to put this through an EDI channel, but if we don't.
+
+368
+00:33:04.930 --> 00:33:07.260
+Adam.Chaddock: then… This gets a little.
+
+369
+00:33:07.260 --> 00:33:07.650
+Mark Dallas: the worst.
+
+370
+00:33:07.650 --> 00:33:08.220
+Adam.Chaddock: simple.
+
+371
+00:33:08.220 --> 00:33:08.960
+Mark Dallas: It could.
+
+372
+00:33:09.380 --> 00:33:10.970
+Mark Dallas: So here's, I think, maybe…
+
+373
+00:33:11.220 --> 00:33:18.059
+Mark Dallas: again, I wasn't on the calls, but what was being said? If you need to go live with Costco pronto, pronto, then…
+
+374
+00:33:19.010 --> 00:33:24.830
+Mark Dallas: you know, you could use our WebEDI portal to do that. It's…
+
+375
+00:33:25.630 --> 00:33:36.170
+Mark Dallas: frankly, the limitation there is it's manual. You're having to go in there, and basically, an 850 comes in for your trading partner, you kind of manually port over the data from
+
+376
+00:33:36.340 --> 00:33:44.939
+Mark Dallas: Well, you click a button and it ports the data over from the 850 to an 856 form. You fill in the missing data, because the 850 obviously doesn't have everything.
+
+377
+00:33:45.180 --> 00:33:53.060
+Mark Dallas: you know, the shipping information, right? That kind of thing. You manually fill that out, and then you click another button and send the 856.
+
+378
+00:33:53.500 --> 00:33:54.440
+Mark Dallas: So…
+
+379
+00:33:54.570 --> 00:34:01.580
+Mark Dallas: it's a manual process, and I think probably what the Orderful team was talking to you about was, hey, you know.
+
+380
+00:34:01.680 --> 00:34:05.530
+Mark Dallas: If you need to go live with Costco soon, you could do that by…
+
+381
+00:34:06.490 --> 00:34:11.070
+Mark Dallas: using the WebDI portal to fulfill the 856s. Does that sound right?
+
+382
+00:34:12.730 --> 00:34:14.890
+Adam.Chaddock: Yeah, cause we know, we know…
+
+383
+00:34:15.449 --> 00:34:24.730
+Adam.Chaddock: for the Fresno planets will be automated, but we know for the Fairfield plan, it's going to be some manual process, so we're just trying to create it as the least… least amount of pain possible.
+
+384
+00:34:24.739 --> 00:34:30.849
+Mark Dallas: And so what I'm saying is, is, hey, if we can… if you're not in, you know.
+
+385
+00:34:31.589 --> 00:34:35.049
+Mark Dallas: super hurry mode to get the… to get Costco live.
+
+386
+00:34:35.279 --> 00:34:39.359
+Mark Dallas: And you could wait on the integration, then what we could do is…
+
+387
+00:34:39.719 --> 00:34:42.949
+Mark Dallas: Assuming that you're having 850s coming in.
+
+388
+00:34:43.679 --> 00:34:46.209
+Mark Dallas: You… yeah, we could just…
+
+389
+00:34:46.389 --> 00:34:50.699
+Mark Dallas: Hopefully avoid needing to use the web portal and that manual step there.
+
+390
+00:34:50.839 --> 00:34:52.489
+Mark Dallas: Altogether, right?
+
+391
+00:34:53.989 --> 00:35:05.309
+Adam.Chaddock: Yeah, but I don't think that's gonna work, because I think, Costco wants us live by… well, they want us certified as of the 15th of this month, which didn't happen, so, once we get certified, they're gonna set a go-live date.
+
+392
+00:35:06.119 --> 00:35:10.089
+Adam.Chaddock: And right now, we're… we're… right now, SPS is…
+
+393
+00:35:10.329 --> 00:35:16.369
+Adam.Chaddock: $100 a vendor per month, and so they've already… SPS has already got us for…
+
+394
+00:35:16.739 --> 00:35:22.739
+Adam.Chaddock: I think it's, like, 300 or 400 bucks a month now, and I just think it's just gonna grow, so we… we need to contain the…
+
+395
+00:35:23.739 --> 00:35:25.759
+Adam.Chaddock: the bleeding, in a sense. So,
+
+396
+00:35:25.760 --> 00:35:26.780
+Mark Dallas: Sure, sure.
+
+397
+00:35:26.970 --> 00:35:33.879
+Mark Dallas: Yeah, right, okay, I see. So that kind of gives the urgency to getting Costco live,
+
+398
+00:35:35.690 --> 00:35:38.140
+Mark Dallas: Yeah, interesting. Okay, so…
+
+399
+00:35:38.140 --> 00:35:42.629
+Adam.Chaddock: Yes, so we have some choices. It's like, we can leave the as-is process with Park City.
+
+400
+00:35:43.540 --> 00:35:48.530
+Adam.Chaddock: But then we either go to Repositrack, because they said they do have…
+
+401
+00:35:48.820 --> 00:35:52.849
+Adam.Chaddock: a way to get EDI data to a, like, a copy.
+
+402
+00:35:53.250 --> 00:35:56.299
+Adam.Chaddock: And we could just leave it as is, and… and…
+
+403
+00:35:56.870 --> 00:36:01.759
+Adam.Chaddock: keep doing this direct download, then you guys wouldn't have to translate these 850s
+
+404
+00:36:02.810 --> 00:36:07.780
+Adam.Chaddock: And then we just basically figure out how do we get the 850 to you so we can create the 856.
+
+405
+00:36:09.290 --> 00:36:14.469
+Mark Dallas: As you're saying, for Costco, they're under the VMI situation, so we could just skip
+
+406
+00:36:15.400 --> 00:36:21.669
+Mark Dallas: Yeah, 850 altogether, and then we only need to generate the 856, which could be the Web EDI solution.
+
+407
+00:36:22.310 --> 00:36:23.210
+Adam.Chaddock: Yeah.
+
+408
+00:36:23.210 --> 00:36:27.630
+Mark Dallas: And then I think what John was getting at earlier, asking about the volume, is…
+
+409
+00:36:28.480 --> 00:36:31.450
+Mark Dallas: WebDAC is a good solution.
+
+410
+00:36:31.680 --> 00:36:35.239
+Mark Dallas: for… Hey, we're in a bind, and we need to go…
+
+411
+00:36:35.510 --> 00:36:38.680
+Mark Dallas: live ASAP, which it sounds like you are.
+
+412
+00:36:38.930 --> 00:36:45.580
+Mark Dallas: But it's not… it's just manual long-term, right? So if you have a team member who can log in and do that all the time, and manually
+
+413
+00:36:46.260 --> 00:36:47.160
+Mark Dallas: you know.
+
+414
+00:36:47.270 --> 00:36:58.090
+Mark Dallas: send 856s, key in data from the fulfillment side, right? So then it works. So I guess that's the path we're going to go forward with.
+
+415
+00:36:59.120 --> 00:36:59.500
+Adam.Chaddock: And…
+
+416
+00:36:59.500 --> 00:37:01.460
+Mark Dallas: But just so you're aware, that's…
+
+417
+00:37:01.920 --> 00:37:04.690
+Mark Dallas: The limitation there, long-term and high volume.
+
+418
+00:37:04.690 --> 00:37:09.060
+Adam.Chaddock: Yeah, and so our hope is that They're pushing on us…
+
+419
+00:37:09.550 --> 00:37:15.239
+Adam.Chaddock: To do our warehouse management system, In those 3 plants.
+
+420
+00:37:15.410 --> 00:37:17.700
+Adam.Chaddock: By the end of next year, so…
+
+421
+00:37:17.840 --> 00:37:25.220
+Adam.Chaddock: ideally, if we get UMQA online, then that one would go away, then we get Fairfield online, then that one goes away. You know, so…
+
+422
+00:37:25.520 --> 00:37:30.070
+Adam.Chaddock: We are trying to get to the automated process, but in the meantime, we have to do this manual.
+
+423
+00:37:30.220 --> 00:37:33.610
+Mark Dallas: Okay. Well, as long as you understand that, you know, there's the manual…
+
+424
+00:37:34.240 --> 00:37:37.329
+Mark Dallas: You know, process involved, and that wouldn't be automated.
+
+425
+00:37:37.730 --> 00:37:41.439
+Mark Dallas: Good, and it will definitely work and get you where you need to go.
+
+426
+00:37:41.880 --> 00:37:49.580
+Mark Dallas: And then for the other trading partners, right, that don't go through a VMI,
+
+427
+00:37:50.180 --> 00:37:57.280
+Mark Dallas: You would still need more of the normal path of 850s coming in, Those get translated to ERMS.
+
+428
+00:37:58.480 --> 00:37:59.110
+Adam.Chaddock: Correct.
+
+429
+00:37:59.110 --> 00:38:00.860
+Mark Dallas: 1856 is back.
+
+430
+00:38:01.330 --> 00:38:05.450
+Adam.Chaddock: That's the ones in the file that are called… like, when you look at the,
+
+431
+00:38:08.560 --> 00:38:11.180
+Adam.Chaddock: The… oh, let me share my screen, stop sharing.
+
+432
+00:38:17.390 --> 00:38:25.089
+Adam.Chaddock: when you look at these, like, NCS and NCW files, those are the ones coming through EDI. Those are down… those are in the,
+
+433
+00:38:25.200 --> 00:38:27.309
+Adam.Chaddock: Under this file name on the portal.
+
+434
+00:38:27.310 --> 00:38:27.700
+Mark Dallas: I see.
+
+435
+00:38:27.700 --> 00:38:29.470
+Adam.Chaddock: D, D6, D6.
+
+436
+00:38:29.610 --> 00:38:34.670
+Adam.Chaddock: So those would be actual… And then this one…
+
+437
+00:38:36.070 --> 00:38:39.879
+Adam.Chaddock: These are Costco, but I don't know, you would have…
+
+438
+00:38:40.520 --> 00:38:48.959
+Adam.Chaddock: since Oregon is different, their direct vendor, they'll be mixed in here, so you'll see Costco come up for Umpqua, but nobody else.
+
+439
+00:38:49.480 --> 00:38:53.140
+Adam.Chaddock: But these, are in that JSON mapping file.
+
+440
+00:38:55.940 --> 00:38:56.590
+Mark Dallas: Okay.
+
+441
+00:38:57.170 --> 00:39:02.960
+Adam.Chaddock: Do those go through… The typical, panel.
+
+442
+00:39:05.460 --> 00:39:09.800
+Adam.Chaddock: You know, through Aptian, and then Aptian creates this file for us.
+
+443
+00:39:10.010 --> 00:39:13.219
+Mark Dallas: Right, right, which is what we're gonna replace. So…
+
+444
+00:39:13.330 --> 00:39:17.599
+Mark Dallas: Okay, so what you shared there is… flat files. Do you have…
+
+445
+00:39:18.460 --> 00:39:25.099
+Mark Dallas: I know it's a zipped file, there's a lot in there. Do you have 850s as well, that kind of relate to each of these flat files?
+
+446
+00:39:25.430 --> 00:39:29.599
+Adam.Chaddock: Well, that's what I wasn't sure, cause I… so, under,
+
+447
+00:39:32.960 --> 00:39:34.899
+Adam.Chaddock: Where was it at?
+
+448
+00:39:40.470 --> 00:39:50.639
+Adam.Chaddock: credential ball. I put the login to Aptian, so I didn't know if you wanted me to get that to you, or if you guys… I mean, there's some confusion on who exactly… I mean, if you guys need us to do it, that's not a problem.
+
+449
+00:39:51.050 --> 00:39:53.890
+Adam.Chaddock: But I did provide the login to Appkin. Okay.
+
+450
+00:39:53.890 --> 00:39:59.809
+Mark Dallas: I see. I'm just not used to… you're being very proactive. I'm not used to clients using Orderful
+
+451
+00:39:59.920 --> 00:40:03.250
+Mark Dallas: UI to… share stuff with us, so that's great.
+
+452
+00:40:03.810 --> 00:40:10.439
+Mark Dallas: I like it. It saves on the emails. So, yeah, that's great.
+
+453
+00:40:10.970 --> 00:40:13.210
+Adam.Chaddock: And that was this site,
+
+454
+00:40:13.660 --> 00:40:20.700
+Adam.Chaddock: Yes. You know, and so, if I just do blank, I'm just doing a date range of 5 to 20.
+
+455
+00:40:20.700 --> 00:40:27.270
+Mark Dallas: Or you could… you could just show me that, okay, so if we're… if we go back to orderful, and I get one of those order numbers…
+
+456
+00:40:27.810 --> 00:40:29.289
+Mark Dallas: Or, I guess, flat files.
+
+457
+00:40:29.530 --> 00:40:32.389
+Mark Dallas: numbers in the payload there, how would I look it up in…
+
+458
+00:40:33.890 --> 00:40:37.809
+Mark Dallas: Aptian. Is there just what… I don't know what reference number to go off of.
+
+459
+00:40:37.830 --> 00:40:41.219
+Adam.Chaddock: Well, that's the trick, so let me go see,
+
+460
+00:40:42.810 --> 00:40:44.390
+Adam.Chaddock: Let me go see what I did.
+
+461
+00:40:47.360 --> 00:40:53.460
+Adam.Chaddock: Aptian really stinks, so, it's not a great portal, so this looks like it's…
+
+462
+00:40:54.150 --> 00:40:57.299
+Adam.Chaddock: Maybe the 12th for the delivery on the 15th?
+
+463
+00:40:57.900 --> 00:41:03.620
+Mark Dallas: Sure, and is that HST, that first number there? Is that, like, the PO number or something?
+
+464
+00:41:04.720 --> 00:41:05.860
+Adam.Chaddock: Maybe.
+
+465
+00:41:08.570 --> 00:41:10.699
+Adam.Chaddock: Let's see what I got here…
+
+466
+00:41:21.580 --> 00:41:22.290
+Mark Dallas: No.
+
+467
+00:41:23.020 --> 00:41:26.110
+Adam.Chaddock: Hang on, it might be in there. I may have to look at the…
+
+468
+00:41:31.100 --> 00:41:34.239
+Mark Dallas: Yeah, and we can… I'm sure we can figure it out if we…
+
+469
+00:41:34.470 --> 00:41:39.820
+Mark Dallas: download… because I… what I could do is I could just download the 8, you know, Nate 50…
+
+470
+00:41:40.060 --> 00:41:44.560
+Mark Dallas: And, and to kind of figure out where the PO number overlaps.
+
+471
+00:41:48.720 --> 00:41:54.700
+Mark Dallas: Okay, so while you're doing that, because I'm going to have to go here in a second, but probably next steps is get…
+
+472
+00:41:55.100 --> 00:42:03.519
+Mark Dallas: you know, get going on Costco. So, I guess for Costco, should we use a new ISAID? That's probably the first question.
+
+473
+00:42:06.390 --> 00:42:10.129
+Adam.Chaddock: Well, I think we're gonna go to… The orderful, right?
+
+474
+00:42:10.130 --> 00:42:18.480
+Mark Dallas: Yes, that's what we said. I guess what I did, Adam, was I started uploading all of your trading partners, you know, mass upload to create the
+
+475
+00:42:18.740 --> 00:42:31.320
+Mark Dallas: I can't remember how many trading partners it is, trade requests, right, for the many there. And I was just a little hesitant, I was like, okay, you know, I might have to go back and delete all these if it's not right. So, you want to, in every case.
+
+476
+00:42:31.540 --> 00:42:35.370
+Mark Dallas: do a new ISAID and use orderfuls. I mean, I think that would be the…
+
+477
+00:42:35.570 --> 00:42:37.960
+Mark Dallas: Most straightforward route, but just wanted to make sure.
+
+478
+00:42:38.260 --> 00:42:44.089
+Adam.Chaddock: Yeah, I think we… when we… we talked about it before, that it, it made the most sense, because right now we have
+
+479
+00:42:44.490 --> 00:42:56.020
+Adam.Chaddock: you know, Umpqua was purchased in 2022, or 21, somewhere in there, and they had their set of IDs, then producers had their set of IDs, now we got Mid-Valley with their set of IDs. It just becomes very confusing.
+
+480
+00:42:56.020 --> 00:42:56.850
+Mark Dallas: Yes, I agree.
+
+481
+00:42:56.850 --> 00:43:00.689
+Adam.Chaddock: If we can get it all under one, then we're like, okay, we know this is all orderful.
+
+482
+00:43:00.840 --> 00:43:01.350
+Mark Dallas: And then I think…
+
+483
+00:43:01.350 --> 00:43:01.950
+Adam.Chaddock: Changed it.
+
+484
+00:43:01.950 --> 00:43:09.129
+Mark Dallas: Just looking at year 850 mapping review there, as long as…
+
+485
+00:43:09.340 --> 00:43:16.830
+Mark Dallas: The trading partners are always sending a delineator that identifies the store
+
+486
+00:43:18.480 --> 00:43:24.119
+Mark Dallas: And they're not just going off of the ISAID being different. They shouldn't, but, anyway.
+
+487
+00:43:26.420 --> 00:43:30.699
+Becky.Keller: You'll have the DENS number to identify which location that you're ordering from, correct?
+
+488
+00:43:33.270 --> 00:43:34.579
+Mark Dallas: Say that again, Becky?
+
+489
+00:43:34.580 --> 00:43:39.019
+Becky.Keller: We'll have a DUNS number to identify what location they're ordering from, or two.
+
+490
+00:43:39.180 --> 00:43:42.869
+Mark Dallas: There you go. Yep. Yep. That's true. I should have that.
+
+491
+00:43:43.680 --> 00:43:49.250
+Adam.Chaddock: So, in that JSON mapping, there is a… it talks about a flat file that it was looking at.
+
+492
+00:43:49.250 --> 00:43:49.590
+Mark Dallas: Okay.
+
+493
+00:43:49.590 --> 00:43:54.699
+Adam.Chaddock: I can't remember if I gave you the raw file, but, it talks about…
+
+494
+00:43:54.700 --> 00:43:58.749
+Mark Dallas: I didn't see that, so it gives the flat file, and then it gives the PO number, yeah.
+
+495
+00:43:58.750 --> 00:44:03.870
+Adam.Chaddock: Yeah, it says this file had this PO number, so then if I go over to,
+
+496
+00:44:05.600 --> 00:44:07.610
+Adam.Chaddock: Let's see, let me see if I can find…
+
+497
+00:44:10.670 --> 00:44:22.520
+Adam.Chaddock: Yeah, so see. That was a… that… so that's Umpqua, because it's SPS, but I can come over here. It's very clunky. There's no real way… easy way to get raw data out of here, but here's the…
+
+498
+00:44:22.660 --> 00:44:23.240
+Mark Dallas: That's it.
+
+499
+00:44:23.240 --> 00:44:24.330
+Adam.Chaddock: Here's the…
+
+500
+00:44:24.330 --> 00:44:28.220
+Mark Dallas: No, that is clunky, but that gives us what we need. I see the path now, okay.
+
+501
+00:44:31.400 --> 00:44:34.309
+Adam.Chaddock: And then, like, right now, this is under UMQA.
+
+502
+00:44:40.740 --> 00:44:46.050
+Adam.Chaddock: But we have a buyer-vendor number in here, so, I mean, there's ways to isolate if it's umpire or…
+
+503
+00:44:46.780 --> 00:44:48.879
+Adam.Chaddock: Like Becky said, Dunn's number, maybe.
+
+504
+00:44:51.580 --> 00:44:53.810
+Adam.Chaddock: They also put Umpqua up here.
+
+505
+00:44:54.500 --> 00:44:56.280
+Adam.Chaddock: That's the plant, maybe.
+
+506
+00:45:04.140 --> 00:45:11.199
+Adam.Chaddock: Yeah, I'll have to see if… I can't remember what I sent as far as… I can't remember if I sent the raw 850s…
+
+507
+00:45:11.420 --> 00:45:14.999
+Adam.Chaddock: That this worked off of. I thought I did, but I might have missed it.
+
+508
+00:45:16.520 --> 00:45:17.160
+Mark Dallas: Okay.
+
+509
+00:45:18.260 --> 00:45:33.140
+Mark Dallas: Yeah, I didn't see it when I looked in the email, but that's… yeah, that'd be great, even just for that one, if you just find that… that pair that goes with it. Of course, if it shares the PO… oh, no, don't even worry about that, because if it shares the PO number, I'm gonna have to get into Aptian and…
+
+510
+00:45:33.900 --> 00:45:42.299
+Mark Dallas: And, you know, I can find it anyway, just like you did. So that'll be a good first exercise for me to make sure I can… I can navigate and do that.
+
+511
+00:45:43.220 --> 00:45:50.290
+Adam.Chaddock: And this example was, Umpqua, so Oregon, not vendor-managed, so…
+
+512
+00:45:53.180 --> 00:45:56.240
+Adam.Chaddock: But it does map it out, so you can see what it is.
+
+513
+00:45:56.440 --> 00:46:04.110
+Adam.Chaddock: And then it should map the fields out. This document contains all the mappings, so…
+
+514
+00:46:07.760 --> 00:46:15.619
+Mark Dallas: Yeah, okay, and it is, as you're kind of walking me through this, I think that's… should give us enough of what we need to start here. Now.
+
+515
+00:46:15.750 --> 00:46:23.809
+Mark Dallas: I think the question is, are we saying that, really, we don't need to map the Costco 850 because.
+
+516
+00:46:24.790 --> 00:46:25.460
+Adam.Chaddock: Whoa.
+
+517
+00:46:25.610 --> 00:46:27.390
+Adam.Chaddock: You need to map it for OMQA.
+
+518
+00:46:27.640 --> 00:46:30.810
+Adam.Chaddock: I see, I see. Not for Park City, yeah.
+
+519
+00:46:30.810 --> 00:46:31.799
+Mark Dallas: Presence, yeah, that's right.
+
+520
+00:46:32.060 --> 00:46:39.630
+Adam.Chaddock: So that's the… so when you look at this, the NCS NCW files are the ones coming through…
+
+521
+00:46:40.400 --> 00:46:43.620
+Adam.Chaddock: That are through, aptian.
+
+522
+00:46:45.500 --> 00:46:47.220
+Adam.Chaddock: And they're all text files.
+
+523
+00:46:47.220 --> 00:46:49.789
+Mark Dallas: And I see… and so the… the… yeah…
+
+524
+00:46:49.790 --> 00:46:50.790
+Adam.Chaddock: Appian's creating.
+
+525
+00:46:50.790 --> 00:46:53.620
+Mark Dallas: The thing would be, is we really can't…
+
+526
+00:46:54.290 --> 00:47:03.989
+Mark Dallas: go live with Orderful and Costco until we get Umqua ready to go as well, even though, for the other 3 plants, we won't be
+
+527
+00:47:05.260 --> 00:47:07.280
+Mark Dallas: Actually bringing in the 850s.
+
+528
+00:47:07.420 --> 00:47:08.689
+Mark Dallas: for you guys.
+
+529
+00:47:08.800 --> 00:47:12.279
+Mark Dallas: But because there's the one plant that has that requirement.
+
+530
+00:47:12.500 --> 00:47:16.060
+Mark Dallas: We need to get this mapped and get this off the ground before Go Live.
+
+531
+00:47:16.940 --> 00:47:23.019
+Adam.Chaddock: Well, and then… Then the question becomes, how do I get the 856? So we have to solve that.
+
+532
+00:47:23.320 --> 00:47:24.140
+Adam.Chaddock: Yep.
+
+533
+00:47:24.600 --> 00:47:27.199
+Mark Dallas: Yeah, so you mean the 56 for Umpqua?
+
+534
+00:47:28.030 --> 00:47:36.229
+Adam.Chaddock: Yeah, the… to generate the 856 for Fairfield and eventually Model Dairy, they would both be under the manual process.
+
+535
+00:47:36.230 --> 00:47:41.780
+Mark Dallas: So, what it would be is, okay, 850… oh yeah, we're not gonna have an 850, that's what you're saying.
+
+536
+00:47:42.110 --> 00:47:46.090
+Adam.Chaddock: Yeah, but what we could potentially look at is where,
+
+537
+00:47:46.230 --> 00:47:51.579
+Adam.Chaddock: Park City sent us saying that Repositrak can do AS2 connections, so it's potential that…
+
+538
+00:47:52.420 --> 00:47:54.899
+Adam.Chaddock: we reach out to Park City and say, hey.
+
+539
+00:47:55.080 --> 00:47:57.730
+Adam.Chaddock: Can you send a copy of the 852?
+
+540
+00:47:58.420 --> 00:48:02.739
+Adam.Chaddock: orderful, that you guys would get it in X12 format, so then that…
+
+541
+00:48:04.030 --> 00:48:10.170
+Adam.Chaddock: I don't know if you even need to do anything with it, because we would then just generate the A56 from that data.
+
+542
+00:48:10.170 --> 00:48:22.319
+Mark Dallas: Right, exactly. So yes, we… what we need to, you're on the right track, we gotta figure out some way to get an 850 into order full, right, for… for every transaction. And once we have that, then…
+
+543
+00:48:22.460 --> 00:48:31.280
+Mark Dallas: It's using the WebEDI portal to grab that data from the 850, move it into the form for the 856, and then you have to fill out
+
+544
+00:48:31.430 --> 00:48:35.610
+Mark Dallas: manually fulfillment data. So you gotta get that from somewhere. I'm assuming you have that, right?
+
+545
+00:48:37.870 --> 00:48:42.549
+Adam.Chaddock: Yeah, if we had the PO number, we'd have the pick sheet. I mean, we could figure out…
+
+546
+00:48:42.550 --> 00:48:46.650
+Mark Dallas: There you go. So, as long as you have access to how it was shipped, the actual pick sheet.
+
+547
+00:48:47.000 --> 00:48:52.690
+Mark Dallas: I mean, it may ask you some things like the SCAT code, you know, which is, like, the carrier who carried it.
+
+548
+00:48:52.690 --> 00:48:54.009
+Adam.Chaddock: Yeah, but we can.
+
+549
+00:48:54.010 --> 00:48:55.409
+Mark Dallas: Maybe isn't bother, but yeah.
+
+550
+00:48:55.410 --> 00:48:58.770
+Adam.Chaddock: Do you guys have hard code? Like, where you can hard code,
+
+551
+00:48:59.180 --> 00:49:02.820
+Adam.Chaddock: Because our SCAT code's typically just self, is what we,
+
+552
+00:49:02.820 --> 00:49:06.299
+Mark Dallas: Yep, sure, exactly. We could, we could figure all that kind of stuff, yeah.
+
+553
+00:49:06.640 --> 00:49:07.849
+Adam.Chaddock: Yeah, so, I mean…
+
+554
+00:49:07.850 --> 00:49:14.410
+Mark Dallas: get… we can get you an $856 that'll pass Costco's muster, you know,
+
+555
+00:49:14.830 --> 00:49:22.160
+Mark Dallas: Yeah, I think so. It's just gonna be a manual process. As long as you have a pick ticket that you can look at, and you can manually enter the data in.
+
+556
+00:49:22.530 --> 00:49:39.780
+Mark Dallas: WebVDI is going to work for you. The only piece, I think, that's missing is how do we get that 850 in to orderful easily, and I think that does sound like Repositrack AS2, makes the most sense. So, maybe if you… that'd be a good next step, if you could reach out to them.
+
+557
+00:49:39.970 --> 00:49:41.120
+Mark Dallas: And…
+
+558
+00:49:42.020 --> 00:49:47.499
+Mark Dallas: Yeah, so just, I guess, as a wrap here, next steps would be, maybe you can reach out to Repositrak.
+
+559
+00:49:47.880 --> 00:49:59.420
+Mark Dallas: find out about the AS2 connection with Orderful, you know, all that information is available on the Orderful's website, and we can talk with them to make sure they have what they need to get that. Should be pretty simple, if that's the case.
+
+560
+00:49:59.970 --> 00:50:01.999
+Mark Dallas: So that's 1, then 2.
+
+561
+00:50:02.160 --> 00:50:08.599
+Mark Dallas: Obviously, if we're on the, you know, hurry up, wagon for Costco, then…
+
+562
+00:50:08.860 --> 00:50:14.190
+Mark Dallas: we need something similar to the Word document that's on your screen for the other.
+
+563
+00:50:14.430 --> 00:50:18.460
+Mark Dallas: Outbound files, right?
+
+564
+00:50:19.650 --> 00:50:22.149
+Adam.Chaddock: Yeah, and that was sent,
+
+565
+00:50:24.350 --> 00:50:27.460
+Adam.Chaddock: So, let me see if I can find that. I don't,
+
+566
+00:50:29.940 --> 00:50:34.909
+Adam.Chaddock: So I mapped our… I mapped our 810, so,
+
+567
+00:50:34.910 --> 00:50:35.450
+Mark Dallas: Correct.
+
+568
+00:50:36.670 --> 00:50:39.730
+Adam.Chaddock: Yeah, so this email, I can forward this to you,
+
+569
+00:50:41.580 --> 00:50:43.880
+Mark Dallas: Okay. Yeah, that'd be good.
+
+570
+00:50:43.880 --> 00:50:48.810
+Adam.Chaddock: So this was some of the mapping stuff I had played around with. I think it's this one.
+
+571
+00:50:49.890 --> 00:51:01.449
+Adam.Chaddock: Similar kind of thing. It talks about some issues that we found, but then it just says, Field 8, you're gonna see Invoice 8. Field 4, you're gonna see invoice number, so…
+
+572
+00:51:01.630 --> 00:51:04.250
+Mark Dallas: Yeah, yeah, yeah. And again, I think this is…
+
+573
+00:51:05.140 --> 00:51:07.530
+Mark Dallas: Not as standardized as, you know.
+
+574
+00:51:08.010 --> 00:51:12.770
+Mark Dallas: I would have expected, but I think that this can work, right? You've given us access to AppTN,
+
+575
+00:51:13.130 --> 00:51:17.239
+Mark Dallas: and this, and flat files that you uploaded, so I think…
+
+576
+00:51:17.470 --> 00:51:24.260
+Mark Dallas: Between those, we can probably make it happen. So yeah, if you'll forward me that email,
+
+577
+00:51:24.820 --> 00:51:28.240
+Mark Dallas: then… does it have the 852 on there? I think that's…
+
+578
+00:51:28.620 --> 00:51:31.980
+Adam.Chaddock: We don't even touch the 852. It's not even translated.
+
+579
+00:51:31.980 --> 00:51:32.690
+Mark Dallas: Okay.
+
+580
+00:51:32.940 --> 00:51:36.980
+Adam.Chaddock: It's just… it's just copied. Carbon… carbon copy. So it goes…
+
+581
+00:51:36.980 --> 00:51:38.240
+Mark Dallas: You can end straight.
+
+582
+00:51:38.240 --> 00:51:39.930
+Adam.Chaddock: to, Park City.
+
+583
+00:51:43.380 --> 00:51:47.540
+Adam.Chaddock: So I guess what I can do is… here, let me write this down. So I need to…
+
+584
+00:51:47.540 --> 00:51:52.150
+Mark Dallas: So, and that's inbound from… to you guys, right? A52?
+
+585
+00:51:52.350 --> 00:51:56.580
+Adam.Chaddock: It comes to us, but we just… we don't process it, we just bounce it and call.
+
+586
+00:51:56.580 --> 00:52:01.280
+Mark Dallas: That's right, we can do the same thing in orderful, if they send the A52 to Orderful.
+
+587
+00:52:02.350 --> 00:52:07.490
+Mark Dallas: we could just send a 997 back as accepted, and let's stop there. So…
+
+588
+00:52:07.970 --> 00:52:12.509
+Mark Dallas: You know, if you want to get an email notifying you that it came in or something like that, we could set that up too, but…
+
+589
+00:52:13.270 --> 00:52:13.970
+Mark Dallas: Yeah.
+
+590
+00:52:16.270 --> 00:52:22.950
+Adam.Chaddock: Yeah, and I don't… I mean, I'd have to ask Narvel, but I don't think we do anything with the A52 in-house. I know we don't…
+
+591
+00:52:23.510 --> 00:52:25.739
+Adam.Chaddock: I don't think we have any setups in our…
+
+592
+00:52:26.050 --> 00:52:30.039
+Adam.Chaddock: main system, and I don't think we… we don't take it, right, Narvelle?
+
+593
+00:52:30.040 --> 00:52:31.880
+Narvel Taylor: Right, we don't have any, any kind of,
+
+594
+00:52:32.140 --> 00:52:34.540
+Narvel Taylor: setups for an A52 and ERMS.
+
+595
+00:52:34.680 --> 00:52:36.339
+Adam.Chaddock: Okay, so that's simple.
+
+596
+00:52:36.730 --> 00:52:38.340
+Mark Dallas: Yep. Okay. So good.
+
+597
+00:52:38.340 --> 00:52:40.930
+Adam.Chaddock: So what I need to do is set up, like, a…
+
+598
+00:52:42.250 --> 00:52:46.180
+Adam.Chaddock: These are the holes, and these are the gaps, and these are the path that…
+
+599
+00:52:46.950 --> 00:52:54.570
+Adam.Chaddock: like, Umpqua, I need to say… Costco, SPS… Umpqua850, out 810.
+
+600
+00:52:55.080 --> 00:52:59.950
+Adam.Chaddock: And then, Fresno Fairfield, Model plants are…
+
+601
+00:53:01.600 --> 00:53:07.280
+Adam.Chaddock: you know, this A52 thing, just so we can… maybe C… so we don't…
+
+602
+00:53:07.390 --> 00:53:10.610
+Adam.Chaddock: So, just need to really list out the different things that we…
+
+603
+00:53:10.840 --> 00:53:14.570
+Adam.Chaddock: we need, like, 8.50 from Repositrak.
+
+604
+00:53:14.690 --> 00:53:16.129
+Adam.Chaddock: Yes. I can get it all…
+
+605
+00:53:16.130 --> 00:53:16.570
+Mark Dallas: Yes.
+
+606
+00:53:16.570 --> 00:53:18.440
+Adam.Chaddock: So let me create, like, a…
+
+607
+00:53:19.050 --> 00:53:28.069
+Adam.Chaddock: I don't know what to call the document, but some sort of, like, this is what we do today, and these are the things we need to answer, and the paths we need to close.
+
+608
+00:53:28.070 --> 00:53:32.990
+Mark Dallas: That would be great. I would even say just some kind of a flow chart, right, that kind of shows, okay, here's your current state.
+
+609
+00:53:33.250 --> 00:53:39.629
+Mark Dallas: That would be helpful, too, you know, especially with AI tools, it should be relatively simple, though.
+
+610
+00:53:40.120 --> 00:53:43.370
+Mark Dallas: Make that, just so we're not missing anything.
+
+611
+00:53:44.300 --> 00:53:53.990
+Adam.Chaddock: Yeah, I might be able to do it with the… so I've been doing all this JSON work with Claude, so I might be able to just say, hey, can you create a flowchart for, the Umpqua Costco path, and then the…
+
+612
+00:53:54.180 --> 00:53:56.629
+Adam.Chaddock: Park City Path and the accounts involved.
+
+613
+00:53:56.630 --> 00:53:57.310
+Mark Dallas: That would be great.
+
+614
+00:53:57.310 --> 00:54:05.159
+Adam.Chaddock: all that in its brain, and so it can probably… and then the gaps and things that we need to answer, too. Yeah, let me try that avenue first.
+
+615
+00:54:06.130 --> 00:54:07.239
+Adam.Chaddock: Yep, yep, I think that's.
+
+616
+00:54:07.240 --> 00:54:18.959
+Mark Dallas: awesome. And two, you know, one thing that your… just these Word documents, mapping templates don't really cover is mandatory fields.
+
+617
+00:54:19.220 --> 00:54:25.569
+Mark Dallas: Right, so… On the ERMS side, it would be great to know if
+
+618
+00:54:26.240 --> 00:54:29.890
+Mark Dallas: You don't have a particular field, isn't a…
+
+619
+00:54:30.590 --> 00:54:33.330
+Mark Dallas: Is it not going to be able to ingest into your system?
+
+620
+00:54:33.970 --> 00:54:40.480
+Mark Dallas: And then how we handle that if that use case happens. You know, if a trading partner sends an 850 that's not
+
+621
+00:54:40.680 --> 00:54:45.679
+Mark Dallas: doesn't have mandatory data? You know, do we create the flat file, and then…
+
+622
+00:54:46.010 --> 00:54:49.690
+Mark Dallas: It bounces on your side, how should that work, you know?
+
+623
+00:54:49.860 --> 00:54:54.860
+Adam.Chaddock: Yeah, so basically, it's just these are the fields, so anything other than that are ignored.
+
+624
+00:54:56.380 --> 00:55:01.560
+Adam.Chaddock: You know, so this… so this header, HSTLDT.
+
+625
+00:55:01.790 --> 00:55:04.230
+Mark Dallas: Down to the T's the bottom, yeah.
+
+626
+00:55:04.230 --> 00:55:11.029
+Adam.Chaddock: And so if you find a field and you don't see that we're mapping it, I think even Claude mentioned that. So I could maybe… let me… okay, hang on.
+
+627
+00:55:11.030 --> 00:55:15.060
+Mark Dallas: I did see that it said TOT was the bottom field,
+
+628
+00:55:16.460 --> 00:55:19.669
+Adam.Chaddock: Let me see if I can ask Claude what's missing,
+
+629
+00:55:20.510 --> 00:55:24.140
+Adam.Chaddock: Not maybe missing, but what's, not imported?
+
+630
+00:55:24.490 --> 00:55:33.169
+Mark Dallas: Well, but so basically, I think you're saying it's basically HDRT, HDR2, TOT are the mandatory fields.
+
+631
+00:55:34.410 --> 00:55:39.759
+Adam.Chaddock: this is what I need to do to pull it in the system. So, anything on top of that, we just…
+
+632
+00:55:39.970 --> 00:55:49.669
+Adam.Chaddock: Aptian's not mapping it for us, they're just… this is… so, Aptian takes that X12 and says, okay, here, based on what you told us you need, this… this is what it gets translated to.
+
+633
+00:55:49.920 --> 00:55:56.570
+Mark Dallas: So, but in that case, it looks like you're not… so you're saying that you're not importing the ship to name? The address?
+
+634
+00:55:57.900 --> 00:55:59.620
+Mark Dallas: Because I'm seeing that in the…
+
+635
+00:56:00.090 --> 00:56:03.189
+Mark Dallas: Yeah, but that's a separate segment. Okay, I got you, I got you, okay.
+
+636
+00:56:03.190 --> 00:56:08.919
+Adam.Chaddock: This is… this is where… so when I first did this, Claude started putting in what the fields meant.
+
+637
+00:56:09.360 --> 00:56:13.120
+Adam.Chaddock: So this isn't the actual data. This is a mock-up.
+
+638
+00:56:13.690 --> 00:56:16.620
+Adam.Chaddock: So it's saying here is where the Ship 2 name goes.
+
+639
+00:56:17.110 --> 00:56:22.129
+Mark Dallas: I see. Oh, okay, okay. Yes, it's saying in that column, that row, that's where the ship to name would be.
+
+640
+00:56:22.130 --> 00:56:22.920
+Adam.Chaddock: Yeah.
+
+641
+00:56:23.500 --> 00:56:24.719
+Mark Dallas: Yeah, okay.
+
+642
+00:56:25.160 --> 00:56:34.190
+Adam.Chaddock: And then this is where the item description goes, because we hadn't signed a contract yet, so I didn't… I was redacting some of this information, so it's… that's its way of redacting it.
+
+643
+00:56:34.600 --> 00:56:36.579
+Adam.Chaddock: But I can get you,
+
+644
+00:56:38.260 --> 00:56:41.329
+Adam.Chaddock: I can get you… let me look into the mapping.
+
+645
+00:56:42.780 --> 00:56:48.450
+Adam.Chaddock: 1850 from Umpqua. Well, we might have that in the JSON file.
+
+646
+00:56:48.630 --> 00:56:52.180
+Adam.Chaddock: But let me just look at what we've got, and see if I can make it easier.
+
+647
+00:56:52.850 --> 00:56:53.780
+Mark Dallas: Yep, okay.
+
+648
+00:56:56.820 --> 00:57:04.170
+Mark Dallas: Alright, well, just looking over my list of questions here, making sure we didn't,
+
+649
+00:57:04.480 --> 00:57:11.239
+Adam.Chaddock: Because this one was meant more to be more readable, so you guys could see, like, okay, I can see this is ship from name, this is more of a readable…
+
+650
+00:57:11.550 --> 00:57:16.700
+Mark Dallas: Right. Yeah, now that would be helpful. Is that one of the ones that you have shared with us?
+
+651
+00:57:17.140 --> 00:57:17.880
+Mark Dallas: In…
+
+652
+00:57:17.880 --> 00:57:22.000
+Adam.Chaddock: It's the one I just… so I just forwarded this email.
+
+653
+00:57:22.000 --> 00:57:23.600
+Mark Dallas: I see a nut's there.
+
+654
+00:57:25.840 --> 00:57:26.670
+Mark Dallas: Okay.
+
+655
+00:57:27.630 --> 00:57:29.769
+Mark Dallas: Okay, great. So…
+
+656
+00:57:32.050 --> 00:57:38.529
+Mark Dallas: Let me… yeah, because you've shared a lot with us here, and hopefully that gives us what we need to start on the mapping.
+
+657
+00:57:38.720 --> 00:57:44.299
+Mark Dallas: piece. Obviously, we need to get the server stood up, and then we probably need…
+
+658
+00:57:46.190 --> 00:57:50.779
+Mark Dallas: you know, once we get the service set up on our side, the connection details to BizLink.
+
+659
+00:57:51.170 --> 00:57:54.499
+Mark Dallas: I think that's the name, right, of the service there.
+
+660
+00:57:54.500 --> 00:57:56.309
+Adam.Chaddock: It's our internal server.
+
+661
+00:57:56.500 --> 00:57:59.540
+Mark Dallas: Right, okay. But isn't that where we're gonna be…
+
+662
+00:58:00.240 --> 00:58:02.659
+Mark Dallas: Getting… they're gonna be dropping the files off.
+
+663
+00:58:02.910 --> 00:58:05.360
+Mark Dallas: To… to us, right?
+
+664
+00:58:05.360 --> 00:58:14.299
+Adam.Chaddock: Well, so I'll use BizLink to log into your SFTP, grab whatever folder structure you set up, you just tell me, you know.
+
+665
+00:58:16.010 --> 00:58:17.259
+Adam.Chaddock: what it is.
+
+666
+00:58:17.260 --> 00:58:17.950
+Mark Dallas: Yep, yep.
+
+667
+00:58:18.270 --> 00:58:22.510
+Mark Dallas: Yeah, and I was saying it backwards, you're right. So that's where you're gonna pick up…
+
+668
+00:58:22.880 --> 00:58:26.739
+Mark Dallas: The 850 file that we deposit there.
+
+669
+00:58:26.850 --> 00:58:35.430
+Mark Dallas: hopefully mapped correctly, you guys picked that up. So yeah, that'd be kind of the next step there, is to know what those credentials are, and then,
+
+670
+00:58:35.680 --> 00:58:38.419
+Mark Dallas: Which I guess it's really, you're gonna be hooking that up once we…
+
+671
+00:58:38.980 --> 00:58:41.830
+Mark Dallas: We have our side ready, so… Yeah.
+
+672
+00:58:42.720 --> 00:58:43.400
+Mark Dallas: Yeah.
+
+673
+00:58:43.400 --> 00:58:46.690
+Adam.Chaddock: all the internal side of… getting…
+
+674
+00:58:46.820 --> 00:58:50.890
+Adam.Chaddock: I'll… I'll do all the terminal setup for the BizLink with Narvel.
+
+675
+00:58:51.150 --> 00:58:51.940
+Adam.Chaddock: M.
+
+676
+00:58:53.570 --> 00:58:56.180
+Adam.Chaddock: the team here. Okay.
+
+677
+00:58:56.180 --> 00:59:00.840
+Mark Dallas: But then I'll go ahead in the meantime, push the rest of these trade requests over.
+
+678
+00:59:01.150 --> 00:59:11.100
+Mark Dallas: I think there's a few questions on some of them, but most of them, I'll go ahead and create the trade request to get the onboarding process started for the other trading partners you shared. Costco being the priority, obviously.
+
+679
+00:59:11.960 --> 00:59:24.409
+Mark Dallas: we'll, get our server stood up, work on these mappings with the data you provided, and then, Adam, I'll just follow up with you with, okay, hey, here's this mapping piece that's not making sense.
+
+680
+00:59:24.620 --> 00:59:29.489
+Mark Dallas: Certainly, next weekly meeting, we'll probably go over some of those mappings and get those things clarified.
+
+681
+00:59:30.060 --> 00:59:33.480
+Mark Dallas: and then…
+
+682
+00:59:33.660 --> 00:59:46.410
+Mark Dallas: Yeah, if you can just provide a little bit more context around your current state process, like we said, flow chart, some documentation, because we know there's different plants and different use cases there, specific to Costco, I think that'd be great.
+
+683
+00:59:47.530 --> 00:59:53.449
+Adam.Chaddock: Yeah, and that way, because it… it's kind of complicated, it gets confusing, so…
+
+684
+00:59:53.720 --> 00:59:59.280
+Mark Dallas: Right, especially for first-timers, you know, hearing it, so that'd be… that'd be great.
+
+685
+00:59:59.280 --> 01:00:07.429
+Adam.Chaddock: Well, and I actually inherited a lot of this stuff, so I don't even know that much about Park City, but as we've gone through it, I've learned more, so it's like.
+
+686
+01:00:07.780 --> 01:00:14.770
+Adam.Chaddock: Narvel and I are learning, kind of, as we go on some of this, so… our EDI guy, or…
+
+687
+01:00:15.020 --> 01:00:19.739
+Adam.Chaddock: i-Series guy retired, so… It's… it's been…
+
+688
+01:00:19.950 --> 01:00:23.070
+Adam.Chaddock: We're just piecing it together, but I think we have a good…
+
+689
+01:00:23.300 --> 01:00:24.699
+Adam.Chaddock: I think we have it pretty good.
+
+690
+01:00:26.140 --> 01:00:26.660
+Mark Dallas: No.
+
+691
+01:00:26.790 --> 01:00:28.979
+Mark Dallas: Okay, well, I gotta jump, guys, it's,
+
+692
+01:00:29.570 --> 01:00:30.120
+Adam.Chaddock: Yep.
+
+693
+01:00:30.250 --> 01:00:34.049
+Mark Dallas: For that time. So, thank you, everybody, and we will be in touch.
+
+694
+01:00:34.050 --> 01:00:34.540
+Becky.Keller: Thank you.
+
+695
+01:00:34.540 --> 01:00:34.990
+Adam.Chaddock: Okay.
+
+696
+01:00:34.990 --> 01:00:35.520
+Becky.Keller: Have a great day.
+
+697
+01:00:35.520 --> 01:00:36.290
+Adam.Chaddock: Take care.
+

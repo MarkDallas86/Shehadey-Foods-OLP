@@ -45,6 +45,16 @@ p{margin:0}
 .tag{font-family:var(--mono);font-size:12px;color:var(--muted)}
 .flow{display:grid;grid-template-columns:minmax(0,1.15fr) 72px minmax(0,1fr) 72px minmax(0,1.15fr) 72px minmax(0,1fr) 72px minmax(0,1fr);align-items:stretch}
 .flow.six{grid-template-columns:minmax(0,1fr) 60px minmax(0,1fr) 60px minmax(0,1fr) 60px minmax(0,1.15fr) 60px minmax(0,1fr) 60px minmax(0,1fr)}
+.subhead{font-size:15px;margin:4px 0 0}
+.plants{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.plant{border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0;background:var(--bg)}
+.plant ul{margin:0;padding-left:16px;font-size:13px}
+.plant li+li{margin-top:3px}
+.plant-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.pname{font-weight:600;font-size:14px}
+.pill{font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid}
+.pill.wms{color:var(--tp);border-color:var(--tp);background:var(--tp-bg)}
+.pill.nowms{color:var(--warn);border-color:var(--warn);background:var(--warn-bg)}
 .node{border:2px solid;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .node .who{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .node ul{margin:0;padding-left:16px;font-size:13px;color:var(--fg)}
@@ -88,10 +98,10 @@ td.diff{background:var(--warn-bg)}
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Concurrent-led · Orderful onboarding · Kickoff prep</div>
+    <div class="eyebrow">Concurrent-led · Orderful onboarding · Updated Oct 22 after the 10/20 working session</div>
     <h1>Shehadey Foods integration flow</h1>
-    <p class="sub">How EDI documents will move between Shehadey's plants and their trading partners once Aptean is replaced. Shehadey's BizLink moves files to and from an SFTP server (host still to be decided). Concurrent's Tray.ai layer translates between those flat files and the Orderful API. Orderful handles X12, 997s, and partner connectivity.</p>
-    <p class="sub"><b>Decided at kickoff (Oct 13):</b> Costco is the pilot partner · net new Orderful ISA IDs · ~45 partners, ~6-month rollout. <b>Open:</b> who hosts the SFTP (Shehadey or Concurrent) — John to decide after weighing cost and upkeep.</p>
+    <p class="sub">How EDI documents will move between Shehadey's plants and their trading partners once Aptean is replaced. Shehadey's BizLink moves files to and from an SFTP server that Concurrent hosts. Concurrent's Tray.ai layer translates between those flat files and the Orderful API. Orderful handles X12, 997s, and partner connectivity.</p>
+    <p class="sub"><b>Decided (Oct 13 and Oct 20):</b> Costco is the pilot partner · new Orderful ISA IDs for all partners · Concurrent hosts the SFTP · Park City orders stay on direct download · ~45 partners, ~6-month rollout.</p>
     <div class="legend">
       <span><i class="sw c"></i>Shehadey (customer)</span>
       <span><i class="sw k"></i>Concurrent builds</span>
@@ -127,13 +137,13 @@ td.diff{background:var(--warn-bg)}
         </ul>
       </div>
       <div class="arrow"><span class="ln r"></span><span class="fmt">SFTP</span><span class="ln l"></span></div>
-      <div class="node n-c n-dash">
-        <div class="who">SFTP server · host TBD</div>
-        <h3>Shehadey or Concurrent?</h3>
+      <div class="node n-k">
+        <div class="who">Concurrent · hosted SFTP</div>
+        <h3>Concurrent SFTP server</h3>
         <ul>
-          <li>Both options were raised at kickoff</li>
-          <li>John (Concurrent) to decide: cost, setup, who maintains it</li>
-          <li>Sandbox + production folders either way</li>
+          <li>Inbound and outbound folders, sandbox + production</li>
+          <li>Concurrent sends BizLink connection guide</li>
+          <li>Hosting cost being confirmed internally</li>
         </ul>
       </div>
       <div class="arrow"><span class="ln r"></span><span class="fmt">SFTP</span><span class="ln l"></span></div>
@@ -162,17 +172,46 @@ td.diff{background:var(--warn-bg)}
         <div class="who">Trading partners</div>
         <h3>35 partners · 39 connections</h3>
         <ul>
-          <li><b>Pilot: Costco</b> (4 relationships, incl. SPS Commerce and Park City Group)</li>
+          <li><b>Pilot: Costco</b> — direct EDI for Umpqua; Park City VMI for Fresno, Fairfield, Model</li>
           <li>Walmart, Safeway, Raley's, Kroger, WinCo, US Foods, PFG, others</li>
           <li>Net new Orderful ISA IDs</li>
         </ul>
       </div>
     </div>
     <div class="docs">
-      <span><b>Inbound:</b> 850 (confirmed), 875</span>
-      <span><b>Outbound:</b> 810, 856 (confirmed), 880, 894, 855 (origin unclear), 945</span>
+      <span><b>Inbound:</b> 850 from direct-EDI partners (e.g., Costco → Umpqua), 875 · 852 is a carbon copy only (Orderful returns a 997; ERMS doesn't use it)</span>
+      <span><b>Outbound:</b> 810, 856, 880, 894, 855 (origin unclear), 945</span>
     </div>
-    <p class="callout"><b>Watch:</b> most ERMS 856s have no pallet/SSCC data. Costco and Raley's now need accurate ASNs, and label/ASN capture isn't in scope yet.</p>
+
+    <h3 class="subhead">Costco: two order channels, three ASN (856) paths</h3>
+    <div class="plants">
+      <div class="plant">
+        <div class="plant-top"><span class="pname">Umpqua (Roseburg, OR)</span><span class="pill nowms">No WMS</span></div>
+        <ul>
+          <li><b>Orders:</b> Costco sends X12 850 directly (today via SPS) → Orderful → Tray writes the ERMS file</li>
+          <li><b>Invoice:</b> ERMS 810 → Tray → Orderful</li>
+          <li><b>856:</b> no pallet/SSCC data from ERMS; automated ASN not possible yet — WebEDI or order-only file (open)</li>
+          <li>Volume: 2 products, about twice a week</li>
+        </ul>
+      </div>
+      <div class="plant">
+        <div class="plant-top"><span class="pname">Fresno (Producers)</span><span class="pill wms">WMS</span></div>
+        <ul>
+          <li><b>Orders:</b> Park City VMI — Costco's 852 goes to Park City, Park City creates the 850, Shehadey downloads it directly (not EDI). Stays as-is.</li>
+          <li><b>856:</b> WMS has real pallet/SSCC data → automated ASN through Tray</li>
+        </ul>
+      </div>
+      <div class="plant">
+        <div class="plant-top"><span class="pname">Fairfield &amp; Model (NV)</span><span class="pill nowms">No WMS</span></div>
+        <ul>
+          <li><b>Orders:</b> Park City VMI, direct download (same as Fresno)</li>
+          <li><b>856:</b> keyed manually in Orderful WebEDI from the pick sheet</li>
+          <li>WebEDI needs the 850 in Orderful — depends on ReposiTrak (Park City's EDI provider) sending a copy via AS2 (meeting pending)</li>
+          <li>Volume: Fairfield ~10 Costco locations, ~10 shipments a day</li>
+        </ul>
+      </div>
+    </div>
+    <p class="callout"><b>Why mixed WMS complicates this:</b> one partner (Costco) needs three different ASN paths depending on the plant. Plants without a WMS can't produce pallet/SSCC data, so their ASNs are either manual (WebEDI) or unresolved (Umpqua). Manual keying at ~10 shipments a day is slow and error-prone, and Costco charges back for bad ASNs. WebEDI also needs each Park City 850 in Orderful, which today bypasses EDI entirely. Shehadey plans WMS for the remaining plants by end of next year, so the build should let a plant switch from manual to automated ASNs without remapping.</p>
   </section>
 
   <!-- PHASE 2 -->
@@ -253,13 +292,13 @@ td.diff{background:var(--warn-bg)}
 
   <!-- QUESTIONS -->
   <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="qs">
-    <h2 id="qs">Settle at kickoff</h2>
+    <h2 id="qs">Open questions</h2>
     <div class="qs">
-      <div class="q"><span class="p">SFTP</span>Who hosts it: Shehadey or Concurrent? John to decide (added cost, setup, upkeep). Either way: IPs to whitelist, key or password, folders per plant, file naming, and how BizLink polls.</div>
-      <div class="q"><span class="p">SFTP</span>Can BizLink send one file to two destinations, so we can shadow-test against Aptean output?</div>
-      <div class="q"><span class="p">Costco pilot</span>Which of the four Costco relationships are in the pilot? How do we close the ASN (pallet/SSCC) gap?</div>
-      <div class="q"><span class="p">Net new ISA</span>Every partner must update to the new Orderful ID. Who sends partner notices, and in what order?</div>
-      <div class="q"><span class="p">Specs (critical)</span>Outbound layouts (810, 855, 856, 852, 880/894) and 850 production files. Concurrent maps and tests offline, then brings back only the questions.</div>
+      <div class="q"><span class="p">Costco go-live</span>Costco certification status and go-live date? (10/15 certification target was missed.)</div>
+      <div class="q"><span class="p">Park City 856s</span>Can ReposiTrak send Park City's Costco 850s to Orderful via AS2, so WebEDI can build Fairfield/Model ASNs?</div>
+      <div class="q"><span class="p">Umpqua 856</span>No WMS and no SSCC data: manual WebEDI, or an order-only file Costco may reject?</div>
+      <div class="q"><span class="p">Mapping</span>Need a Costco raw 850 + matching flat file (Aptean login not working yet), the ERMS cross-reference table, and field-level required fields.</div>
+      <div class="q"><span class="p">SFTP</span>Can BizLink send one file to two destinations, so we can compare against Aptean during testing?</div>
       <div class="q"><span class="p">Phase 2</span>Does Gentran stay as the file producer, or does Tray pull from AX 2009 directly?</div>
     </div>
   </section>

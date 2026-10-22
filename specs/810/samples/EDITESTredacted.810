@@ -1,0 +1,45 @@
+HDR|20260810|172112|59697972||2D5J93|20260730|20260809||||||48085467325|20260809|||6|20260809|[TermsDiscountPct]|[TermsDiscountAmt]|||||||1||20260823||0||14|Due 14 Days|20260823|
+HST|08216001|069331990|[ShipToName]|[ShipToAddr1]||[ShipToCity]|[ShipToState]|[ShipToZip]|[ShipToCountry]
+HBT|08216001|069331990|[BillToName]|[BillToAddr1]||[BillToCity]|[BillToState]|[BillToZip]|[BillToCountry]
+HRT||[ShipFromName]|96510|||008860371|[ShipFromAddr1]|||[ShipFromCity]|[ShipFromState]|[ShipFromZip]|
+LDT|000000135|29439302||072935001353|EA||[ItemDescription]||30.25020|||2400.00|2400.00|12100.08000||6|||1|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000000205|29439602||072935002053|EA||[ItemDescription]||30.25020|||1440.00|1440.00|7260.04800||6|||2|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000000356|10262002||078255003565|EA||[ItemDescription]||14.64480|||360.00|372.00|453.98880||12|||3|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000000514|25405302||078255005149|EA||[ItemDescription]||16.56960|||720.00|720.00|994.17600||12|||4|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000010220|25399203||078255002209|EA||[ItemDescription]||43.07220|||4500.00|4509.00|21579.17220||9|||5|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+TOT|[InvoiceTotal]|9441.00||42387.46500||
+HDR|20260810|172112|59704445||2D8842|20260806|20260809||||||48085467330|20260809|||6|20260809|[TermsDiscountPct]|[TermsDiscountAmt]|||||||1||20260823||0||14|Due 14 Days|20260823|
+HST|08216001|069331990|[ShipToName]|[ShipToAddr1]||[ShipToCity]|[ShipToState]|[ShipToZip]|[ShipToCountry]
+HBT|08216001|069331990|[BillToName]|[BillToAddr1]||[BillToCity]|[BillToState]|[BillToZip]|[BillToCountry]
+HRT||[ShipFromName]|96510|||008860371|[ShipFromAddr1]|||[ShipFromCity]|[ShipFromState]|[ShipFromZip]|
+LDT|000010199|30854501||078255001998|EA||[ItemDescription]||34.40000|||1080.00|1080.00|9288.00000||4|||1|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000010299|30862401||078255002995|EA||[ItemDescription]||34.60000|||2808.00|2808.00|24289.20000||4|||2|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+TOT|[InvoiceTotal]|3888.00||33577.20000||
+HDR|20260810|172112|59704444||2D8828|20260806|20260809||||||48085467329|20260809|||6|20260809|[TermsDiscountPct]|[TermsDiscountAmt]|||||||1||20260823||0||14|Due 14 Days|20260823|
+HST|08216001|069331990|[ShipToName]|[ShipToAddr1]||[ShipToCity]|[ShipToState]|[ShipToZip]|[ShipToCountry]
+HBT|08216001|069331990|[BillToName]|[BillToAddr1]||[BillToCity]|[BillToState]|[BillToZip]|[BillToCountry]
+HRT||[ShipFromName]|96510|||008860371|[ShipFromAddr1]|||[ShipFromCity]|[ShipFromState]|[ShipFromZip]|
+LDT|000001010|30867701||078255010105|EA||[ItemDescription]||43.05330|||2916.00|2916.00|13949.26920||9|||1|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000001011|30867101||078255010112|EA||[ItemDescription]||43.41330|||1458.00|1458.00|7032.95460||9|||2|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000010173|30862601||078255001738|EA||[ItemDescription]||34.60000|||432.00|432.00|3736.80000||4|||3|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000010299|30862401||078255002995|EA||[ItemDescription]||34.60000|||1512.00|1512.00|13078.80000||4|||4|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+TOT|[InvoiceTotal]|6318.00||37797.82380||
+HDR|20260810|172112|59704443||2D8827|20260806|20260809||||||48085467328|20260809|||6|20260809|[TermsDiscountPct]|[TermsDiscountAmt]|||||||1||20260823||0||14|Due 14 Days|20260823|
+HST|08216001|069331990|[ShipToName]|[ShipToAddr1]||[ShipToCity]|[ShipToState]|[ShipToZip]|[ShipToCountry]
+HBT|08216001|069331990|[BillToName]|[BillToAddr1]||[BillToCity]|[BillToState]|[BillToZip]|[BillToCountry]
+HRT||[ShipFromName]|96510|||008860371|[ShipFromAddr1]|||[ShipFromCity]|[ShipFromState]|[ShipFromZip]|
+LDT|000010299|30862401||078255002995|EA||[ItemDescription]||34.60000|||3888.00|3888.00|33631.20000||4|||1|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+TOT|[InvoiceTotal]|3888.00||33631.20000||
+HDR|20260810|172112|59704442||2D8826|20260806|20260809||||||48085467327|20260809|||6|20260809|[TermsDiscountPct]|[TermsDiscountAmt]|||||||1||20260823||0||14|Due 14 Days|20260823|
+HST|08216001|069331990|[ShipToName]|[ShipToAddr1]||[ShipToCity]|[ShipToState]|[ShipToZip]|[ShipToCountry]
+HBT|08216001|069331990|[BillToName]|[BillToAddr1]||[BillToCity]|[BillToState]|[BillToZip]|[BillToCountry]
+HRT||[ShipFromName]|96510|||008860371|[ShipFromAddr1]|||[ShipFromCity]|[ShipFromState]|[ShipFromZip]|
+LDT|000010199|30854501||078255001998|EA||[ItemDescription]||34.40000|||2160.00|2160.00|18576.00000||4|||1|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+LDT|000010299|30862401||078255002995|EA||[ItemDescription]||34.60000|||1728.00|1728.00|14947.20000||4|||2|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+TOT|[InvoiceTotal]|3888.00||33523.20000||
+HDR|20260810|172112|59704441||2D8825|20260806|20260809||||||48085467326|20260809|||6|20260809|[TermsDiscountPct]|[TermsDiscountAmt]|||||||1||20260823||0||14|Due 14 Days|20260823|
+HST|08216001|069331990|[ShipToName]|[ShipToAddr1]||[ShipToCity]|[ShipToState]|[ShipToZip]|[ShipToCountry]
+HBT|08216001|069331990|[BillToName]|[BillToAddr1]||[BillToCity]|[BillToState]|[BillToZip]|[BillToCountry]
+HRT||[ShipFromName]|96510|||008860371|[ShipFromAddr1]|||[ShipFromCity]|[ShipFromState]|[ShipFromZip]|
+LDT|000010199|30854501||078255001998|EA||[ItemDescription]||34.40000|||3888.00|3884.00|33402.40000||4|||1|[NetUnitPrice]|||||[GrossUnitPrice]||||||[Brand]|[BrandDescription]|
+TOT|[InvoiceTotal]|3884.00||33402.40000||

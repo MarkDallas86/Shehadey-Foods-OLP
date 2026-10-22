@@ -1,7 +1,7 @@
 # Open questions
 
-## SFTP / BizLink (host TBD — John deciding)
-- Who hosts: Shehadey or Concurrent? Added cost?
+## SFTP / BizLink (Concurrent hosts — decided 10/20)
+- Added cost to Concurrent? (internal)
 - Can Tray connect directly to Shehadey's SFTP without BizLink?
 - BizLink outbound IP addresses to whitelist?
 - SSH key or password?
@@ -36,3 +36,12 @@
 ## From the 2026-10-20 follow-up
 - Aptean access offered by the client (unconfirmed): what access, and can we view existing maps and cross-references there?
 - Park City Group files don't come through EDI (per client). Does Park City stay fully outside Orderful? Does Tray still need to produce the fixed-width format?
+
+## From the 2026-10-20 working session
+- Costco certification status and go-live date? (10/15 certification target missed)
+- Can Park City / ReposiTrak send Costco 850s to Orderful via AS2, so WebEDI can build 856s for Fairfield/Model?
+- Umpqua Costco 856: RA program (no SSCC) or WebEDI? Costco requires SSCC.
+- Field-level required fields for ERMS import; how to handle orders missing required data.
+- Does Aptean apply partner-specific logic on top of the ERMS layout?
+- What do NCS vs NCW file prefixes mean?
+- Line-level mapping questions: see `specs/<doc>/questions.md`.
