@@ -45,3 +45,13 @@
 - Does Aptean apply partner-specific logic on top of the ERMS layout?
 - What do NCS vs NCW file prefixes mean?
 - Line-level mapping questions: see `specs/<doc>/questions.md`.
+
+## Doc type scope and commercials (added 2026-10-26)
+- For the ERMS/EDI lead: Does ERMS import any of the 860, 876, 895, 820, 812, 864 or 824 today, or does Aptean just receive them?
+- Internal (John): Which doc types are in the signed scope? Sales list (Tray opportunity, per intake brief): 850, 875, 880, 810, 856, 855, 945. The 945 isn't in the client inventory; the 894 (3 partners) isn't on the sales list.
+- Internal (John): Are one-time per-partner setup fees, ongoing per-partner subscription, per-doc-type fees and Concurrent onboarding services spelled out in the signed order form/SOW? Intake brief only lists $5,500/doc type (Tray), VAN 3¢/transaction, AS2/SFTP no cost, $5,400/mo year-4 renewal at 45 partners, 3-year ramp (all "AE promises to verify").
+
+## From INTERNAL calls 10/22 and 10/26
+- Field min/max lengths for ERMS flat files: infer from sample history; ask Adam only if critical.
+- Pass the CouchDrop SFTP cost through to the client? (raised 10/22)
+- Does the V3 adapter need different structures for 875/880 partners vs 850/810? (yes per 10/22 — plan for it)

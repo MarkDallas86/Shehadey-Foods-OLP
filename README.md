@@ -10,7 +10,7 @@ CLAUDE.md            guide for Claude (read first)
 action-items.md      who owes what
 build-log.md         dated build/testing progress
 context/             living project facts: overview, systems/flow, partners, decisions, open questions
-meetings/            one file per call: YYYY-MM-DD-topic.md
+meetings/            one file per call: YYYY-MM-DD-INTERNAL-topic.md or YYYY-MM-DD-EXTERNAL-client-topic.md
 specs/<doc type>/    850, 810, 855, 856, 852, 880-894
   layout/            client spec documents
   samples/           raw EDI + matching flat files
@@ -20,6 +20,7 @@ source-docs/         originals, never edited
   from-client/
   from-orderful/
   internal/          Mark's notes, Concurrent process docs
+  transcripts/       call transcripts (.vtt), labeled INTERNAL or EXTERNAL
 outputs/             things we produce: agendas, diagrams, recap drafts
 chats/               summaries of Claude conversations
 ```

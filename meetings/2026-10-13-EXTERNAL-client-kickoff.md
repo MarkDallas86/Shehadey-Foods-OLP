@@ -1,6 +1,6 @@
-# 2026-10-13 — Kickoff (Orderful, Concurrent, Shehadey)
+# 2026-10-13 — EXTERNAL: Client kickoff (Orderful, Concurrent, Shehadey)
 
-Sources: Gemini notes; Mark's hand notes (`source-docs/2026-10-13-kickoff-mark-hand-notes.docx`).
+Sources: Gemini notes; Mark's hand notes (`source-docs/2026-10-13-EXTERNAL-client-kickoff-mark-hand-notes.docx`).
 
 ## Decisions
 - Unified EDI platform across plants/ERPs (ERMS + DAX). ~45 partners. ~6-month rollout estimate.

@@ -23,3 +23,13 @@
 | Shehadey (ERMS lead) | Send ERMS cross-reference table and 'IN 810 file layout' doc | Open | |
 | Shehadey (ERMS lead + IT) | Connect BizLink to the Concurrent SFTP once ready | Open | |
 | Shehadey (ERMS lead) | Confirm Costco certification status and go-live date | Open | |
+| Orderful (Anu) | Review Costco trade request 220507 (Shehadey → COSTCOEDIUSA); confirm scenario 850/860/810/997; trigger outreach | Open | |
+| Orderful (Anu) | Confirm which Costco account sends the 852; add it (accept + 997) | Open | |
+| Mark + Michel | Set up Jira tracking (Mark: project/epics/PM tasks; Michel: technical tickets) | Open | |
+| Michel + Mauricio | Build Tray workflows (inbound 850 → ERMS file; outbound 810/856 → Orderful) | Open | |
+| Michel | IHM error-handling flows | Open | |
+| Isaac | Create CouchDrop SFTP account; credentials in 1Password for Michel | Open | 10/26 |
+| Michel + Mauricio | Adapter design + Jira stories (SFTP connector, Mosaic API, Orderful auth, technical design); rough estimate | Open | 10/27 9:00 ET |
+| Mark | Schedule 10/27 9:00–9:30 ET estimate review (before noon client call) | Open | 10/26 |
+| Mark | Add R.C. Moore Tray flow links to the repo; share Tray flows with Michel | Open | |
+| Mark | Rename the "10-21" agenda and mapping workbook files | Open | |

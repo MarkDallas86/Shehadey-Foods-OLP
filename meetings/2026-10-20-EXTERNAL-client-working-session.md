@@ -1,7 +1,7 @@
-# 2026-10-20 — Working session (Shehadey, Concurrent)
+# 2026-10-20 — EXTERNAL: Client working session (Shehadey, Concurrent)
 
 Attendees: Mark, John (left at ~26 min) — Concurrent; ERMS/EDI lead, Mid Valley EDI lead, IT/EDI — Shehadey.
-Sources: transcript (`source-docs/internal/2026-10-20-working-session-transcript.vtt`), Mark's hand notes. Recording kept outside the repo (see README).
+Sources: transcript (`source-docs/transcripts/2026-10-20-EXTERNAL-client-working-session.vtt`), Mark's hand notes. Recording kept outside the repo (see README).
 
 ## Decisions
 - **ISA:** move all partners to new Orderful ISA IDs (consolidates Umpqua, Producers and Mid Valley ID sets). Plant/location identified by DUNS / store in the 850.
