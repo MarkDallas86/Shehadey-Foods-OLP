@@ -72,4 +72,4 @@
 - File names: what do NCS and NCW mean? Does ERMS pick up by prefix + ".850.txt" or the exact NCS.YYYYMMDDHHMMSS.850.txt pattern? OK to bump the timestamp (or add a sequence) when two POs land in the same second? Today Aptean batches several POs per file — is one PO per file OK?
 - ERMS import: which fields must every order have, and which does ERMS check against its own setup (Costco item number, ship-to/store)? Can you export the Costco items and ship-tos set up in ERMS so MagicPass can pre-check and alert?
 - Always-empty positions (HDR 8-10 and 12-20, HST 2, LDT 26 = 0): confirm ERMS ignores them so we can leave them as Aptean sends them.
-- Header message: what does ERMS do with the HDR customer message (screen, pick ticket)? When a PO has two special-instruction lines (e.g., PO 010731019278), which goes in HDR? Please send that PO's flat file.
+- Header message: what does ERMS do with the HDR customer message (screen, pick ticket)? (Answered 10/28 from Adam's paired PO 010731005278: when a PO has two special-instruction lines, HDR carries the first one; HCM carries all.)
