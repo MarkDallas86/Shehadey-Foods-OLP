@@ -55,3 +55,21 @@
 - Field min/max lengths for ERMS flat files: infer from sample history; ask Adam only if critical.
 - Pass the CouchDrop SFTP cost through to the client? (raised 10/22)
 - Does the V3 adapter need different structures for 875/880 partners vs 850/810? (yes per 10/22 — plan for it)
+
+## From the 2026-10-27 calls
+- Costco vendor numbers for each plant (30255-<plant suffix>)? No single Shehadey number. (Adam/Narvel)
+- Order-desk email for 860 notifications? AR email for 824s?
+- Does HighRadius prefer X12 or JSON for the 820?
+- Which partners besides Target and Walmart send 820s/824s today?
+- ReposiTrak's existing AS2 connection with Orderful: confirm the details and IDs (unconfirmed).
+- Costco certification: the 10/15 target passed; Costco has set no new hard deadline (per Adam). Watch for one.
+- Internal: who administers the "Orderful Led Projects" 1Password vault (Aptean credentials) so Michel gets lasting access?
+
+## For Adam — ERMS 850 import (from Michel's questions, 2026-10-28)
+- Costco vendor numbers confirmed by Adam 10/27: Umpqua 0009125500, Producers/Fresno 0003025500 (arrives in 850 REF*VR). Plant routing in MagicPass will key off REF*VR — confirm.
+- Folders: should all Costco 850 flat files go to one ERMS pickup folder, or one per plant (Umpqua vs Fresno)? The flat file has no plant/vendor field — how does ERMS assign the plant today (Aptean mailbox UMPQUA vs PRODNCS)?
+- Adam's flow says only Umpqua gets Costco EDI 850s, but Aptean shows Costco 850s to PRODNCS (Tracy depot, vendor 0003025500). Which plant ships those, and is that flow in scope?
+- File names: what do NCS and NCW mean? Does ERMS pick up by prefix + ".850.txt" or the exact NCS.YYYYMMDDHHMMSS.850.txt pattern? OK to bump the timestamp (or add a sequence) when two POs land in the same second? Today Aptean batches several POs per file — is one PO per file OK?
+- ERMS import: which fields must every order have, and which does ERMS check against its own setup (Costco item number, ship-to/store)? Can you export the Costco items and ship-tos set up in ERMS so MagicPass can pre-check and alert?
+- Always-empty positions (HDR 8-10 and 12-20, HST 2, LDT 26 = 0): confirm ERMS ignores them so we can leave them as Aptean sends them.
+- Header message: what does ERMS do with the HDR customer message (screen, pick ticket)? When a PO has two special-instruction lines (e.g., PO 010731019278), which goes in HDR? Please send that PO's flat file.

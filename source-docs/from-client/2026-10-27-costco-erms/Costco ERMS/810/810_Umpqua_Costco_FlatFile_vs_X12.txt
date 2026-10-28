@@ -1,0 +1,130 @@
+================================================================================
+Invoice 59779553 — Umpqua Dairy to Costco Roseburg (#1073), direct via SPS Commerce
+Same real order shown in three representations: flat file, raw X12, parsed JSON
+================================================================================
+
+--------------------------------------------------------------------------------
+PART 1: FLAT FILE
+--------------------------------------------------------------------------------
+HDR|20261019|194656|59779553|1033918431073|010731009279|20261009|20261019||||||59779553|20261019|||6|20261019|0|0|||||||1073||20261102||0||14|Due 14 Days|20261102|
+HST|02100210|1033918431073|Costco 1073 Roseburg|4141 NE Stephens st|Vendor 91255 00|Roseburg|OR|97470|
+HBT|02100210|1033918431073|Costco 1073 Roseburg|4141 NE Stephens St|Vendor 91255 00|Roseburg|OR|97470|
+HRT||Umpqua Dairy||||027773944|PO BOX 888944|||Los Angeles|CA|90088-8944|
+LDT|000203743|1084795||071203004171|EA||UMP SC 3#||24.00024|||0|168.00|504.00504||8|||1|5.34680||||03743|42.77440||||||384|Umpqua|
+LDT|000203980|1497927||071203002801|EA||UMP CC 3#||24.00096|||0|588.00|1764.07056||8|||2|7.62210||||03980|60.97680||||||384|Umpqua|
+TOT|5380.05|756.00||2268.07560||
+
+--------------------------------------------------------------------------------
+PART 2: RAW X12 EDI
+--------------------------------------------------------------------------------
+ISA*00* *00* *ZZ*UMPQUA *ZZ*COSTCOEDIUSA *261019*2310*U*00401*000376938*0*P*>
+GS*IN*UMPQUA*COSTCOEDIUSA*20261019*2310*000376938*X*004010
+ST*810*376938001
+BIG*20261019*59779553*20261009*010731009279
+ITD*01*3****20261102*14*****NET IN 14 DAY
+IT1**168*EA*5.3468**IN*1084795
+PID*F****UMP SC 3#
+IT1**588*EA*7.6221**IN*1497927
+PID*F****UMP CC 3#
+TDS*538005
+CTT*2
+SE*10*376938001
+GE*000001*000376938
+IEA*00001*000376938
+
+--------------------------------------------------------------------------------
+PART 3: PARSED JSON (actual output of parse_810_header.py against the flat file above)
+Note: this run includes a real bug fix -- vendorItemNumber previously read from
+Field 2 and returned the wrong value. Corrected to Field 3, confirmed via this
+order's IT1 "IN" qualifier match in Part 2 (same correction already made for 850).
+--------------------------------------------------------------------------------
+{
+  "invoiceDate": "20261019",
+  "invoiceNumber": "59779553",
+  "purchaseOrderNumber": "010731009279",
+  "purchaseOrderDate": "20261009",
+  "invoiceType": "invoice",
+  "buyersCurrency": { "currencyCode": "USD" },
+  "sellersCurrency": { "currencyCode": "USD" },
+  "references": { "customerOrderNumber": { "value": "010731009279" } },
+  "termsOfSale": {
+    "type": "basic",
+    "basisDate": "deliveryDate",
+    "discountPercent": "0",
+    "discountDaysDue": "0",
+    "description": "Due 14 Days"
+  },
+  "parties": {
+    "shipTo": {
+      "name": "Costco 1073 Roseburg",
+      "addressLine1": "4141 NE Stephens st",
+      "addressLine2": "Vendor 91255 00",
+      "city": "Roseburg",
+      "stateOrProvinceCode": "OR",
+      "postalCode": "97470",
+      "countryCode": null
+    },
+    "billTo": {
+      "name": "Costco 1073 Roseburg",
+      "addressLine1": "4141 NE Stephens St",
+      "addressLine2": "Vendor 91255 00",
+      "city": "Roseburg",
+      "stateOrProvinceCode": "OR",
+      "postalCode": "97470",
+      "countryCode": null
+    },
+    "accountsReceivable": {
+      "name": "Umpqua Dairy",
+      "identificationCode": "027773944",
+      "identificationCodeType": "duns",
+      "addressLine1": "PO BOX 888944",
+      "addressLine2": null,
+      "city": "Los Angeles",
+      "stateOrProvinceCode": "CA",
+      "postalCode": "90088-8944",
+      "countryCode": null
+    }
+  },
+  "lineItems": [
+    {
+      "productIds": { "vendorItemNumber": "1084795", "buyerItemNumber": "03743", "gtin12": "071203004171" },
+      "quantityInvoiced": { "value": "168.00", "unitOfMeasure": "each" },
+      "unitPrice": "5.34680",
+      "productAttributes": { "description": "UMP SC 3#", "brand": "384" }
+    },
+    {
+      "productIds": { "vendorItemNumber": "1497927", "buyerItemNumber": "03980", "gtin12": "071203002801" },
+      "quantityInvoiced": { "value": "588.00", "unitOfMeasure": "each" },
+      "unitPrice": "7.62210",
+      "productAttributes": { "description": "UMP CC 3#", "brand": "384" }
+    }
+  ],
+  "allowances": [],
+  "invoiceTotal": "5380.05"
+}
+
+================================================================================
+FIELD CORRESPONDENCE ACROSS ALL THREE REPRESENTATIONS
+================================================================================
+Invoice Date:      20261019         <-> BIG01                      <-> invoiceDate               ✅ exact
+Invoice Number:    59779553         <-> BIG02                      <-> invoiceNumber              ✅ exact
+PO Date:           20261009         <-> BIG03                      <-> purchaseOrderDate          ✅ exact
+PO Number:         010731009279     <-> BIG04                      <-> purchaseOrderNumber        ✅ exact
+Terms:             14 / Due 14 Days <-> ITD "14" / "NET IN 14 DAY" <-> termsOfSale.description    ✅ exact
+Item 1: 1084795/168/5.34680   <-> IT1**168*EA*5.3468**IN*1084795   <-> lineItems[0]               ✅ exact
+Item 1 Description: UMP SC 3# <-> PID                              <-> lineItems[0].productAttributes.description  ✅ exact
+Item 2: 1497927/588/7.62210   <-> IT1**588*EA*7.6221**IN*1497927   <-> lineItems[1]                ✅ exact
+Item 2 Description: UMP CC 3# <-> PID                              <-> lineItems[1].productAttributes.description  ✅ exact
+Invoice Total:     5380.05     <-> TDS (538005, decimal implied)   <-> invoiceTotal                ✅ exact
+Line Count:        2 lines     <-> CTT*2                                                          ✅ exact
+
+🎯 This order is the one that DISAMBIGUATED the Invoice Date / PO Date field positions.
+Because this order's invoice date and PO date genuinely differ (unlike the Park City order, where they
+happened to be the same calendar date), it let us confirm definitively: HDR Field 8 = Invoice Date,
+HDR Field 7 = PO Date. Both confirmed exact matches here. This also proved the Park City order's PO Date
+mismatch is a real discrepancy in their data/process, not a flaw in the field mapping itself.
+
+🎯 Also confirmed here: Field 17 (Pack) x Field 21 (Unit Price) = a trailing field value on the same line.
+  Item 1: UnitPrice 5.34680 x Pack 8 = 42.7744 -- matches the real trailing field value exactly.
+This is the same "price x pack" relationship already confirmed for other transaction types elsewhere in
+this project, now independently confirmed for 810's LDT record with real verified numbers.

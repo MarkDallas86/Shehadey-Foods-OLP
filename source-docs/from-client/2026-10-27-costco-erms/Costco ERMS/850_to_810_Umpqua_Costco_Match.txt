@@ -1,0 +1,103 @@
+================================================================================
+PO 012871005279 — Costco Central Point (#1287) to Umpqua Dairy, direct via SPS Commerce
+Complete order lifecycle: 850 (Purchase Order) through 810 (Invoice)
+================================================================================
+
+This is the same PO confirmed on the 850 side at the very start of this project's
+850 work (see 850_Costco_Umpqua_FlatFile_vs_X12.txt). This document adds the 810
+(Invoice) side -- flat file AND raw X12, both real -- confirming the complete
+lifecycle for the same real order with no reconstruction anywhere in the chain.
+
+--------------------------------------------------------------------------------
+850 (PURCHASE ORDER) — flat file, already confirmed against real raw X12 earlier
+Source: NCS.20261005103114.850.txt
+--------------------------------------------------------------------------------
+HDR|20261005|1031|012871005279|COSTCOEDIUSA|012871005279|20261005||||20261014||||||||||0.000|0.000||NA|PP|ZZ|01|2|0||21|||1MPK= LAYER DELV WEDNESDAY||||
+HST||1033918431287|COSTCO CENTRAL POINT|3075 HAMRICK ROAD||CENTRAL POINT|OR|97502||
+HCM|1MPK= LAYER DELV WEDNESDAY|
+HCM|This order incorporates the Costco Wholesale Standard Terms,|
+HCM|as they may be amended from time to time, and any applicable|
+HCM|signed agreements between us.|
+LDT||1084795|||EA|EA|UMPQUA SOUR CREAM 3LB     7T7HP=294   DOM50   SL20||||420.000|||||||5.3500|||||||0|||||
+LDT||1497927|||EA|EA|UMPQUA W COTTAGE CHEESE   3LB 7T7HP=294 DOM30 SL20||||1470.000|||||||7.6200|||||||0|||||
+TOT
+
+--------------------------------------------------------------------------------
+810 (INVOICE) — flat file (ERMS), REAL upload
+Source: EDI_OUT_UCOSTCO2610150800.810
+--------------------------------------------------------------------------------
+HDR|20261015|080042|59773054|1033918431287|012871005279|20261005|20261014||||||59773054|20261014|||6|20261014|0|0|||||||0||20261028||0||14|Due 14 Days|20261028|
+HST|02102837|1033918431287|Costco 1287 CP|3075 Hamrick Rd|Vendor 91255 00|Central Point|OR|97502|
+HBT|02102837|1033918431287|Costco 1287 CP|3075 Hamrick Rd|Vendor 91255 00|Central Point|OR|97502|
+HRT||Umpqua Dairy||||027773944|PO BOX 888944|||Los Angeles|CA|90088-8944|
+LDT|000203743|1084795||071203004171|EA||UMP SC 3#||24.00024|||0|420.00|1260.01260||8|||1|5.34680||||03743|42.77440||||||384|Umpqua|
+LDT|000203980|1497927||071203002801|EA||UMP CC 3#||24.00096|||0|1470.00|4410.17640||8|||2|7.62210||||03980|60.97680||||||384|Umpqua|
+TOT|13450.15|1890.00||5670.18900||
+
+--------------------------------------------------------------------------------
+RAW X12 EDI — REAL, confirmed via Aptean raw data listing for this exact invoice
+Source: Aptean_Raw_59773054.pdf (Sender Id COSTCOEDIUSA, Set Control 373723001)
+--------------------------------------------------------------------------------
+ISA*00* *00* *ZZ*UMPQUA *ZZ*COSTCOEDIUSA *261015*1210*U*00401*000373723*0*P*>
+GS*IN*UMPQUA*COSTCOEDIUSA*20261015*1210*000373723*X*004010
+ST*810*373723001
+BIG*20261014*59773054*20261005*012871005279
+ITD*01*3****20261028*14*****NET IN 14 DAY
+IT1**420*EA*5.3468**IN*1084795
+PID*F****UMP SC 3#
+IT1**1470*EA*7.6221**IN*1497927
+PID*F****UMP CC 3#
+TDS*1345015
+CTT*2
+SE*10*373723001
+GE*000001*000373723
+IEA*00001*000373723
+
+--------------------------------------------------------------------------------
+PARSED JSON — real, actual output of parse_810_header.py against the 810 flat file above
+--------------------------------------------------------------------------------
+{
+  "invoiceDate": "20261014",
+  "invoiceNumber": "59773054",
+  "purchaseOrderNumber": "012871005279",
+  "purchaseOrderDate": "20261005",
+  "invoiceType": "invoice",
+  "termsOfSale": {
+    "type": "basic",
+    "basisDate": "deliveryDate",
+    "discountPercent": "0",
+    "discountDaysDue": "0",
+    "description": "Due 14 Days"
+  },
+  "parties": {
+    "shipTo": { "name": "Costco 1287 CP", "addressLine1": "3075 Hamrick Rd", "city": "Central Point", "stateOrProvinceCode": "OR" },
+    "billTo": { "name": "Costco 1287 CP", "addressLine1": "3075 Hamrick Rd", "city": "Central Point", "stateOrProvinceCode": "OR" },
+    "accountsReceivable": { "name": "Umpqua Dairy", "identificationCode": "027773944", "identificationCodeType": "duns" }
+  },
+  "lineItems": [
+    { "productIds": { "vendorItemNumber": "1084795", "gtin12": "071203004171" }, "quantityInvoiced": { "value": "420.00", "unitOfMeasure": "each" }, "unitPrice": "5.34680", "productAttributes": { "description": "UMP SC 3#" } },
+    { "productIds": { "vendorItemNumber": "1497927", "gtin12": "071203002801" }, "quantityInvoiced": { "value": "1470.00", "unitOfMeasure": "each" }, "unitPrice": "7.62210", "productAttributes": { "description": "UMP CC 3#" } }
+  ],
+  "invoiceTotal": "13450.15"
+}
+
+================================================================================
+FIELD CORRESPONDENCE — 850 flat file vs 810 flat file vs 810 raw X12, all real
+================================================================================
+PO Number:       012871005279  <-> 850 and 810 flat files, and X12 BIG04        ✅ exact, all three
+Invoice Number:  59773054       <-> 810 flat file and X12 BIG02                 ✅ exact
+Invoice Date:    20261014       <-> 810 flat file and X12 BIG01                 ✅ exact
+PO Date:         20261005       <-> 810 flat file and X12 BIG03                 ✅ exact
+Terms:           14 / Due 14 Days <-> X12 ITD07 / ITD12 ("NET IN 14 DAY")       ✅ exact
+Item 1 (1084795): 850 ordered 420, 810 flat+X12 invoiced 420, price 5.34680     ✅ exact, all three
+Item 2 (1497927): 850 ordered 1470, 810 flat+X12 invoiced 1470, price 7.62210   ✅ exact, all three
+Invoice Total:   13450.15       <-> X12 TDS (1345015, decimal implied)          ✅ exact
+
+Note: the 850's item descriptions ("UMPQUA SOUR CREAM 3LB...", "UMPQUA W COTTAGE
+CHEESE 3LB...") differ in wording from the 810's ("UMP SC 3#", "UMP CC 3#") --
+same products, same item numbers, same quantities, just different naming
+conventions between the purchase-order and invoice systems. Not a discrepancy.
+
+Also note: unlike the Park City examples, this 810 shows NO return/credit lines --
+the full ordered quantity was invoiced exactly as ordered, with nothing adjusted
+between order and delivery for this particular order.

@@ -8,3 +8,4 @@ Dated entries for Tray build, SFTP setup, and testing.
 - 2026-10-21: Filed 10/20 working-session transcript, client 810/856 templates and samples, Park City layouts, 59 850 flat files, 6 raw 850s. Drafted Costco mapping (specs/*/mapping.md + outputs workbook): 850 89%, 810 86%, 856 75%. Updated agenda with answered questions.
 - 2026-10-26: Costco trade request 220507 created via Orderful MCP. Added milestones M1–M6, Jira and Tray build steps to the agenda's Next Steps tab.
 - 2026-10-26: Added INTERNAL transcripts/summaries for 10/22 and 10/26; renamed client meeting files with EXTERNAL label; recorded CouchDrop and V3 adapter decisions.
+- 2026-10-27: Filed INTERNAL dev kickoff and EXTERNAL weekly client sync (transcripts + summaries). Decisions on 860/820/824 handling, the ReposiTrak trade request and the single Mosaic mapping. Dev work started on the 850 flow (Jira OLP-509). CouchDrop SFTP created by Isaac.

@@ -19,3 +19,13 @@
 | 2026-10-26 | SFTP via **CouchDrop** managed service (~$50/month), paid by Concurrent; no self-run server. GCP serverless SFTP considered for future clients | INTERNAL 10/26 |
 | 2026-10-26 | Build a reusable **adapter / SFTP connector in MagicPass V3**: Orderful Mosaic JSON ↔ flat files (pipe-delimited first), mapping-config driven. No canonical order data stored (pull → transform → push) | INTERNAL 10/22 + 10/26 |
 | 2026-10-26 | Map to **Orderful Mosaic JSON**, not X12; Orderful produces the X12. First flow: 850 Orderful → SFTP | INTERNAL 10/26 |
+| 2026-10-27 | 860 (PO change): notification only — email to the order desk; not imported into ERMS | EXTERNAL 10/27 (meetings/2026-10-27-EXTERNAL-client-weekly-sync.md) |
+| 2026-10-27 | 820: pass through to the SFTP for HighRadius (X12 or JSON); 824: email to AR. Not imported into ERMS; same for all partners | EXTERNAL 10/27 (meetings/2026-10-27-EXTERNAL-client-weekly-sync.md) |
+| 2026-10-27 | Park City VMI 850s into ERMS stay on the existing direct ERMS ↔ Park City job (reconfirmed) | EXTERNAL 10/27 (meetings/2026-10-27-EXTERNAL-client-weekly-sync.md) |
+| 2026-10-27 | Costco VMI 850 copy into Orderful: Concurrent creates a trade request with ReposiTrak (existing AS2 to Orderful per their 10/22 email) instead of a call with Kelly | EXTERNAL 10/27 (meetings/2026-10-27-EXTERNAL-client-weekly-sync.md) |
+| 2026-10-27 | Mapping inferred from paired samples (flat file + X12 + JSON) and the client template, then validated in testing (reconfirmed) | EXTERNAL 10/27 (meetings/2026-10-27-EXTERNAL-client-weekly-sync.md) |
+| 2026-10-27 | Aptean won't be notified until the transition is ready (client) | EXTERNAL 10/27 (meetings/2026-10-27-EXTERNAL-client-weekly-sync.md) |
+| 2026-10-27 | One Mosaic-based mapping per doc type for all partners, per-partner required/optional flags in the transformation; no MagicPass TP enrollment, no canonical storage | INTERNAL 10/27 (meetings/2026-10-27-INTERNAL-dev-kickoff-and-client-prep.md) |
+| 2026-10-27 | V3 adapter stores the map for both directions (flat file ↔ JSON) | INTERNAL 10/27 (meetings/2026-10-27-INTERNAL-dev-kickoff-and-client-prep.md) |
+| 2026-10-27 | Timeline by doc type goes to the client on next week's call, not 10/27 | INTERNAL 10/27 (meetings/2026-10-27-INTERNAL-dev-kickoff-and-client-prep.md) |
+| 2026-10-27 | Jira: one Costco story with per-doc-type subtasks (OLP-509 = V3 auth + system-to-system integration story) | INTERNAL 10/27 (meetings/2026-10-27-INTERNAL-dev-kickoff-and-client-prep.md) |

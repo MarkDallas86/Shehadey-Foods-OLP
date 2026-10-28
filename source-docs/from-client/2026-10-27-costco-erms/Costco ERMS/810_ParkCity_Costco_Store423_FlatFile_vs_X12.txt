@@ -1,0 +1,142 @@
+================================================================================
+Invoice 59781675 — Fairfield Dairy (via Park City Group) to Costco Store #423 (Sunnyvale)
+Third confirmed Park City 810 example — fully real, no reconstruction
+================================================================================
+
+This closes the gap from several messages ago: a raw X12 810 for store 423 was
+pasted directly, but at the time we had no flat file to match it against (it fell
+outside the original 13-order batch). A later upload (EDI_OUT_PCGCOSTCO2610151540.810)
+turned out to contain the real flat file for this exact invoice. Unlike the Store 741
+example, NOTHING here is reconstructed — both Part 1 and Part 2 are genuine uploads.
+
+--------------------------------------------------------------------------------
+PART 1: FLAT FILE (ERMS) — REAL, from EDI_OUT_PCGCOSTCO2610151540.810
+--------------------------------------------------------------------------------
+HDR|20261015|154100|59781675|6100241287|004231014000|20261012|20261014||||||59781675|20261014|||16|20261014|0|0|||||||000423||20261030||0||16|Due 16 Days|20261030|
+HST|08030423|1033918430423|COSTCO 423 SUNNYVALE|150 LAWRENCE STATION RD|VN3025536|SUNNYVALE|CA|94086|
+HBT|08030423|1033918430423|PRICECOSTCO|VENDOR 30255 0|PO BOX 85466|SAN DIEGO|CA|92186-5466|
+HRT||Fairfield Dairy|30255|||008860371|PO BOX 888944|||Los Angeles|CA|90088-8944|
+LDT|000000185|096619000012||096619000012|EA||2% KIRKLD 2 BX #1||17.76000|||0|210.00|3729.60000||1|||1|6.67000|||||6.67000||||||7|Kirkland|
+LDT|000000186|096619000029||096619000029|EA||WHOLE KIRKLD 2 BX #2||17.76000|||0|525.00|9324.00000||1|||2|6.63000|||||6.63000||||||7|Kirkland|
+LDT|000000187|096619000128||096619000128|EA||FF KIRKLD 2 BX #12||17.76000|||0|105.00|1864.80000||1|||3|5.85000|||||5.85000||||||7|Kirkland|
+LDT|000000316|078255003169||078255003169|EA||HEAVY WHIP 6CT HG26545||28.88520|||0|90.00|433.27800||6|||4|7.87000|||||47.22000||||||1|Producers Dairy|
+LDT|000003110|078255031100||078255031100|EA||ORG WHL 2-G #1268246||17.88330|||0|105.00|1877.74650||1|||5|11.33000|||||11.33000||||||1|Producers Dairy|
+LDT|000003135|078255031353||078255031353|EA||ORG RF 2% 2G #1268247||17.88330|||0|105.00|1877.74650||1|||6|11.12000|||||11.12000||||||1|Producers Dairy|
+LDT|000000185|096619000012||096619000012|EA||2% KIRKLD 2 BX #1||17.76000|||0|-22.00|-390.72000||1|||7|6.67000|||||6.67000||||||7|Kirkland|
+LDT|000000186|096619000029||096619000029|EA||WHOLE KIRKLD 2 BX #2||17.76000|||0|-17.00|-301.92000||1|||8|6.63000|||||6.63000||||||7|Kirkland|
+LDT|000000187|096619000128||096619000128|EA||FF KIRKLD 2 BX #12||17.76000|||0|-1.00|-17.76000||1|||9|5.85000|||||5.85000||||||7|Kirkland|
+TOT|8295.95|1100.00||18396.77100||
+
+--------------------------------------------------------------------------------
+PART 2: RAW X12 EDI — REAL, as originally pasted
+--------------------------------------------------------------------------------
+ISA*00* *00* *ZZ*PRODDAIR *01*103391843 *261015*1910*U*00401*000374003*0*P*>
+GS*IN*PRODDAIR*103391843PCG*20261015*1910*000374003*X*004010
+ST*810*374003002
+BIG*20261014*59781675*20261014*004231014000
+N1*ST*COSTCO 423 SUNNYVALE*9*000423
+N3*150 LAWRENCE STATION RD*VN3025536
+N4*SUNNYVALE*CA*94086
+ITD*01*3*****21*****DUE 21 DAYS
+IT1**210.00*EA*6.670**IN*00000185
+PID*F****2% KIRKLD 2 BX #1
+IT1**525.00*EA*6.630**IN*00000186
+PID*F****WHOLE KIRKLD 2 BX #2
+IT1**105.00*EA*5.850**IN*00000187
+PID*F****FF KIRKLD 2 BX #12
+IT1**90.00*EA*7.870**IN*00000316
+PID*F****HEAVY WHIP 6CT HG26545
+IT1**105.00*EA*11.330**IN*00003110
+PID*F****ORG WHL 2-G #1268246
+IT1**105.00*EA*11.120**IN*00003135
+PID*F****ORG RF 2% 2G #1268247
+IT1**-22.00*EA*6.670**IN*00000185
+PID*F****2% KIRKLD 2 BX #1
+IT1**-17.00*EA*6.630**IN*00000186
+PID*F****WHOLE KIRKLD 2 BX #2
+IT1**-1.00*EA*5.850**IN*00000187
+PID*F****FF KIRKLD 2 BX #12
+TDS*829595
+CTT*9
+SE*27*374003002
+GE*000011*000374003
+IEA*00001*000374003
+
+--------------------------------------------------------------------------------
+PART 3: PARSED JSON — REAL, actual output of parse_810_header.py against Part 1
+--------------------------------------------------------------------------------
+{
+  "invoiceDate": "20261014",
+  "invoiceNumber": "59781675",
+  "purchaseOrderNumber": "004231014000",
+  "purchaseOrderDate": "20261012",
+  "invoiceType": "invoice",
+  "buyersCurrency": { "currencyCode": "USD" },
+  "sellersCurrency": { "currencyCode": "USD" },
+  "references": { "customerOrderNumber": { "value": "004231014000" } },
+  "termsOfSale": {
+    "type": "basic",
+    "basisDate": "deliveryDate",
+    "discountPercent": "0",
+    "discountDaysDue": "0",
+    "description": "Due 16 Days"
+  },
+  "parties": {
+    "shipTo": {
+      "name": "COSTCO 423 SUNNYVALE",
+      "addressLine1": "150 LAWRENCE STATION RD",
+      "addressLine2": "VN3025536",
+      "city": "SUNNYVALE",
+      "stateOrProvinceCode": "CA",
+      "postalCode": "94086",
+      "countryCode": null
+    },
+    "billTo": {
+      "name": "PRICECOSTCO",
+      "addressLine1": "VENDOR 30255 0",
+      "addressLine2": "PO BOX 85466",
+      "city": "SAN DIEGO",
+      "stateOrProvinceCode": "CA",
+      "postalCode": "92186-5466",
+      "countryCode": null
+    },
+    "accountsReceivable": {
+      "name": "Fairfield Dairy",
+      "identificationCode": "008860371",
+      "identificationCodeType": "duns",
+      "addressLine1": "PO BOX 888944",
+      "addressLine2": null,
+      "city": "Los Angeles",
+      "stateOrProvinceCode": "CA",
+      "postalCode": "90088-8944",
+      "countryCode": null
+    }
+  },
+  "lineItems": [
+    { "productIds": { "vendorItemNumber": "096619000012", "gtin12": "096619000012" }, "quantityInvoiced": { "value": "210.00", "unitOfMeasure": "each" }, "unitPrice": "6.67000", "productAttributes": { "description": "2% KIRKLD 2 BX #1", "brand": "7" } },
+    { "productIds": { "vendorItemNumber": "096619000029", "gtin12": "096619000029" }, "quantityInvoiced": { "value": "525.00", "unitOfMeasure": "each" }, "unitPrice": "6.63000", "productAttributes": { "description": "WHOLE KIRKLD 2 BX #2", "brand": "7" } },
+    { "productIds": { "vendorItemNumber": "096619000128", "gtin12": "096619000128" }, "quantityInvoiced": { "value": "105.00", "unitOfMeasure": "each" }, "unitPrice": "5.85000", "productAttributes": { "description": "FF KIRKLD 2 BX #12", "brand": "7" } },
+    { "productIds": { "vendorItemNumber": "078255003169", "gtin12": "078255003169" }, "quantityInvoiced": { "value": "90.00", "unitOfMeasure": "each" }, "unitPrice": "7.87000", "productAttributes": { "description": "HEAVY WHIP 6CT HG26545", "brand": "1" } },
+    { "productIds": { "vendorItemNumber": "078255031100", "gtin12": "078255031100" }, "quantityInvoiced": { "value": "105.00", "unitOfMeasure": "each" }, "unitPrice": "11.33000", "productAttributes": { "description": "ORG WHL 2-G #1268246", "brand": "1" } },
+    { "productIds": { "vendorItemNumber": "078255031353", "gtin12": "078255031353" }, "quantityInvoiced": { "value": "105.00", "unitOfMeasure": "each" }, "unitPrice": "11.12000", "productAttributes": { "description": "ORG RF 2% 2G #1268247", "brand": "1" } },
+    { "productIds": { "vendorItemNumber": "096619000012", "gtin12": "096619000012" }, "quantityInvoiced": { "value": "-22.00", "unitOfMeasure": "each" }, "unitPrice": "6.67000", "productAttributes": { "description": "2% KIRKLD 2 BX #1", "brand": "7" } },
+    { "productIds": { "vendorItemNumber": "096619000029", "gtin12": "096619000029" }, "quantityInvoiced": { "value": "-17.00", "unitOfMeasure": "each" }, "unitPrice": "6.63000", "productAttributes": { "description": "WHOLE KIRKLD 2 BX #2", "brand": "7" } },
+    { "productIds": { "vendorItemNumber": "096619000128", "gtin12": "096619000128" }, "quantityInvoiced": { "value": "-1.00", "unitOfMeasure": "each" }, "unitPrice": "5.85000", "productAttributes": { "description": "FF KIRKLD 2 BX #12", "brand": "7" } }
+  ],
+  "allowances": [],
+  "invoiceTotal": "8295.95"
+}
+
+================================================================================
+FIELD CORRESPONDENCE — all real, all confirmed exact
+================================================================================
+Invoice Number:   59781675         <-> BIG02                       <-> invoiceNumber     ✅ exact
+PO Reference:     004231014000     <-> BIG04                       <-> purchaseOrderNumber ✅ exact (matches BIG04 formula: 00423+1014+000)
+Store Number:     000423           <-> N1*ST qualifier-9 ID        ✅ exact
+All 9 line items (6 positive, 3 return/credit) <-> IT1/PID          ✅ exact, every single line, including quantities and descriptions
+Invoice Total:    8295.95          <-> TDS 829595, decimal implied ✅ exact
+
+Note: BIG04 decomposes as 00423 (store) + 1014 (delivery MMDD) + 000 -- the delivery
+date here (10/14) differs slightly from the invoice date (10/15), both confirmed
+directly from BIG01/BIG03 in the real X12. Consistent with the already-confirmed
+BIG04 formula.

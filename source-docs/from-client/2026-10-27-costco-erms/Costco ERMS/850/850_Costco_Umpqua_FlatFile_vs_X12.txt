@@ -1,0 +1,136 @@
+================================================================================
+PO 012871005279 — Costco to Umpqua, via SPS Commerce
+Same real order shown in three representations: flat file, raw X12, and parsed JSON
+================================================================================
+
+--------------------------------------------------------------------------------
+PART 1: FLAT FILE (as our system received it, after VAN translation)
+Source: NCS.20261005103114.850.txt
+--------------------------------------------------------------------------------
+HDR|20261005|1031|012871005279|COSTCOEDIUSA|012871005279|20261005||||20261014||||||||||0.000|0.000||NA|PP|ZZ|01|2|0||21|||1MPK= LAYER DELV WEDNESDAY||||
+HST||1033918431287|COSTCO CENTRAL POINT|3075 HAMRICK ROAD||CENTRAL POINT|OR|97502||
+HBT||||||||||
+HCM|1MPK= LAYER DELV WEDNESDAY|
+HCM|This order incorporates the Costco Wholesale Standard Terms,|
+HCM|as they may be amended from time to time, and any applicable|
+HCM|signed agreements between us.|
+LDT||1084795|||EA|EA|UMPQUA SOUR CREAM 3LB     7T7HP=294   DOM50   SL20||||420.000|||||||5.3500|||||||0|||||
+LDT||1497927|||EA|EA|UMPQUA W COTTAGE CHEESE   3LB 7T7HP=294 DOM30 SL20||||1470.000|||||||7.6200|||||||0|||||
+TOT
+
+--------------------------------------------------------------------------------
+PART 2: RAW X12 EDI (what Costco actually transmitted, before VAN translation)
+Source: Costco/Umpqua SPS Commerce transmission, Set Control 5680002
+--------------------------------------------------------------------------------
+ISA*00* *00* *ZZ*COSTCOEDIUSA *ZZ*UMPQUA *261005*0713*U*00401*000000568*0*P*>
+GS*PO*COSTCOEDIUSA*UMPQUA*20261005*0713*568*X*004010
+ST*850*5680002
+BEG*00*SA*012871005279**20261005
+REF*VR*0009125500
+REF*DP*17*COSTCO DEPARTMENT
+REF*19*NW*COSTCO REGION
+REF*ZZ*91255*BUYER VENDOR NUMBER
+REF*ZZ*28*BUYER VENDOR SUFFIX
+REF*YD*NW101*CREATED BY
+FOB*PP*ZZ*NA
+ITD*01*2*****21*****ROG 21
+DTM*175*20261013
+DTM*002*20261014
+DTM*010*20261013
+TD5*****VENDORS CHOICE
+N9*H7*SPECIAL INSTRUCTIONS
+MSG*1MPK= LAYER DELV WEDNESDAY
+N9*H5*LEGAL DISCLAIMER
+MSG*This order incorporates the Costco Wholesale Standard Terms,
+MSG*as they may be amended from time to time, and any applicable
+MSG*signed agreements between us.
+N1*ST*COSTCO CENTRAL POINT*9*1033918431287
+N3*3075 HAMRICK ROAD
+N4*CENTRAL POINT*OR*97502
+PER*RE**TE*5416307001
+PO1*1*420*EA*5.35**IN*1084795
+PID*F****UMPQUA SOUR CREAM 3LB 7T7HP=294 DOM50 SL20
+PO1*2*1470*EA*7.62**IN*1497927
+PID*F****UMPQUA W COTTAGE CHEESE 3LB 7T7HP=294 DOM30 SL20
+CTT*2*1890
+SE*30*5680002
+GE*2*568
+IEA*1*000000568
+
+--------------------------------------------------------------------------------
+PART 3: PARSED JSON (actual output of parse_pipe_850.py against the flat file above)
+Note: this run includes a real bug fix -- the parser's "description" field previously
+read from the wrong position (Field 5) and returned null. It's corrected here to read
+from Field 8, confirmed via this exact order's PID segment match in Part 2.
+--------------------------------------------------------------------------------
+{
+  "receivedDate": "20261005",
+  "poNumber": "012871005279",
+  "senderId": "COSTCOEDIUSA",
+  "deliveryDate": "20261014",
+  "shipTo": {
+    "tradingPartnerId": "1033918431287",
+    "name": "COSTCO CENTRAL POINT",
+    "addressLine1": "3075 HAMRICK ROAD",
+    "city": "CENTRAL POINT",
+    "state": "OR"
+  },
+  "billTo": {
+    "tradingPartnerId": null,
+    "name": null,
+    "addressLine1": null,
+    "city": null,
+    "state": null
+  },
+  "comments": [
+    "1MPK= LAYER DELV WEDNESDAY",
+    "This order incorporates the Costco Wholesale Standard Terms,",
+    "as they may be amended from time to time, and any applicable",
+    "signed agreements between us."
+  ],
+  "lineItems": [
+    {
+      "vendorItemNumberOrUPC": null,
+      "customerItemNumber": "1084795",
+      "description": "UMPQUA SOUR CREAM 3LB     7T7HP=294   DOM50   SL20",
+      "unitOfMeasure": "EA",
+      "quantity": "420.000",
+      "unitPrice": "5.3500",
+      "vendorItemDescription": null
+    },
+    {
+      "vendorItemNumberOrUPC": null,
+      "customerItemNumber": "1497927",
+      "description": "UMPQUA W COTTAGE CHEESE   3LB 7T7HP=294 DOM30 SL20",
+      "unitOfMeasure": "EA",
+      "quantity": "1470.000",
+      "unitPrice": "7.6200",
+      "vendorItemDescription": null
+    }
+  ],
+  "headerAllowancesCharges": [],
+  "lineAllowancesCharges": []
+}
+
+================================================================================
+FIELD CORRESPONDENCE ACROSS ALL THREE REPRESENTATIONS
+================================================================================
+Concept                      | Flat File         | Raw X12                         | JSON field
+-----------------------------|--------------------|----------------------------------|---------------------------
+Sender ID                     | HDR Field 5        | ISA Sender ID                    | senderId
+PO Number                     | HDR Field 4        | BEG03                            | poNumber
+Ship-To ID                    | HST Field 3        | N1*ST qualifier-9 ID             | shipTo.tradingPartnerId
+Ship-To Name                  | HST Field 4        | N1*ST name                       | shipTo.name
+Ship-To Address               | HST Fields 5/7/8   | N3/N4                            | shipTo.addressLine1/city/state
+Special Instruction           | HCM line 1         | N9*H7 + MSG                      | comments[0]
+Legal Disclaimer              | HCM lines 2-4      | N9*H5 + MSG                      | comments[1:]
+Item 1 identifier/qty/price   | LDT Field 3/12/19  | PO1*1*420*EA*5.35**IN*1084795    | lineItems[0] customerItemNumber/quantity/unitPrice
+Item 1 Description            | LDT Field 8        | PID (same order)                 | lineItems[0].description
+Item 2 identifier/qty/price   | LDT Field 3/12/19  | PO1*2*1470*EA*7.62**IN*1497927   | lineItems[1] customerItemNumber/quantity/unitPrice
+Item 2 Description            | LDT Field 8        | PID (same order)                 | lineItems[1].description
+TOT (empty)                   | TOT (no fields)    | no corresponding segment found   | (not represented in JSON)
+
+Not yet mapped into JSON at all: vendorItemNumberOrUPC and vendorItemDescription were
+both null in this real example -- genuinely unconfirmed against any position, not a
+parsing gap. billTo is also fully null here, consistent with this trading partner's
+real data (HBT is empty in the flat file for this order).

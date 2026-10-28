@@ -1,0 +1,1513 @@
+WEBVTT
+
+1
+00:00:12.830 --> 00:00:14.430
+Mark Dallas: Alright, hi everybody.
+
+2
+00:00:15.150 --> 00:00:16.360
+Adam.Chaddock: Good morning.
+
+3
+00:00:16.360 --> 00:00:16.740
+Narvel Taylor: Mona.
+
+4
+00:00:17.100 --> 00:00:18.070
+Mark Dallas: Lucky.
+
+5
+00:00:26.910 --> 00:00:32.309
+Mark Dallas: So I think I'm it from my side. John's not… he has a conflict today.
+
+6
+00:00:32.570 --> 00:00:35.480
+Mark Dallas: And I think this is it for your team too, right, Adam?
+
+7
+00:00:35.770 --> 00:00:39.810
+Adam.Chaddock: Right, yeah, this is gonna be the majority of the three that show up.
+
+8
+00:00:40.010 --> 00:00:42.560
+Mark Dallas: Okay, great, so let me start the recording.
+
+9
+00:00:42.800 --> 00:00:47.289
+Mark Dallas: So we can capture everything here. So, I think I'll start with a quick update from our side.
+
+10
+00:00:47.560 --> 00:00:54.850
+Mark Dallas: Just where things stand. So, met with our development team for the first time yesterday on this.
+
+11
+00:00:55.370 --> 00:01:01.580
+Mark Dallas: And yeah, we've stood up the…
+
+12
+00:01:01.770 --> 00:01:05.700
+Mark Dallas: Are there… I think they've already done it today, the server.
+
+13
+00:01:06.070 --> 00:01:09.030
+Mark Dallas: SFTP server, I think it's Couch?
+
+14
+00:01:09.900 --> 00:01:11.639
+Mark Dallas: Is who we use, Couch Drop.
+
+15
+00:01:15.100 --> 00:01:22.180
+Mark Dallas: So hopefully soon should have, you know, we'll let you know the details on that so we can, connect to BizLink there.
+
+16
+00:01:22.390 --> 00:01:29.029
+Mark Dallas: to our server. We've created the trade request with Orderful for Costco, specifically.
+
+17
+00:01:29.210 --> 00:01:37.080
+Mark Dallas: And… You know, have… logged into Aptian and reviewed the files. We have plenty of
+
+18
+00:01:39.850 --> 00:01:53.030
+Mark Dallas: you know, X12 examples that we can port over into Orderful, and use those as our initial tests, so all good there. And… yeah, then our development team has started work on the
+
+19
+00:01:53.440 --> 00:01:58.959
+Mark Dallas: Parsing, translation, you know, layers of that initial 850 flow.
+
+20
+00:01:59.320 --> 00:02:01.820
+Mark Dallas: So we can bring in those 850s.
+
+21
+00:02:02.370 --> 00:02:08.029
+Mark Dallas: Drop them on the server, and… You know, what you guys… ingest those into ERMS.
+
+22
+00:02:08.590 --> 00:02:13.000
+Mark Dallas: So, yeah, that's high level. Any questions?
+
+23
+00:02:13.670 --> 00:02:18.830
+Mark Dallas: you know, concerns on that piece before we kind of jump into some other questions I have for y'all?
+
+24
+00:02:19.460 --> 00:02:22.030
+Adam.Chaddock: No, it seems like it's progressing, so that's good.
+
+25
+00:02:22.630 --> 00:02:24.220
+Mark Dallas: Yep, yep, I think so.
+
+26
+00:02:26.490 --> 00:02:30.329
+Mark Dallas: And… so yeah, let me share my screen. I've got,
+
+27
+00:02:31.100 --> 00:02:35.069
+Mark Dallas: These are just the questions I've kind of been tracking on. I think there's 12 of them.
+
+28
+00:02:35.330 --> 00:02:38.889
+Mark Dallas: Not in any particular order, but
+
+29
+00:02:39.560 --> 00:02:47.300
+Mark Dallas: So, when I was completing the trade request, I… what it's asking for is your vendor number.
+
+30
+00:02:47.660 --> 00:02:52.629
+Mark Dallas: So what I could identify is this is not, this is like your SAP number.
+
+31
+00:02:53.010 --> 00:02:57.820
+Mark Dallas: Probably, for how Costco is referring to shady foods.
+
+32
+00:02:58.490 --> 00:03:07.710
+Adam.Chaddock: Yeah, our vendor numbers are, like, it's the same front number, and then there's a sub number behind it to identify the plant, so hang on, I had… nice, if I can find that.
+
+33
+00:03:09.040 --> 00:03:12.839
+Mark Dallas: Okay, so there'd be a different vendor number for each plant.
+
+34
+00:03:13.330 --> 00:03:16.399
+Mark Dallas: So there's not one that's just Shahidi Foods generally?
+
+35
+00:03:16.730 --> 00:03:17.380
+Adam.Chaddock: No.
+
+36
+00:03:22.680 --> 00:03:24.340
+Mark Dallas: Yeah, I guess.
+
+37
+00:03:24.750 --> 00:03:30.030
+Mark Dallas: Because I know, like, Costco, when you… when you do testing with them, they're gonna require us to send the…
+
+38
+00:03:30.440 --> 00:03:35.110
+Mark Dallas: Vendor number in the email, and, you know, that's the subject line there.
+
+39
+00:03:35.230 --> 00:03:43.130
+Mark Dallas: So maybe we just send them all… 4.
+
+40
+00:03:43.890 --> 00:03:46.880
+Mark Dallas: Plant vendor numbers is probably what we need to do.
+
+41
+00:03:50.310 --> 00:03:51.420
+Adam.Chaddock: I'm trying to find that.
+
+42
+00:03:51.420 --> 00:03:52.359
+Becky.Keller: In the order?
+
+43
+00:03:53.140 --> 00:03:56.820
+Mark Dallas: No, not on the order, this is… this is to begin testing with Costco.
+
+44
+00:04:01.730 --> 00:04:02.390
+Becky.Keller: Okay.
+
+45
+00:04:02.730 --> 00:04:07.600
+Mark Dallas: Yeah, they want to know, you know, basically, okay, who are we? Who is Costco?
+
+46
+00:04:08.200 --> 00:04:10.570
+Mark Dallas: Beginning this test.
+
+47
+00:04:10.740 --> 00:04:12.520
+Mark Dallas: Transaction 4, right?
+
+48
+00:04:22.070 --> 00:04:26.059
+Adam.Chaddock: Yeah, so it is an SAP number, but it says the,
+
+49
+00:04:26.720 --> 00:04:29.569
+Adam.Chaddock: I don't know, I don't have all the details yet, so hang on.
+
+50
+00:04:29.920 --> 00:04:34.289
+Adam.Chaddock: So it looks like 30255 is the main number, and then there's a dash, and then…
+
+51
+00:04:35.030 --> 00:04:38.260
+Adam.Chaddock: a plan identifier after that. Let me,
+
+52
+00:04:39.810 --> 00:04:44.540
+Adam.Chaddock: Listen Narvel, you can find it. I'm trying to find the email that had all of them in it.
+
+53
+00:04:47.190 --> 00:04:50.930
+Mark Dallas: Okay, and, you know, it could certainly be after this call, you know,
+
+54
+00:04:52.410 --> 00:05:05.500
+Mark Dallas: that we find that out, but yeah, just going through the… some of the things that we're looking for here. So yeah, if you found that in the background, great. The next one is the 860. Looking at your data in Aptian, I only saw…
+
+55
+00:05:06.310 --> 00:05:12.279
+Mark Dallas: 3860 since May, so it looks like the PO change is rare.
+
+56
+00:05:12.810 --> 00:05:14.860
+Mark Dallas: With Costco, at least, so…
+
+57
+00:05:15.030 --> 00:05:18.839
+Mark Dallas: Is that something that we can handle with notification only? You know, just.
+
+58
+00:05:18.840 --> 00:05:22.210
+Adam.Chaddock: Yeah, that could just be an email to our order desk.
+
+59
+00:05:22.360 --> 00:05:25.049
+Adam.Chaddock: Because I don't think our system will process it.
+
+60
+00:05:25.480 --> 00:05:26.210
+Mark Dallas: Right.
+
+61
+00:05:27.190 --> 00:05:28.630
+Mark Dallas: And,
+
+62
+00:05:28.870 --> 00:05:35.360
+Mark Dallas: Yeah, and that's something we see with a lot of clients, right? PO changes can be hard to… Map.
+
+63
+00:05:35.730 --> 00:05:39.250
+Mark Dallas: Because there's a lot that could change, and timing is a big issue, too, so…
+
+64
+00:05:39.250 --> 00:05:45.979
+Adam.Chaddock: Yeah, if it's already picked and they send in a change, then it makes it kind of tough, so we have to kind of… there has to be a human being involved.
+
+65
+00:05:45.980 --> 00:05:51.539
+Mark Dallas: Yes, exactly. And… Trading partners will do that, for sure. You know, it's…
+
+66
+00:05:51.990 --> 00:05:55.700
+Mark Dallas: It was… it's already… it's already on a truck, and they're telling you to change the order, so…
+
+67
+00:05:56.160 --> 00:05:58.930
+Mark Dallas: Okay, and so…
+
+68
+00:05:59.110 --> 00:06:06.460
+Mark Dallas: Yeah, I think that you just provide me what email that should go to. Again, it's not critical now to have that, but, we will need that to set that up.
+
+69
+00:06:06.910 --> 00:06:12.550
+Mark Dallas: Question number 3 here… For 820s and 824s.
+
+70
+00:06:13.840 --> 00:06:23.379
+Mark Dallas: we didn't see any 820s, only two 824s, so just didn't know if those are being handled outside of Aptian, or if that's really, you know.
+
+71
+00:06:23.380 --> 00:06:24.260
+Adam.Chaddock: Well…
+
+72
+00:06:24.440 --> 00:06:39.080
+Adam.Chaddock: Aptian is funny. They… so, the previous EDI I used to use… we used to get every document under the sun. Aptian seems to control… I'm not really sure. I… we just started a process with a payment,
+
+73
+00:06:39.260 --> 00:06:41.090
+Adam.Chaddock: Cash Application Program.
+
+74
+00:06:41.210 --> 00:06:51.220
+Adam.Chaddock: And so, ideally, if I can get the 820 over to them, or at least bounce it from BizLink… right now with Aptian, I take it off of Aptian for Target and…
+
+75
+00:06:51.820 --> 00:06:56.439
+Adam.Chaddock: Walmart, I think it is, and I send it to our payment processor, they're called High Radius.
+
+76
+00:06:56.700 --> 00:06:57.770
+Adam.Chaddock: Okay.
+
+77
+00:06:57.900 --> 00:07:03.730
+Adam.Chaddock: So, if I could start getting 820s to height radius, that would be awesome. 824s would just be,
+
+78
+00:07:03.860 --> 00:07:05.459
+Adam.Chaddock: That's advice, right?
+
+79
+00:07:05.560 --> 00:07:12.530
+Adam.Chaddock: It… It would be more of a email, so e… Yeah, so…
+
+80
+00:07:12.790 --> 00:07:18.460
+Adam.Chaddock: So the payment remittance advice should go to High radius, and then the…
+
+81
+00:07:19.680 --> 00:07:21.890
+Adam.Chaddock: It's the 824 that's, like, the…
+
+82
+00:07:22.170 --> 00:07:25.850
+Adam.Chaddock: like, the notes, or whatever you call it, then that can go to our AR department.
+
+83
+00:07:26.240 --> 00:07:30.109
+Adam.Chaddock: So, and that would be the case with all of them, if we could get them.
+
+84
+00:07:31.010 --> 00:07:37.580
+Mark Dallas: Yeah, so my question would be, is that, when you say get it over to them, is that just, okay, we have the X12 file.
+
+85
+00:07:37.760 --> 00:07:41.270
+Mark Dallas: which can be translated into JSON, Orderful does that for us anyway.
+
+86
+00:07:41.600 --> 00:07:52.520
+Mark Dallas: And do we just land that on the server, or does it need some… and then, you know, HiRadius picks it up, or is there some sort of translation to a flat file that's needed?
+
+87
+00:07:52.810 --> 00:07:53.490
+Mark Dallas: orbs.
+
+88
+00:07:53.490 --> 00:08:05.219
+Adam.Chaddock: So what I'm doing with HiRadius now, with the current ones, I'm just taking… it's like a text file, and it… and I just move it over to them, and they parse it, so it looks like they're able to, parse whatever I'm giving them.
+
+89
+00:08:05.440 --> 00:08:12.290
+Mark Dallas: Okay, so… would that include… when you say text files, would that include, like, a JSON or a X12?
+
+90
+00:08:12.870 --> 00:08:20.289
+Adam.Chaddock: It'd be an X12 type. It would be direct… if you go to Apptian… here, let me… if we log into Aptian, I can show you one.
+
+91
+00:08:20.640 --> 00:08:24.839
+Mark Dallas: And just so… yeah, let me think it would be… so…
+
+92
+00:08:25.310 --> 00:08:30.539
+Mark Dallas: If you look at Orderful, and I actually don't even have that window open, but…
+
+93
+00:08:30.740 --> 00:08:35.389
+Mark Dallas: you know, Orderful can translate to X12 to JSON natively, so we don't even have to
+
+94
+00:08:35.600 --> 00:08:39.350
+Mark Dallas: You know, just so you know, if that would help, to have that.
+
+95
+00:08:40.159 --> 00:08:44.409
+Mark Dallas: There's an inbound for either 850s, or 820s, or 824s.
+
+96
+00:08:44.730 --> 00:08:52.289
+Mark Dallas: you know, we could land a JSON file just as easily as an Nextel file, you know, for those.
+
+97
+00:08:52.620 --> 00:09:01.249
+Adam.Chaddock: Yeah, and I can ask HiRadius, because it's… I mean, we literally went live with HiRadius for just the ERMS side about a month ago, so it's relatively new. I see.
+
+98
+00:09:01.420 --> 00:09:05.210
+Adam.Chaddock: It's easier, we have issues with trying to get
+
+99
+00:09:05.950 --> 00:09:14.170
+Adam.Chaddock: It's supposed to automatically apply payments, but, that's a challenge, so the payment order remittance seems to be the best way to do it, because it…
+
+100
+00:09:15.170 --> 00:09:20.779
+Adam.Chaddock: it's pretty clear. So yeah, so if you look at… Let's see…
+
+101
+00:09:23.520 --> 00:09:31.429
+Adam.Chaddock: So yeah, all I'm… I'm just sending them, it lands on our… yeah, it's just X12 format, because it lands on our,
+
+102
+00:09:32.000 --> 00:09:36.050
+Adam.Chaddock: portal, but I can ask iRadius if they'd prefer it in Jason.
+
+103
+00:09:36.590 --> 00:09:43.769
+Mark Dallas: Yeah, I mean, it's either one. So, I guess the biggest thing is, really, the only thing we would need to do is take those
+
+104
+00:09:44.270 --> 00:09:46.879
+Mark Dallas: document types, neither X12 or JSON.
+
+105
+00:09:46.990 --> 00:09:52.170
+Mark Dallas: land them on the server in one of those two formats, and then RADIUS…
+
+106
+00:09:53.020 --> 00:09:56.790
+Mark Dallas: And… high radius, and who was the other… who would the A24 go to?
+
+107
+00:09:57.250 --> 00:09:59.649
+Adam.Chaddock: Yeah, just go to email to our ER department.
+
+108
+00:09:59.990 --> 00:10:00.930
+Mark Dallas: Okay.
+
+109
+00:10:01.280 --> 00:10:08.450
+Adam.Chaddock: And that's the standard for all the… if we can get any 820 or any 824, then that would be the standard template.
+
+110
+00:10:09.370 --> 00:10:12.770
+Adam.Chaddock: We don't process those into our system at all, so…
+
+111
+00:10:14.940 --> 00:10:15.540
+Mark Dallas: Okay.
+
+112
+00:10:15.910 --> 00:10:16.910
+Mark Dallas: Understood.
+
+113
+00:10:17.130 --> 00:10:25.660
+Mark Dallas: Yeah, so that's pretty simple. Pretty straightforward. You know, the mapping is where, you know, we gotta dive in a little bit more. So as long as we're not doing mapping, I think we're good there.
+
+114
+00:10:27.110 --> 00:10:43.560
+Adam.Chaddock: It should just be a straight push. So those I'm not so concerned about, because either I'll get the file to them, or we'll figure out a better way to get the file to them, and maybe a better format that might work for them better. But we'll see, because right now I'm just taking it from Aptian, and I just literally move it over.
+
+115
+00:10:43.900 --> 00:10:49.759
+Adam.Chaddock: So I pull it off of one SFTP site, and I move it over to another SFTP site with BizLink. That's all I'm doing.
+
+116
+00:10:50.790 --> 00:10:51.480
+Adam.Chaddock: So…
+
+117
+00:10:53.100 --> 00:11:02.640
+Mark Dallas: Right, right, that makes sense, and I think we can definitely, you know, facilitate that here easily, and especially since you're doing it the same way, you know, across different trading partners.
+
+118
+00:11:03.460 --> 00:11:04.020
+Adam.Chaddock: Hmm.
+
+119
+00:11:04.270 --> 00:11:10.799
+Mark Dallas: Yep, yep, that'll be great. We can streamline that for everybody. Whoever wants to do the 8-208-24, we'll handle it in the same way.
+
+120
+00:11:11.370 --> 00:11:13.330
+Adam.Chaddock: Yeah, that'd be the standard template.
+
+121
+00:11:13.870 --> 00:11:18.439
+Mark Dallas: Yeah, great. Always makes things easier when we can standardize, you know, so…
+
+122
+00:11:19.210 --> 00:11:20.519
+Adam.Chaddock: Make it simple.
+
+123
+00:11:21.070 --> 00:11:25.480
+Mark Dallas: Yep. It can't always be simple, but it's great when sometimes it can't be.
+
+124
+00:11:25.610 --> 00:11:29.089
+Mark Dallas: Okay, so the next one is the 852.
+
+125
+00:11:29.270 --> 00:11:34.050
+Mark Dallas: you know, you're sending and receiving 852, so…
+
+126
+00:11:34.570 --> 00:11:39.429
+Mark Dallas: like you said, for your vendor-managed inventory, the Costco A52 is coming in.
+
+127
+00:11:40.290 --> 00:11:45.590
+Adam.Chaddock: We don't… we don't process it, it goes straight to Park City. Yes. So it'd be a carbon copy.
+
+128
+00:11:45.590 --> 00:11:48.429
+Mark Dallas: Carbon copy and orderful can facilitate that.
+
+129
+00:11:48.670 --> 00:11:50.180
+Mark Dallas: Yeah, that's…
+
+130
+00:11:50.180 --> 00:11:56.290
+Adam.Chaddock: That's what Aptian does now, is… that's the… that's the current process, is we don't touch the file, it just…
+
+131
+00:11:56.290 --> 00:11:57.510
+Mark Dallas: Oh, this is likely.
+
+132
+00:11:57.510 --> 00:12:01.350
+Adam.Chaddock: Comes in to Aptin, and then it goes over to Park City.
+
+133
+00:12:01.790 --> 00:12:03.610
+Mark Dallas: Yep. Okay, so…
+
+134
+00:12:03.810 --> 00:12:12.050
+Mark Dallas: One thing I did wonder is, just so that we understand, is how do the BMI orders flow into your ERMS system?
+
+135
+00:12:13.370 --> 00:12:21.549
+Adam.Chaddock: So Park City takes the 852, and they create the, 850. That's the one we have to get from Repositrak.
+
+136
+00:12:22.260 --> 00:12:22.780
+Mark Dallas: Yeah.
+
+137
+00:12:22.780 --> 00:12:27.680
+Adam.Chaddock: into orderful in some way, so we can do the 856. That's that whole.
+
+138
+00:12:27.680 --> 00:12:32.279
+Mark Dallas: Well, okay, but so I think it's two separate questions. Yes, I get… I understood…
+
+139
+00:12:32.580 --> 00:12:40.010
+Mark Dallas: But the concept of, okay, we have to… that's what we have down here, I have that as the… one of the last agenda items, talking about that.
+
+140
+00:12:40.390 --> 00:12:48.149
+Mark Dallas: How are we gonna get that $850 into orderful for purposes of… the, 856.
+
+141
+00:12:48.290 --> 00:12:54.980
+Mark Dallas: Yeah. But what I'm… what I'm getting at is, I think, a different flow, right? Where… How does that…
+
+142
+00:12:55.790 --> 00:12:56.890
+Mark Dallas: order.
+
+143
+00:12:57.330 --> 00:13:11.280
+Mark Dallas: from VMI, or I guess Park City, your VMI flow into ERMS so that the 856, you know, can be fulfilled, or the order can be fulfilled, and the 856 later on can flow out. Does that make sense?
+
+144
+00:13:11.280 --> 00:13:24.279
+Adam.Chaddock: Yeah, yeah, we have a job in ERMS that takes, it logs into the SSTP site, Park City, and says, give me all the 850s, and then it downloads them to ERMS and processes them, so it's a direct connection to Park City.
+
+145
+00:13:24.280 --> 00:13:26.229
+Mark Dallas: I see. Okay, got it.
+
+146
+00:13:26.230 --> 00:13:29.900
+Adam.Chaddock: No, it's in our file format, which is…
+
+147
+00:13:30.990 --> 00:13:42.020
+Adam.Chaddock: different from our standard 850 file format. There's two different flat files I found out. There's one that Park City formats, and then there's one that we get that's from Aptian that's a different format.
+
+148
+00:13:45.160 --> 00:13:50.449
+Adam.Chaddock: But the one I think we said with Park City, we were just not gonna touch it. We were just gonna let that process stay put.
+
+149
+00:13:50.710 --> 00:13:53.139
+Mark Dallas: That's right, I just wanted to make sure that I had that.
+
+150
+00:13:53.140 --> 00:13:53.710
+Adam.Chaddock: Right.
+
+151
+00:13:53.710 --> 00:13:54.260
+Mark Dallas: Exactly.
+
+152
+00:13:54.260 --> 00:13:55.020
+Adam.Chaddock: Yep, yep.
+
+153
+00:13:55.020 --> 00:14:00.380
+Mark Dallas: I think I… I think you probably did explain it, I just didn't get what you were saying. So, good. The 850s…
+
+154
+00:14:00.580 --> 00:14:06.700
+Mark Dallas: orders coming into ERMS is already handled via your current integration directly with… with them.
+
+155
+00:14:06.960 --> 00:14:09.630
+Mark Dallas: So, good, we just won't touch that.
+
+156
+00:14:10.490 --> 00:14:13.170
+Mark Dallas: Obviously, then the 852s will handle
+
+157
+00:14:13.430 --> 00:14:19.029
+Mark Dallas: the, you know, VMI knowing what needs to be,
+
+158
+00:14:19.440 --> 00:14:25.100
+Mark Dallas: what orders need to be re-upped, I can't think of the technical name for that, but…
+
+159
+00:14:25.530 --> 00:14:29.480
+Mark Dallas: Well, and one other question I did have on that, the…
+
+160
+00:14:29.800 --> 00:14:39.180
+Mark Dallas: Do you have some kind of, like, large order, you know, quarterly or something that comes in from Costco that you're fulfilling against? Is it based on inventory levels?
+
+161
+00:14:40.090 --> 00:14:55.480
+Adam.Chaddock: They take the 852, which is sales and inventory data, and they say, okay, based on that, we have a fill level we have to go to, and they… Park City… and this is just… this isn't… we're not talking Umpqua, Oregon right now, we're just talking California and Nevada.
+
+162
+00:14:56.920 --> 00:15:11.790
+Adam.Chaddock: they just take that data and say, here's the 850. So they're responsible for making sure the shelf is full, so they're using the data, what was sold, what was inventory left, and then coming up with an 850. And then we get the result.
+
+163
+00:15:12.290 --> 00:15:23.669
+Mark Dallas: But there's never, like, a bulk 850 from Costco that's, you know, that comes in quarterly or something that says, hey, you can pull 100,000 units. What it is, is it's based on inventory level, and if it reaches the
+
+164
+00:15:24.850 --> 00:15:28.730
+Mark Dallas: The Bible, or whatever that is that you replant. Okay.
+
+165
+00:15:28.730 --> 00:15:37.739
+Adam.Chaddock: It would be store-specific, so it's… store 1 is at this level, here's an 850 to make it to that level, and then store 2 is this to make it to that.
+
+166
+00:15:37.950 --> 00:15:40.050
+Mark Dallas: Correct, so I'm sure it's very dynamic based on…
+
+167
+00:15:40.630 --> 00:15:47.449
+Mark Dallas: you know, all the factors, you know. If it's in the South, if you have a snowstorm, all the milk is getting bought, so…
+
+168
+00:15:47.680 --> 00:15:51.049
+Mark Dallas: I don't know if that's specifically what you're selling here, but anyway.
+
+169
+00:15:51.220 --> 00:15:54.540
+Mark Dallas: Okay, so that makes sense.
+
+170
+00:15:55.120 --> 00:15:56.799
+Mark Dallas: I think I've got that piece.
+
+171
+00:15:57.120 --> 00:15:59.800
+Mark Dallas: Hopefully.
+
+172
+00:15:59.980 --> 00:16:01.030
+Mark Dallas: well defined.
+
+173
+00:16:01.290 --> 00:16:03.459
+Mark Dallas: So let's go on to the next one.
+
+174
+00:16:04.910 --> 00:16:13.029
+Mark Dallas: Yeah, as far as Costco, have they given you a deadline for certification? I think you said no. They were just kind of had it out there.
+
+175
+00:16:13.470 --> 00:16:16.830
+Adam.Chaddock: Well, they said the 15th of this month, so…
+
+176
+00:16:17.170 --> 00:16:17.950
+Mark Dallas: Right.
+
+177
+00:16:18.220 --> 00:16:19.580
+Mark Dallas: Already behind that…
+
+178
+00:16:19.580 --> 00:16:30.240
+Adam.Chaddock: Yeah. Yeah, but the issue is we still don't know how we're going to get that repositrack, or whatever you want to call it, Park City 850 in, so that's been the holdup.
+
+179
+00:16:30.490 --> 00:16:31.149
+Adam.Chaddock: And so.
+
+180
+00:16:31.150 --> 00:16:41.190
+Mark Dallas: And we can just skip down. So, I mean, it's good, as long as they don't give us hard and fast deadline. I mean, we're gonna try to move as quick as we can on this, for all the reasons, but…
+
+181
+00:16:41.370 --> 00:16:45.860
+Mark Dallas: you know, I just wanted to make sure of that, and if they do call out one, then we need to know it, but…
+
+182
+00:16:46.250 --> 00:16:51.830
+Mark Dallas: yeah, so… Agenda item 11 here.
+
+183
+00:16:52.310 --> 00:16:58.360
+Mark Dallas: Scheduling that call with, you know, Kelly from Orderful Side. She's like the, you know, you met her account manager.
+
+184
+00:16:58.540 --> 00:17:09.020
+Mark Dallas: Because, yeah, that might… be outside our integration that we're building, and coming straight into Orderful.
+
+185
+00:17:09.329 --> 00:17:15.240
+Mark Dallas: you know, I don't see a reason why Repositrack couldn't send it.
+
+186
+00:17:15.619 --> 00:17:20.039
+Mark Dallas: VAS2, right? If they have an EDI 850, which you're saying they do.
+
+187
+00:17:20.440 --> 00:17:25.630
+Mark Dallas: orderful, you know, I mean, they're trading with everybody, they have an AS2 set up,
+
+188
+00:17:25.819 --> 00:17:29.130
+Mark Dallas: I mean, they have VAN, they have, you know, all the different…
+
+189
+00:17:30.340 --> 00:17:31.410
+Adam.Chaddock: Windows 12.
+
+190
+00:17:31.410 --> 00:17:31.770
+Mark Dallas: So…
+
+191
+00:17:31.770 --> 00:17:36.890
+Adam.Chaddock: talk… when Narvel talked to them, they were pretty open in saying that they could send a…
+
+192
+00:17:37.190 --> 00:17:46.749
+Adam.Chaddock: through… we keep saying repository, because that's who they say they are using, so they said they can just set up a channel to do a direct EDI to whoever we choose.
+
+193
+00:17:47.740 --> 00:17:53.619
+Mark Dallas: Okay, great. So… I mean, certainly we could meet to discuss it, but maybe, you know, the…
+
+194
+00:17:55.170 --> 00:17:59.379
+Mark Dallas: The, you know, discussion would more be, hey.
+
+195
+00:17:59.820 --> 00:18:04.170
+Mark Dallas: Maybe, you know, my team goes ahead and looks into creating a trade request.
+
+196
+00:18:04.310 --> 00:18:07.020
+Mark Dallas: for Park City, or well, for Repositrak.
+
+197
+00:18:07.220 --> 00:18:15.580
+Mark Dallas: And… asks them for their EDI details, and we go ahead and start the… Start the connection.
+
+198
+00:18:15.970 --> 00:18:17.640
+Adam.Chaddock: Yeah, that would make the most sense.
+
+199
+00:18:17.640 --> 00:18:18.520
+Mark Dallas: Yeah.
+
+200
+00:18:19.840 --> 00:18:28.789
+Mark Dallas: So maybe, I guess maybe the action item would be, then, if you can email, Repositrak and request that, right?
+
+201
+00:18:30.330 --> 00:18:30.970
+Mark Dallas: Yeah.
+
+202
+00:18:30.970 --> 00:18:33.260
+Adam.Chaddock: Narvel, did you do… any, or…
+
+203
+00:18:33.260 --> 00:18:40.809
+Narvel Taylor: Yeah, they're… actually, they replied back. There was an email from them that they were saying that they have an existing AS2 connection with Orderful.
+
+204
+00:18:40.810 --> 00:18:42.730
+Mark Dallas: Oh, did they really? Okay, I missed that.
+
+205
+00:18:43.070 --> 00:18:48.769
+Mark Dallas: Yeah. Alright, let's see… So if they… if they do… what was the title of that email?
+
+206
+00:18:49.210 --> 00:18:53.059
+Narvel Taylor: That email was sent… Let me get that for you.
+
+207
+00:18:53.790 --> 00:19:02.940
+Narvel Taylor: It was titled, shahadi Foods, Costco VMI, copy of A50POs to SPS Commerce.
+
+208
+00:19:03.530 --> 00:19:04.740
+Mark Dallas: Okay, I should…
+
+209
+00:19:05.030 --> 00:19:08.260
+Narvel Taylor: But yeah, you were… you were copied on the email, and so was John.
+
+210
+00:19:09.040 --> 00:19:10.560
+Mark Dallas: Okay, great.
+
+211
+00:19:10.840 --> 00:19:14.550
+Narvel Taylor: It was sent on the, 22nd of October.
+
+212
+00:19:14.770 --> 00:19:17.489
+Mark Dallas: Yes, I see that now. Okay,
+
+213
+00:19:18.910 --> 00:19:24.020
+Mark Dallas: So if they already… okay, yeah, please send a copy of each Costco VMI order.
+
+214
+00:19:24.170 --> 00:19:29.199
+Mark Dallas: is to… Okay, well, that's good.
+
+215
+00:19:34.610 --> 00:19:41.840
+Adam.Chaddock: create a flow… a flow for this, too. I don't know if I shared it, but I did create a flow for this, if we want to see that, if it helps.
+
+216
+00:19:44.290 --> 00:19:49.879
+Mark Dallas: Yes, so that's one of the things I had in here, is that, yeah, it would help to have a flow, just to kind of keep us all on.
+
+217
+00:19:50.280 --> 00:19:52.319
+Adam.Chaddock: I'm gonna share my screen?
+
+218
+00:19:52.320 --> 00:19:53.510
+Mark Dallas: Yeah, sure.
+
+219
+00:19:54.020 --> 00:19:54.970
+Mark Dallas: -
+
+220
+00:19:55.590 --> 00:19:58.279
+Mark Dallas: Stop sharing mine if I can find my Zoom window. There we go.
+
+221
+00:20:04.250 --> 00:20:06.200
+Adam.Chaddock: So, hopefully this makes sense.
+
+222
+00:20:06.390 --> 00:20:12.020
+Adam.Chaddock: So we have two streams, UMQA's at the top, And so…
+
+223
+00:20:13.650 --> 00:20:17.550
+Adam.Chaddock: Umpqua Oregon's processes, Costco sends an 850,
+
+224
+00:20:18.240 --> 00:20:24.200
+Adam.Chaddock: SPS processes at 850, it goes into our ERMS, and then,
+
+225
+00:20:25.240 --> 00:20:32.840
+Adam.Chaddock: Right now, this is… this is dashed right here, because we don't… this is that whole, how to, you know, what do we do here?
+
+226
+00:20:32.940 --> 00:20:34.860
+Adam.Chaddock: To get a manual.
+
+227
+00:20:35.350 --> 00:20:49.429
+Adam.Chaddock: 8.56, they're going to be on the manual process, because they don't have the warehouse management system yet. And then the 810's generated, and then it goes out… it's all the unscheduled jobs for the 810, and then it goes out to, I believe, SPS, and then back to Costco.
+
+228
+00:20:49.850 --> 00:20:53.889
+Mark Dallas: Now, when you say the ERP import for OMQA, so there's not…
+
+229
+00:20:53.890 --> 00:20:55.829
+Adam.Chaddock: That's Euromass, yeah.
+
+230
+00:20:55.830 --> 00:20:59.010
+Mark Dallas: Yeah, so there's… it's just a manual import.
+
+231
+00:20:59.820 --> 00:21:10.139
+Adam.Chaddock: It's all in a… they're all on jobs, so it just comes in and flows into our system. As long as everything's set up right, it just imports in. I didn't know what to call this step, if I should say ERMS.
+
+232
+00:21:10.260 --> 00:21:13.370
+Adam.Chaddock: I just called it ERP import to keep it kind of general.
+
+233
+00:21:13.620 --> 00:21:21.870
+Mark Dallas: Yeah, understood. I guess I'm just saying it doesn't… it's not something Aptian or, you know, is currently helping you with, right?
+
+234
+00:21:22.360 --> 00:21:24.009
+Adam.Chaddock: Well, we… so…
+
+235
+00:21:24.450 --> 00:21:25.809
+Narvel Taylor: Yeah, the 18 that goat.
+
+236
+00:21:25.930 --> 00:21:27.760
+Narvel Taylor: We send 18 to Appdian.
+
+237
+00:21:28.110 --> 00:21:37.239
+Adam.Chaddock: Yeah, so this is all going through Aptian, so we all… all of our links are through Aptian, so I guess I could add to this flow and add Aptian in here, I didn't do that.
+
+238
+00:21:37.790 --> 00:21:46.139
+Adam.Chaddock: Basically, we're getting… SPS sends it to us… we get it from Aptian's SFTP, and then we pull it in.
+
+239
+00:21:47.110 --> 00:21:47.720
+Mark Dallas: Okay.
+
+240
+00:21:48.890 --> 00:21:53.659
+Mark Dallas: Got it. Yep, yep. I just didn't see them in the flow, so I wasn't sure if it was different with.
+
+241
+00:21:53.660 --> 00:21:54.060
+Adam.Chaddock: Yeah.
+
+242
+00:21:54.920 --> 00:21:59.970
+Adam.Chaddock: I can… I can add that. I think that got missed. Yeah, no worries. I can add Aptian in here.
+
+243
+00:22:00.300 --> 00:22:01.970
+Mark Dallas: Yeah, that'd be great. Okay.
+
+244
+00:22:02.580 --> 00:22:07.900
+Adam.Chaddock: And then the second flow is the 852 data comes in, we carbon copy.
+
+245
+00:22:08.320 --> 00:22:10.840
+Adam.Chaddock: Park City generates the $850.
+
+246
+00:22:11.720 --> 00:22:14.150
+Adam.Chaddock: 8.50 goes in,
+
+247
+00:22:14.630 --> 00:22:23.710
+Adam.Chaddock: to two different paths now, so the WMS warehouse management system is in Fresno, so it goes and can go out automatically.
+
+248
+00:22:24.120 --> 00:22:26.880
+Adam.Chaddock: That can be an automated process, but for…
+
+249
+00:22:27.390 --> 00:22:32.350
+Adam.Chaddock: Fairfield and Model Dairies, it'd have to be a manual portal.
+
+250
+00:22:32.750 --> 00:22:39.739
+Adam.Chaddock: in some sort of development, like, I'm not sure… that's why it's dashed line, I'm not sure what we're doing. Like, we said maybe we could do this with orderful.
+
+251
+00:22:40.460 --> 00:22:42.230
+Mark Dallas: Yeah, and I think what we said is…
+
+252
+00:22:43.560 --> 00:23:01.939
+Mark Dallas: That could be the Web EDI solution for that. You know, where you port… we… for the email that we were just discussing, you know, with Repositrack, they send the 850s into Orderful, Orderful ingests those, and then some of the data can be ported from the 850
+
+253
+00:23:02.130 --> 00:23:06.420
+Mark Dallas: To create the 856, and then some of the data will have to be manually entered, you know, the fulfillment.
+
+254
+00:23:06.990 --> 00:23:09.760
+Mark Dallas: You know, details that are not on the 850.
+
+255
+00:23:10.030 --> 00:23:15.780
+Mark Dallas: And then you can send the A56 out to… Costco from there.
+
+256
+00:23:16.190 --> 00:23:16.960
+Adam.Chaddock: Yeah.
+
+257
+00:23:18.090 --> 00:23:19.810
+Adam.Chaddock: I can tie this up.
+
+258
+00:23:20.270 --> 00:23:23.759
+Mark Dallas: Okay, that's helpful, that's good. Yeah, if you'll just add…
+
+259
+00:23:23.990 --> 00:23:29.679
+Mark Dallas: Aptian in there, and any other details, and send that over, that would be great to have.
+
+260
+00:23:31.020 --> 00:23:31.780
+Mark Dallas: Yeah, just to…
+
+261
+00:23:31.780 --> 00:23:34.070
+Adam.Chaddock: Yeah, and that… and then I did do a…
+
+262
+00:23:35.060 --> 00:23:42.270
+Adam.Chaddock: It kinda… oh, this is very, very generic, but kind of… Overarching theme.
+
+263
+00:23:44.380 --> 00:23:46.130
+Adam.Chaddock: Of some of the things that need to…
+
+264
+00:23:50.730 --> 00:23:51.749
+Mark Dallas: Yeah, okay, so…
+
+265
+00:23:51.750 --> 00:23:57.420
+Adam.Chaddock: some of the things that, you know, have to be… I was trying to figure out what do we exactly have to map? So I was trying to, like.
+
+266
+00:23:57.790 --> 00:24:01.050
+Adam.Chaddock: Okay, what exactly needs to be mapped here? So…
+
+267
+00:24:01.050 --> 00:24:05.599
+Mark Dallas: Yes, I think… That's where, you know.
+
+268
+00:24:06.270 --> 00:24:09.220
+Mark Dallas: We're… what we're using right now is the…
+
+269
+00:24:09.410 --> 00:24:16.869
+Mark Dallas: the Word doc that you sent us with some mapping, you know, Mapping structures on there.
+
+270
+00:24:17.330 --> 00:24:17.740
+Adam.Chaddock: Yeah.
+
+271
+00:24:17.740 --> 00:24:18.719
+Mark Dallas: What we really need is…
+
+272
+00:24:18.720 --> 00:24:21.029
+Adam.Chaddock: High-level, like, task list.
+
+273
+00:24:21.030 --> 00:24:25.879
+Mark Dallas: Right, what we need is just to make sure, because you asked on what do you need on the mapping, what needs to be mapped.
+
+274
+00:24:26.490 --> 00:24:34.429
+Mark Dallas: it needs to be whatever fields you require in ERMS, so whatever those mandatory fields are that you need.
+
+275
+00:24:34.910 --> 00:24:41.689
+Mark Dallas: In your system. What we're moving forward with now, right, just based on our previous discussion, hey, you don't have a
+
+276
+00:24:41.910 --> 00:24:45.670
+Mark Dallas: robust, you know, specification sheet.
+
+277
+00:24:46.330 --> 00:24:48.870
+Mark Dallas: We're just gonna move forward with saying, okay.
+
+278
+00:24:49.380 --> 00:24:51.759
+Mark Dallas: Give us some flat files, right?
+
+279
+00:24:51.960 --> 00:24:58.480
+Mark Dallas: That were generated, and then let's max pair those up with some 850s and 810s.
+
+280
+00:24:58.960 --> 00:25:03.359
+Mark Dallas: And then we'll just kind of infer most of the mapping.
+
+281
+00:25:03.580 --> 00:25:07.980
+Mark Dallas: And using your… the templated guide you already gave us.
+
+282
+00:25:08.130 --> 00:25:15.650
+Mark Dallas: And then hopefully that will get us 90% of the way there, and then we can talk through, as we're doing testing, we fire off a few 850s.
+
+283
+00:25:15.860 --> 00:25:20.119
+Mark Dallas: You pick them up, and then you let us know what we missed, or whatever, right?
+
+284
+00:25:20.120 --> 00:25:24.169
+Adam.Chaddock: Yeah, because our 850 file's pretty basic,
+
+285
+00:25:24.170 --> 00:25:26.810
+Mark Dallas: Yeah, it does seem that way, yeah, looking at those in Aptian.
+
+286
+00:25:27.190 --> 00:25:36.040
+Adam.Chaddock: And then the only concern would be, like, on the 810, but we have X12, examples, so if we just model after an X12 example, then we should be…
+
+287
+00:25:36.520 --> 00:25:38.950
+Adam.Chaddock: Like you said, get, like, 90% of it.
+
+288
+00:25:39.610 --> 00:25:40.940
+Mark Dallas: Right. Yep.
+
+289
+00:25:41.790 --> 00:25:42.550
+Mark Dallas: Yep.
+
+290
+00:25:43.090 --> 00:25:46.930
+Mark Dallas: Okay, so we've only got about 5 minutes left, so…
+
+291
+00:25:47.300 --> 00:25:50.040
+Mark Dallas: Yeah, I guess I'll just go through the rest of these.
+
+292
+00:25:50.370 --> 00:25:52.000
+Mark Dallas: Pretty quick here, so we already covered.
+
+293
+00:25:52.000 --> 00:25:58.099
+Becky.Keller: Hey, gentlemen, I actually have to ditch you and go up to a meeting. I apologize, but I hope you have a really good…
+
+294
+00:25:58.250 --> 00:25:59.920
+Becky.Keller: Jay, and I'll catch you later.
+
+295
+00:26:00.690 --> 00:26:01.390
+Adam.Chaddock: Excellent.
+
+296
+00:26:01.390 --> 00:26:02.530
+Narvel Taylor: If you need me, okay.
+
+297
+00:26:02.610 --> 00:26:03.549
+Becky.Keller: Thanks, bye guys.
+
+298
+00:26:03.720 --> 00:26:04.480
+Narvel Taylor: Alright, Becky.
+
+299
+00:26:04.480 --> 00:26:07.269
+Mark Dallas: Yep, will do. So… I guess…
+
+300
+00:26:08.690 --> 00:26:13.399
+Mark Dallas: We talked about that. Aptian… there's no shutoff for Aptian, is there?
+
+301
+00:26:15.270 --> 00:26:19.839
+Adam.Chaddock: Well, we haven't… no, we're month-to-month, but we haven't even told them yet.
+
+302
+00:26:19.840 --> 00:26:20.550
+Mark Dallas: Okay, good.
+
+303
+00:26:20.550 --> 00:26:23.290
+Adam.Chaddock: That we're shifting. We're trying to hold that until…
+
+304
+00:26:23.860 --> 00:26:26.890
+Adam.Chaddock: Until it's absolutely necessary. I think it's fine.
+
+305
+00:26:26.890 --> 00:26:27.940
+Mark Dallas: Yes.
+
+306
+00:26:27.940 --> 00:26:31.709
+Adam.Chaddock: Yeah, I've done this before, and so it's just easier just to, you know.
+
+307
+00:26:32.850 --> 00:26:36.259
+Mark Dallas: Right, we have our act together, and we're ready to…
+
+308
+00:26:36.470 --> 00:26:39.189
+Mark Dallas: Transition, then we can start making those.
+
+309
+00:26:39.440 --> 00:26:45.890
+Mark Dallas: have discussions with them. Okay, so, essentially, these, these two items here.
+
+310
+00:26:46.110 --> 00:26:54.190
+Mark Dallas: 8 and 9 are just saying, hey, what we need is 850 flat files that we can match up in Aptian to
+
+311
+00:26:54.500 --> 00:27:05.259
+Mark Dallas: the related EDI files. Like we just talked about, that's kind of what we're going to do for the mapping, so I think those are probably the two, you know, big, maybe, asks in the short term for me.
+
+312
+00:27:05.260 --> 00:27:08.159
+Adam.Chaddock: I think they're sitting on the website in a zip file.
+
+313
+00:27:08.410 --> 00:27:09.680
+Adam.Chaddock: So…
+
+314
+00:27:09.680 --> 00:27:11.960
+Mark Dallas: Oh, okay, was that one of those things you put an order for?
+
+315
+00:27:12.280 --> 00:27:17.919
+Adam.Chaddock: I believe so. They're called kind of funky. They're, like, NCS and NCW text files, I think.
+
+316
+00:27:17.920 --> 00:27:21.739
+Mark Dallas: Yeah, the thing is, I don't think… I don't know that we had…
+
+317
+00:27:22.810 --> 00:27:25.940
+Mark Dallas: Costco 850s, did we? I don't think we did.
+
+318
+00:27:26.310 --> 00:27:28.600
+Adam.Chaddock: Hang on, let me… maybe I…
+
+319
+00:27:30.590 --> 00:27:37.950
+Mark Dallas: Because Costco… if we had, like, 3 Costco 850, 3 Costco 810s, then you're right, those files are there, I need to review this again, but I… I thought on the initial pass.
+
+320
+00:27:37.950 --> 00:27:41.870
+Adam.Chaddock: So, I may not have got it to you yet, so here… can I share my screen again?
+
+321
+00:27:41.870 --> 00:27:42.390
+Mark Dallas: Yep.
+
+322
+00:27:44.530 --> 00:27:48.250
+Adam.Chaddock: I know we're running short, but let me, let me just show you this. So,
+
+323
+00:27:49.150 --> 00:27:53.560
+Adam.Chaddock: I just have to get this to you. I'll get the flow better, but
+
+324
+00:27:54.440 --> 00:27:57.700
+Adam.Chaddock: So, I took a… so, flat file.
+
+325
+00:27:58.140 --> 00:27:59.930
+Adam.Chaddock: So this is the flat file.
+
+326
+00:28:00.100 --> 00:28:00.660
+Mark Dallas: Yep.
+
+327
+00:28:00.660 --> 00:28:06.100
+Adam.Chaddock: Part 2 is the raw X12, so… That's the raw…
+
+328
+00:28:06.100 --> 00:28:09.050
+Mark Dallas: Oh, so you paired them up, okay, I guess…
+
+329
+00:28:09.050 --> 00:28:13.929
+Adam.Chaddock: This is the… and then… and then down here, part 3 is what it would look like in JSON.
+
+330
+00:28:14.250 --> 00:28:17.939
+Adam.Chaddock: Based on what I know of your JSON mapping, so I might be wrong here, but…
+
+331
+00:28:17.940 --> 00:28:18.290
+Mark Dallas: Boom.
+
+332
+00:28:18.880 --> 00:28:20.949
+Adam.Chaddock: And then here's kind of a field…
+
+333
+00:28:21.580 --> 00:28:25.579
+Adam.Chaddock: correspondence across all of them. So this is kind of like a…
+
+334
+00:28:26.550 --> 00:28:33.549
+Adam.Chaddock: This is for Umpqua. So this is an Umpqua example of a… so this is what we… we got this flat file…
+
+335
+00:28:33.920 --> 00:28:37.239
+Adam.Chaddock: And then it generated this,
+
+336
+00:28:39.020 --> 00:28:42.679
+Adam.Chaddock: this document, which is… I believe this was the 810.
+
+337
+00:28:43.210 --> 00:28:48.350
+Adam.Chaddock: Oh, no, this is the 850. So this is the order… This is the 850,
+
+338
+00:28:48.650 --> 00:28:51.540
+Adam.Chaddock: And then I would just have to get you an 810.
+
+339
+00:28:51.890 --> 00:28:52.910
+Adam.Chaddock: Yep.
+
+340
+00:28:53.040 --> 00:28:58.289
+Adam.Chaddock: And then that would… Feel that. So this is the inbound process.
+
+341
+00:29:02.670 --> 00:29:09.899
+Mark Dallas: Yeah, okay, that's good. And that is the most important one, and yeah, I see that. And so that's just… so that's one example, at least, that we have.
+
+342
+00:29:10.280 --> 00:29:10.920
+Mark Dallas: Of…
+
+343
+00:29:10.920 --> 00:29:12.639
+Adam.Chaddock: Yeah, and then I… I did the…
+
+344
+00:29:13.050 --> 00:29:16.169
+Adam.Chaddock: I might have… well, see, I did… I did one…
+
+345
+00:29:16.170 --> 00:29:16.880
+Mark Dallas: Okay.
+
+346
+00:29:17.540 --> 00:29:20.100
+Adam.Chaddock: I did one flat file to 810.
+
+347
+00:29:20.100 --> 00:29:20.700
+Mark Dallas: For example.
+
+348
+00:29:23.130 --> 00:29:27.239
+Adam.Chaddock: And so I've got a few floating around there, I can get those,
+
+349
+00:29:27.240 --> 00:29:35.029
+Mark Dallas: That's perfect, so that's one of each, and then if you could maybe just get us two more, you know, two more flat file 850s, two more flat file 810s…
+
+350
+00:29:35.680 --> 00:29:39.229
+Mark Dallas: Yeah, I think we should be good.
+
+351
+00:29:40.430 --> 00:29:42.010
+Adam.Chaddock: Yeah, cause I think I've got…
+
+352
+00:29:42.690 --> 00:29:50.160
+Adam.Chaddock: Yeah, so this is the 810 version, so… So this would be… Yeah, 810.
+
+353
+00:29:50.290 --> 00:29:59.019
+Adam.Chaddock: So this would be the flat file, this would be the A10, and then this would be the JSON. So I've got them… I'll get them to you. I just been working on them, but I've got…
+
+354
+00:29:59.520 --> 00:30:03.200
+Adam.Chaddock: And then there's the actual files that…
+
+355
+00:30:04.210 --> 00:30:07.199
+Adam.Chaddock: If I open these up, that's the actual raw file.
+
+356
+00:30:09.440 --> 00:30:10.790
+Mark Dallas: Okay, got it.
+
+357
+00:30:13.100 --> 00:30:16.469
+Adam.Chaddock: So, do you want those on the website, or is the email easier?
+
+358
+00:30:16.470 --> 00:30:25.820
+Mark Dallas: Either one, I just… yeah, either one is great. Probably, the website probably is easier. If you just let me know, hey, when they've been uploaded, that way I, you know, I'm tracking.
+
+359
+00:30:26.040 --> 00:30:27.019
+Adam.Chaddock: Yeah, I'll fix the…
+
+360
+00:30:27.020 --> 00:30:29.400
+Mark Dallas: It doesn't notify me or anything when you do, so…
+
+361
+00:30:29.990 --> 00:30:34.480
+Adam.Chaddock: Okay, I'll fix the template, and then I'll put it in there, and then I'll zip the whole thing up, and then,
+
+362
+00:30:35.060 --> 00:30:39.819
+Adam.Chaddock: I'll work on… Maybe working through another example.
+
+363
+00:30:40.830 --> 00:30:41.370
+Mark Dallas: Okay.
+
+364
+00:30:41.370 --> 00:30:44.819
+Adam.Chaddock: Because I have it in, Claude, so I just have to…
+
+365
+00:30:45.010 --> 00:30:48.559
+Adam.Chaddock: dump the file to Claude, and then Claude will give me the result.
+
+366
+00:30:48.640 --> 00:30:50.699
+Mark Dallas: Oh, gotcha, yeah. Oh yeah, man.
+
+367
+00:30:50.700 --> 00:30:51.709
+Adam.Chaddock: a little bit…
+
+368
+00:30:52.140 --> 00:30:58.640
+Mark Dallas: Yeah, the AI tools are… yeah, I mean, they're… it's crazy how much they've changed in the last 6 months, so…
+
+369
+00:30:59.280 --> 00:31:03.239
+Mark Dallas: Yeah, we all gotta use them, if we're gonna be efficient, so…
+
+370
+00:31:04.580 --> 00:31:13.279
+Mark Dallas: Okay, so let me jump. I got another call, but I'll send out end of day, you know, just any other outstanding action items.
+
+371
+00:31:13.560 --> 00:31:18.900
+Mark Dallas: So that way we can keep track, and then obviously I'll keep you guys updated as we make progress on the…
+
+372
+00:31:19.340 --> 00:31:22.900
+Mark Dallas: You know, build out of the integration.
+
+373
+00:31:23.420 --> 00:31:24.870
+Adam.Chaddock: Okay. Sounds good.
+
+374
+00:31:24.870 --> 00:31:25.640
+Narvel Taylor: Cool, yep.
+
+375
+00:31:25.990 --> 00:31:26.710
+Narvel Taylor: Nice.
+
+376
+00:31:27.100 --> 00:31:29.380
+Mark Dallas: Alright, gentlemen, thank you. Have a great rest of your day.
+
+377
+00:31:29.460 --> 00:31:30.120
+Adam.Chaddock: Alright.
+
+378
+00:31:31.080 --> 00:31:31.590
+Narvel Taylor: Thank you.

@@ -1,0 +1,1233 @@
+WEBVTT
+
+1
+00:00:07.340 --> 00:00:08.730
+Mark Dallas: Hey guys, how we doing?
+
+2
+00:00:10.980 --> 00:00:12.169
+John Weathers: Good, how's it going?
+
+3
+00:00:13.290 --> 00:00:14.780
+Mark Dallas: Going well, going well.
+
+4
+00:00:15.060 --> 00:00:16.410
+Mauricio Cabrera: Hey guys, good morning.
+
+5
+00:00:16.820 --> 00:00:17.470
+Michel Vargas: Bring.
+
+6
+00:00:18.270 --> 00:00:19.060
+John Weathers: Bye.
+
+7
+00:00:21.720 --> 00:00:27.570
+Mark Dallas: So yeah, Michel, I just, hey, Isaac. Hey, guys. Michel, I just added you,
+
+8
+00:00:28.710 --> 00:00:31.859
+Mark Dallas: In the orderful org. Thought I'd already done that. So, anyway.
+
+9
+00:00:32.270 --> 00:00:34.470
+Mark Dallas: You and Mauricio are there now.
+
+10
+00:00:34.860 --> 00:00:39.240
+Michel Vargas: Okay, we're in the current account, or in the Work account?
+
+11
+00:00:39.700 --> 00:00:41.200
+Mark Dallas: In the orderful accounts.
+
+12
+00:00:42.340 --> 00:00:42.860
+Michel Vargas: Okay.
+
+13
+00:00:43.210 --> 00:00:44.060
+Michel Vargas: Thanks.
+
+14
+00:00:44.740 --> 00:00:48.650
+Mark Dallas: Yeah, that way… You can work with the MCP if you need to.
+
+15
+00:00:49.170 --> 00:00:56.380
+Michel Vargas: Yeah, and that account that you gave me access is the one that already has configured the, Mosaic, yeah, yeah, yeah.
+
+16
+00:00:57.160 --> 00:00:59.670
+Mark Dallas: Yeah, so it's a little… so the…
+
+17
+00:01:00.060 --> 00:01:05.059
+Mark Dallas: the Mosaic is configured on a relationship level, right? So,
+
+18
+00:01:06.140 --> 00:01:10.729
+Mark Dallas: I created the trade request using the MCP, and I thought that it was done, but apparently…
+
+19
+00:01:11.050 --> 00:01:16.739
+Mark Dallas: it didn't add the guidelines until… I'm just chatting with it now.
+
+20
+00:01:17.400 --> 00:01:23.040
+Mark Dallas: Yeah, so just did that this morning, so I need to configure the relationships.
+
+21
+00:01:23.930 --> 00:01:27.580
+Mark Dallas: for Mosaic, but yes, they will be…
+
+22
+00:01:29.390 --> 00:01:34.180
+Mark Dallas: This morning, configured for that. I mean, I could… I think I could even do that right now.
+
+23
+00:01:34.540 --> 00:01:35.250
+Michel Vargas: can read.
+
+24
+00:01:37.180 --> 00:01:37.510
+John Weathers: Commissioner.
+
+25
+00:01:37.510 --> 00:01:39.219
+Mark Dallas: Yeah, go ahead, John, sorry.
+
+26
+00:01:39.280 --> 00:01:51.769
+John Weathers: Or, Mark, I know the kind of things I was going to come back and talk about were maybe not even related to Shehadey so much, but more about the priorities for the BCE interview and some of the other things, and Vinod's out today, so I didn't spend time with him, but…
+
+27
+00:01:53.520 --> 00:02:03.750
+John Weathers: We're here to make sure we're not dropping any balls. You feel like you have everything you need, Michel, and I saw Isaac create the SFTP. So I guess really just asking if we… if you guys feel like you…
+
+28
+00:02:03.890 --> 00:02:08.099
+John Weathers: We're missing anything to really start moving forward and building today, tomorrow.
+
+29
+00:02:08.229 --> 00:02:10.300
+John Weathers: Whenever Mauricio's gonna start.
+
+30
+00:02:11.050 --> 00:02:12.310
+Michel Vargas: Yeah,
+
+31
+00:02:13.650 --> 00:02:20.529
+Michel Vargas: I think that we have everything that we need. Yesterday we met with Mauricio, and we have some tasks
+
+32
+00:02:20.640 --> 00:02:26.400
+Michel Vargas: to done, so I'm… I'm… Creating, like, the…
+
+33
+00:02:26.880 --> 00:02:31.919
+Michel Vargas: Part of the engine that Will allow us to…
+
+34
+00:02:32.410 --> 00:02:36.840
+Michel Vargas: To import, description file that,
+
+35
+00:02:37.580 --> 00:02:41.639
+Michel Vargas: Allow the, the engine to, to transform,
+
+36
+00:02:41.760 --> 00:02:58.780
+Michel Vargas: a flat file that is configured by the limiters, that is the case of the project. So, we'll be… start to adding, in the future, a new configuration for the 5 files, like…
+
+37
+00:02:59.000 --> 00:03:02.599
+Michel Vargas: CSVs and other kind of… of the.
+
+38
+00:03:02.600 --> 00:03:08.870
+John Weathers: But if you put an output, you'll be able to consume a mapped format, and you'll be able to output a flat file mapped format, right?
+
+39
+00:03:11.680 --> 00:03:13.640
+John Weathers: And we'll be able to store that map.
+
+40
+00:03:15.220 --> 00:03:18.359
+Michel Vargas: To store that map in the wizard.
+
+41
+00:03:18.480 --> 00:03:21.560
+Michel Vargas: So we can change that in the same pipeline.
+
+42
+00:03:21.830 --> 00:03:24.379
+Michel Vargas: And it's an additional part.
+
+43
+00:03:24.600 --> 00:03:36.390
+Michel Vargas: different than the transformation layer. So the, like, imagine that this part of the engine will be in charge of just changing the,
+
+44
+00:03:36.750 --> 00:03:43.580
+Michel Vargas: The, destructor of the… of the file, in this case, to transform the file into a JSON.
+
+45
+00:03:44.110 --> 00:03:45.789
+Michel Vargas: into a flat JSON.
+
+46
+00:03:46.080 --> 00:03:46.830
+Michel Vargas: Please, please.
+
+47
+00:03:47.510 --> 00:03:54.430
+John Weathers: Well, I mean, remember, that's only one way, right? The other way is you're going to take JSON and go to flat file, and I just want to make sure we're storing the map for both ways.
+
+48
+00:03:54.670 --> 00:03:56.209
+Michel Vargas: Yeah, for both ways.
+
+49
+00:03:56.210 --> 00:03:57.260
+John Weathers: Yeah, okay.
+
+50
+00:03:58.130 --> 00:03:58.760
+Michel Vargas: Cool.
+
+51
+00:03:59.180 --> 00:04:17.919
+John Weathers: And then mapping-wise, you feel like you got all the inputs you need from Mark and the client? I feel like we're… we have to be missing something, because I haven't really seen much more than maybe the sales order, but maybe that's what… maybe we'll just start with 850, but just make sure you've got… you kind of get Mark the format that we need to collect from the client for each document type to really get to the bottom of mapping, so I guess it's my main…
+
+52
+00:04:17.920 --> 00:04:25.100
+Michel Vargas: I reviewed the A50, but I think that the document contains all the other ones, the A50.
+
+53
+00:04:25.100 --> 00:04:25.530
+John Weathers: sucks.
+
+54
+00:04:26.150 --> 00:04:28.870
+Michel Vargas: But I only take a look in the F50, but
+
+55
+00:04:29.460 --> 00:04:40.390
+Mark Dallas: Yes, so we do have that for the other document types, too. I basically just took what the client shared, that Word document, John, that I think we looked at on the last call with them. He basically calls out
+
+56
+00:04:41.000 --> 00:04:50.860
+Mark Dallas: what he sees as the mappings, and then grabbed, you know, some payloads, some live payloads, some flat file payloads, and then some EDI payloads, both.
+
+57
+00:04:50.990 --> 00:04:57.290
+Mark Dallas: reviewed both of those, and then Claude came out with the output that's… that Michelle is looking at.
+
+58
+00:04:57.550 --> 00:05:03.759
+Mark Dallas: and that Excel doc on the, on the… Git repo. So,
+
+59
+00:05:04.050 --> 00:05:07.419
+Mark Dallas: I think we do have what we need to start, as far as that goes, yeah.
+
+60
+00:05:08.690 --> 00:05:14.760
+John Weathers: Mark, do you need anything from me on the call with the client today? Because I think I'm overbooked. I got both my calendars up here, I've got to do the time zone.
+
+61
+00:05:14.760 --> 00:05:20.379
+Mark Dallas: No, I think… I think you're… I think we should be fine, no, without you there.
+
+62
+00:05:22.080 --> 00:05:29.320
+Mark Dallas: Yeah, I think probably the next step would just be what we kind of started looking at yesterday, to…
+
+63
+00:05:29.970 --> 00:05:31.809
+Mark Dallas: Where was this tab?
+
+64
+00:05:31.810 --> 00:05:37.219
+John Weathers: We're gonna ask Michel for timeline. I don't think we should get the timeline today.
+
+65
+00:05:37.220 --> 00:05:41.719
+Mark Dallas: No, hopefully, yeah, I mean, hopefully, you know, the client won't push for that, but I think…
+
+66
+00:05:41.840 --> 00:05:51.480
+Mark Dallas: it would be nice… I mean, at some point they are, right? Gonna say, okay, hey, what's the timeline we can do this on? I think they'll be understanding if I don't have that for today, but I think we should define…
+
+67
+00:05:51.590 --> 00:05:55.629
+Mark Dallas: each of these steps. Hey, when are we going to be able to test 850s in?
+
+68
+00:05:55.850 --> 00:06:01.849
+Mark Dallas: and they can consume them into ERMS, you know, when do we estimate that we'll be ready to test the outbounds?
+
+69
+00:06:02.450 --> 00:06:14.580
+John Weathers: Well, we can't… I don't think we should… but this is the timeline, right? So, like, I think we should tell them that we'll provide that on whenever the first call is next week, and just, like, really get our ducks in a row and make sure we have a good plan, would be my opinion for the next day or two here.
+
+70
+00:06:14.890 --> 00:06:25.889
+Mark Dallas: Okay, yeah. I think it's fine. Again, I think that'll be fine for today's call, but yeah, definitely, the next call, I think we should have that defined, what our timelines can be for each of these.
+
+71
+00:06:26.340 --> 00:06:28.979
+John Weathers: And this is the only call this week, I assume? There's one call per week.
+
+72
+00:06:28.980 --> 00:06:31.600
+Mark Dallas: Yep, just one call per week, yep, so I was on Tuesday.
+
+73
+00:06:32.270 --> 00:06:40.689
+Mark Dallas: So maybe… maybe I'll set up this meeting, if this time works for everybody, as a reoccurring, so we can, you know, kind of prep for the client call each week on it.
+
+74
+00:06:41.080 --> 00:06:42.310
+John Weathers: Beautiful. Okay.
+
+75
+00:06:42.810 --> 00:06:44.469
+John Weathers: Phil, you can just kind of…
+
+76
+00:06:44.730 --> 00:06:55.460
+John Weathers: And I don't know if this spreadsheet's shared, but I don't know, you can kind of just do a bottoms-up estimate, I think, Michel. Just, like, feed the dates over to us, and then we can plug them into the spreadsheet with Mark, if you could just give us a rough development plan.
+
+77
+00:06:55.870 --> 00:06:57.219
+Michel Vargas: Okay, great, we will live.
+
+78
+00:06:57.790 --> 00:07:02.929
+John Weathers: By document type seems to be a good way to do it, right? So they know when they're needing to test.
+
+79
+00:07:04.740 --> 00:07:09.750
+John Weathers: I think my last question… I don't know if it was for Mark or Michel both, but…
+
+80
+00:07:10.620 --> 00:07:17.379
+John Weathers: Is there different delivery dates for, say, an 8.50 for Costco versus an 8.50 for whoever else?
+
+81
+00:07:17.960 --> 00:07:22.710
+John Weathers: Or are we saying that 850 is one mapping? I'm not exactly sure.
+
+82
+00:07:22.940 --> 00:07:24.930
+John Weathers: I assume it's one mapping…
+
+83
+00:07:26.280 --> 00:07:31.519
+Michel Vargas: That changes… What changed depending on the… of the customer?
+
+84
+00:07:32.600 --> 00:07:44.330
+Mark Dallas: Yeah, so what… so we do have, right, a bunch of different trading partners. Right now, we only have one trade request, and they're really only wanting us to do this first Costco as the initial test, right?
+
+85
+00:07:44.560 --> 00:07:47.150
+Mark Dallas: So…
+
+86
+00:07:47.150 --> 00:07:47.790
+John Weathers: like this?
+
+87
+00:07:48.030 --> 00:07:55.100
+John Weathers: I guess the question, from a technical perspective, Michel, so you're gonna… so let's say 850 coming in, right? You're gonna have one map that…
+
+88
+00:07:55.230 --> 00:08:11.689
+John Weathers: puts out to file SFTP, right? The dynamic piece here will just be, how am I sourcing the fields, let's call it, for those 12 columns. And so, per trading partner, based on the guidelines, you'll map to a different attribute or node in the orderful
+
+89
+00:08:12.110 --> 00:08:25.170
+John Weathers: API, right? So, I'm just trying to see, is there any other data we need to collect across examples for the other transactions from the other training partners, or can we just go off of the guidelines and the training partners set up in the platform in orderful?
+
+90
+00:08:26.100 --> 00:08:32.199
+John Weathers: I'm assuming we can do that, right, Michel? Because you would just basically enroll the trading partner in Magic Pass, right?
+
+91
+00:08:32.530 --> 00:08:38.620
+John Weathers: And then we should know, from a Magic Pass perspective, how those attributes map into the.
+
+92
+00:08:38.620 --> 00:08:49.889
+Michel Vargas: Okay, for… in this case, for this customer, I'm not making an enrollment for… for the trading partner, because they are not going to use the…
+
+93
+00:08:50.190 --> 00:08:56.210
+Michel Vargas: the, the canonical data. So, in this case, the,
+
+94
+00:08:57.060 --> 00:09:04.109
+Michel Vargas: structure from the mapping logic will be created in the transformation directly, so I don't need to…
+
+95
+00:09:04.500 --> 00:09:09.159
+Michel Vargas: To enroll the customer to generate an automatic mapping.
+
+96
+00:09:09.560 --> 00:09:11.869
+Michel Vargas: For day… for their side, so…
+
+97
+00:09:12.130 --> 00:09:23.189
+John Weathers: Well, I mean, you might want to think about that a little bit, right? Because if you normalize… if you keep it the canonical in place, like, then you've got a normalized map out to ERMS, and then you don't have to worry about that, right?
+
+98
+00:09:24.530 --> 00:09:31.549
+John Weathers: Like, if you think about it, right? Like, because if you enroll the trading partner, you're going to know the guidelines requirements on a per-field basis.
+
+99
+00:09:32.160 --> 00:09:35.819
+John Weathers: On a per-field basis,
+
+100
+00:09:36.210 --> 00:09:44.760
+John Weathers: Right? And then… that just makes it easy, because then you drop it in the canonical, so that's one map, and then… I don't know, you can do it whatever the right way is, but…
+
+101
+00:09:45.110 --> 00:09:54.799
+John Weathers: I'm just trying to figure out, like, I just want to make sure we're not having to do bespoke trading partner by trading partner mappings if we can avoid it, and it seems like we could avoid it by using MOASIC, and then…
+
+102
+00:09:56.920 --> 00:10:06.009
+Michel Vargas: We can avoid that using Mauric. That will be the idea, so I don't need to enroll the trading partner into the system.
+
+103
+00:10:06.660 --> 00:10:07.750
+Michel Vargas: Because they will have.
+
+104
+00:10:07.750 --> 00:10:09.120
+John Weathers: Got it, yeah.
+
+105
+00:10:09.450 --> 00:10:10.280
+Michel Vargas: This is true.
+
+106
+00:10:10.640 --> 00:10:17.820
+Michel Vargas: The only thing that I need to change is that I will… I will blow the…
+
+107
+00:10:18.310 --> 00:10:29.070
+Michel Vargas: objects for each one of the trading partners, and inside of the transformation, I will have, like, for this trading partner, this field is mandatory, and this other is optional, and so on.
+
+108
+00:10:29.310 --> 00:10:34.230
+Michel Vargas: But, the… The fields are going to be the same.
+
+109
+00:10:35.290 --> 00:10:36.599
+John Weathers: Gotcha. Okay.
+
+110
+00:10:36.760 --> 00:10:38.480
+Michel Vargas: the mosaic scene, yeah.
+
+111
+00:10:38.720 --> 00:10:43.320
+Mark Dallas: Yeah, and I think that's one of the exciting things about what we're doing here with this project, is…
+
+112
+00:10:43.570 --> 00:10:54.910
+Mark Dallas: it's kind of the first time we've been able to do this, as I understand it, with Mosaic, and, you know, hopefully have one mapping, you know, for multiple different trading partners, so…
+
+113
+00:10:55.290 --> 00:10:56.030
+Mark Dallas: Yeah.
+
+114
+00:10:58.100 --> 00:11:02.919
+Mark Dallas: But yeah, no, I feel good for the client call. I think…
+
+115
+00:11:03.730 --> 00:11:10.220
+John Weathers: Actually, what you just said is exactly true, right? There should be no transformation, Michel, in our… in our middle layer.
+
+116
+00:11:10.490 --> 00:11:13.570
+John Weathers: like, ERMS is gonna request the same…
+
+117
+00:11:13.720 --> 00:11:17.600
+John Weathers: Columns for every transaction, doesn't matter what the trading partner is, right?
+
+118
+00:11:17.600 --> 00:11:18.260
+Mark Dallas: Right?
+
+119
+00:11:18.560 --> 00:11:25.769
+John Weathers: And then Moesic's gonna obviously normalize that on the way in for us through Orderful, so, like, we should just be able to have one mapping and support all trading partners, actually.
+
+120
+00:11:27.540 --> 00:11:33.620
+John Weathers: Okay, we can leave this aside until you get into the weeds on this a little more, but just kind of thinking out loud, making sure we don't miss anything.
+
+121
+00:11:33.830 --> 00:11:35.529
+Mark Dallas: But yeah, I think that would be the hope, yeah.
+
+122
+00:11:35.600 --> 00:11:54.200
+Mark Dallas: Another thing too, Michelle, in OnePass, and I'll make sure that you're in the vault, I think you are, that has access to this, we have access to Aptia, and that's basically what Orderful is replacing, their current EDS service provider. So there's lots of data here, that, you know, the raw data, raw payloads.
+
+123
+00:11:54.280 --> 00:11:59.120
+Mark Dallas: You know, so, this is gonna be helpful.
+
+124
+00:11:59.320 --> 00:12:03.260
+Mark Dallas: So I'll make sure you have that, and, you know, you can…
+
+125
+00:12:03.260 --> 00:12:06.259
+Michel Vargas: Do you have that access in the 1Password vault for the…
+
+126
+00:12:06.520 --> 00:12:10.620
+Mark Dallas: Yes. I'll make sure it's in the right vault,
+
+127
+00:12:10.620 --> 00:12:11.300
+Michel Vargas: What's…
+
+128
+00:12:11.500 --> 00:12:16.970
+Mark Dallas: But yeah, I think it is. So, anyway, that… I think that'll be helpful, kind of, as you're moving,
+
+129
+00:12:17.960 --> 00:12:20.510
+Mark Dallas: As you're moving through things.
+
+130
+00:12:20.510 --> 00:12:28.899
+John Weathers: Don't forget, you can, like, the new, like, with the cloud browser, whatever, like, you could connect, you could log into that thing and then have it do some analysis for you. Just, I'm sure you… I'm sure you know that, but…
+
+131
+00:12:29.410 --> 00:12:32.709
+Mark Dallas: Yeah, oh yeah, super helpful. For sure.
+
+132
+00:12:33.900 --> 00:12:36.969
+Michel Vargas: Mark, could you give me the name? Okay…
+
+133
+00:12:37.460 --> 00:12:43.079
+Michel Vargas: I couldn't found that organization in my orderful account.
+
+134
+00:12:43.080 --> 00:12:48.130
+Mark Dallas: Okay, yeah, I was just pulling that up to see if,
+
+135
+00:12:49.470 --> 00:12:56.129
+Mark Dallas: So it's Orderful Lead Projects is what it's under. I don't know if you're part of that. Orderful-led projects…
+
+136
+00:12:58.310 --> 00:13:07.320
+John Weathers: Isaac, I saw you wasn't looking for this, I saw you mock mute. Did you have anything? And if… and if you guys want anything from me, I may drop, and I'm trying to get a document done before my call.
+
+137
+00:13:08.100 --> 00:13:10.200
+Isaac Weathers: Yeah, no, I was just gonna drop as well.
+
+138
+00:13:10.660 --> 00:13:12.299
+Mark Dallas: Yep, I think that's it, guys.
+
+139
+00:13:12.540 --> 00:13:16.249
+Mark Dallas: Yeah, Isaac, John, thanks both for your support. Appreciate this.
+
+140
+00:13:16.870 --> 00:13:32.489
+John Weathers: This is gonna be exciting. Thanks, guys. There's gonna be a lot of people that ask for this from an orderful perspective, like, that, you know, this is, like, solving a lot of the bespoke, generic, iPass-type things that are always hard to price, hard to scope, hard to everything, so this is fair.
+
+141
+00:13:32.490 --> 00:13:51.299
+Mark Dallas: Right, I agree, I agree, I agree. And I think because we have Mosaic now, and we have V3, it's just a great pairing. I mean, you know, we'll see how it works out, but I'm optimistic that this could be a great pairing to, like you said, be a real plug-and-play fix for a lot of problems that Orderful comes to us with.
+
+142
+00:13:51.770 --> 00:13:52.480
+John Weathers: Primary.
+
+143
+00:13:54.030 --> 00:13:54.600
+Mark Dallas: Yeah.
+
+144
+00:13:55.190 --> 00:13:57.200
+John Weathers: Okay, alright, thanks, everybody.
+
+145
+00:13:57.200 --> 00:14:07.280
+Mark Dallas: Yeah, thanks. You guys can drop, for sure. Michel, so… where was I? Oh yeah, so let's go back here. So, order flood projects, I guess you're in this bolts?
+
+146
+00:14:07.550 --> 00:14:09.860
+Michel Vargas: No, I don't have access to the bowl.
+
+147
+00:14:10.570 --> 00:14:12.379
+Mark Dallas: Okay, so that's what we need to do.
+
+148
+00:14:12.380 --> 00:14:13.880
+Michel Vargas: operator of the boat?
+
+149
+00:14:13.880 --> 00:14:17.729
+Mark Dallas: I don't know who's… maybe who's the owner of this vault? I don't know if I'm the owner of this vault.
+
+150
+00:14:20.630 --> 00:14:22.690
+Michel Vargas: You… you don't have access to…
+
+151
+00:14:23.430 --> 00:14:26.189
+Michel Vargas: You don't have permissions to give me access to that boat.
+
+152
+00:14:26.670 --> 00:14:30.160
+Mark Dallas: I don't think so. I think usually it would pop up.
+
+153
+00:14:30.620 --> 00:14:33.899
+Mark Dallas: and allow me to add users if I was.
+
+154
+00:14:34.200 --> 00:14:39.369
+Mark Dallas: I can definitely share this item with you, though, right? So I can add…
+
+155
+00:14:39.370 --> 00:14:50.250
+Michel Vargas: Yeah, but if you can… maybe if you can… let me check how we see who is the admin of the bulb, because if you give me that access, I will lose the access in 7 days.
+
+156
+00:14:51.020 --> 00:14:52.720
+Mark Dallas: Oh, yeah, sure, I see.
+
+157
+00:14:52.720 --> 00:14:58.359
+Michel Vargas: Is that the administrator of the board? How do we see that? If you go…
+
+158
+00:14:59.200 --> 00:15:03.010
+Mark Dallas: That's a good question. So if I go back, and I go back here…
+
+159
+00:15:04.480 --> 00:15:09.500
+Mark Dallas: I'm gonna go down to… yeah, we shouldn't have maybe let Isaac drop so soon.
+
+160
+00:15:10.750 --> 00:15:16.809
+Mark Dallas: I don't know how I… Didn't see anything else about this vault, other than just clicking on it.
+
+161
+00:15:22.750 --> 00:15:27.869
+Mark Dallas: 11 items… yeah. I don't really like how 1Pass does their vaults.
+
+162
+00:15:29.910 --> 00:15:35.210
+Michel Vargas: Yeah, I think that if we are not admins, we couldn't see who is the admin. It's so weird.
+
+163
+00:15:35.540 --> 00:15:36.500
+Mark Dallas: Yeah, it is…
+
+164
+00:15:36.500 --> 00:15:39.309
+Michel Vargas: If you click here, you couldn't see anything here.
+
+165
+00:15:39.310 --> 00:15:41.960
+Mark Dallas: No, right and left clicks, neither one does anything.
+
+166
+00:15:42.230 --> 00:15:45.020
+Michel Vargas: Okay, but give us the names…
+
+167
+00:15:45.780 --> 00:15:55.639
+Mark Dallas: Yeah, so it's… it looks like Jose, me, Matt Lutz, and 3 other people. I know Anu and Rakesh are part of this, so probably Matt, maybe?
+
+168
+00:15:57.060 --> 00:16:02.109
+Mark Dallas: Man, I would have thought maybe I set this vault up, because of how I named it, that's always how I name these.
+
+169
+00:16:02.260 --> 00:16:11.239
+Michel Vargas: Maybe just in the general… channel, so… Yeah, I know, it's…
+
+170
+00:16:11.770 --> 00:16:16.889
+Mark Dallas: Yeah, I think that's it. I mean, there's nothing else really that you can click on.
+
+171
+00:16:17.720 --> 00:16:20.409
+Mark Dallas: Yeah. Okay, so I'll ping in the general channel and kind of.
+
+172
+00:16:20.410 --> 00:16:20.910
+Michel Vargas: Yeah.
+
+173
+00:16:20.910 --> 00:16:22.310
+Mark Dallas: Ask, you know.
+
+174
+00:16:22.990 --> 00:16:31.030
+Michel Vargas: Mark, I'm trying… I'm already logged out into the Workflow account and logged in again, but I couldn't see anything…
+
+175
+00:16:31.340 --> 00:16:39.390
+Michel Vargas: Related with the… customer organization, I only have access to the fantastic funky on LavaProad.
+
+176
+00:16:39.850 --> 00:16:49.000
+Mark Dallas: Interesting. Okay, so… if I go to Shehadey Foods… Organization settings… users…
+
+177
+00:16:50.920 --> 00:16:52.970
+Mark Dallas: So I added both of you guys here.
+
+178
+00:16:53.120 --> 00:16:54.500
+Michel Vargas: kept concurrent.
+
+179
+00:16:54.500 --> 00:16:58.889
+Mark Dallas: Oh, okay, yeah, I did. Should I add your other…
+
+180
+00:17:00.260 --> 00:17:09.409
+Mark Dallas: Yeah, I thought I did orderful. So, here's the one thing with using the orderful email. You can't use the orderful MCP.
+
+181
+00:17:10.890 --> 00:17:17.119
+Michel Vargas: Yeah, yeah, you're right. No, don't worry, I will log in with the GetConcurrent account.
+
+182
+00:17:17.440 --> 00:17:18.770
+Michel Vargas: Pardo form.
+
+183
+00:17:19.250 --> 00:17:25.609
+Mark Dallas: Yeah, yeah, so try that one. I think I need to…
+
+184
+00:17:28.420 --> 00:17:33.299
+Mark Dallas: Yeah, I think I need to add you, maybe. Are you gonna use the MCP, do you think?
+
+185
+00:17:33.630 --> 00:17:34.620
+Mark Dallas: Michelle?
+
+186
+00:17:35.890 --> 00:17:37.709
+Michel Vargas: I don't think so, but
+
+187
+00:17:38.690 --> 00:17:44.870
+Michel Vargas: If you can't have both, and with MCP, I can use the getConcurrent one.
+
+188
+00:17:46.510 --> 00:17:51.809
+Mark Dallas: Okay, let me do… so I can do that for sure. Let's go… let me just…
+
+189
+00:17:52.250 --> 00:18:00.450
+Mark Dallas: And you can do that, and that's kind of a workaround, for some reason…
+
+190
+00:18:00.570 --> 00:18:08.399
+Mark Dallas: Orderful doesn't let us hit the MCP for the concurrent accounts. We even asked them that, and they said they're gonna give us the access, and they just never did.
+
+191
+00:18:08.620 --> 00:18:14.019
+Mark Dallas: So let me pull up your orderful email, Michelle.
+
+192
+00:18:15.160 --> 00:18:23.849
+Mark Dallas: And I can invite you as well. And you can invite anybody else, your admins, same as me, so,
+
+193
+00:18:32.770 --> 00:18:37.550
+Mark Dallas: I don't… I guess, Mauricio, you don't have an orderful email.
+
+194
+00:18:42.450 --> 00:18:44.080
+Michel Vargas: I think Mauricio doesn't have…
+
+195
+00:18:44.310 --> 00:18:45.060
+Mark Dallas: Yeah.
+
+196
+00:18:46.900 --> 00:18:49.650
+Mark Dallas: Okay, which is fine, and, you know, if you need…
+
+197
+00:18:49.960 --> 00:18:55.479
+Mark Dallas: Two, I can get one created for you? What do you think, Michel? Should I ask for that?
+
+198
+00:18:55.480 --> 00:18:56.020
+Michel Vargas: me.
+
+199
+00:18:56.400 --> 00:19:05.399
+Michel Vargas: Yeah, I think not… maybe not for this customer, because I will be working with Mauricio, but with our customer, they will be late in the…
+
+200
+00:19:05.810 --> 00:19:07.820
+Michel Vargas: The integration, so… so yeah.
+
+201
+00:19:08.150 --> 00:19:08.910
+Mark Dallas: Okay.
+
+202
+00:19:11.900 --> 00:19:15.629
+Mark Dallas: Okay… Just leaving it up for myself.
+
+203
+00:19:17.250 --> 00:19:25.680
+Mark Dallas: to do that. And then, as far as the Git repo goes, I guess you guys saw that.
+
+204
+00:19:25.910 --> 00:19:31.930
+Mark Dallas: I just did another push of that just now, since we've been on the call.
+
+205
+00:19:32.460 --> 00:19:37.090
+Mark Dallas: So, does that structure kind of make sense, I guess, Michelle?
+
+206
+00:19:37.330 --> 00:19:39.830
+Mark Dallas: How we're doing things.
+
+207
+00:19:41.840 --> 00:19:43.100
+Mauricio Cabrera: See that list.
+
+208
+00:19:46.180 --> 00:19:47.050
+Michel Vargas: Yeah.
+
+209
+00:19:47.050 --> 00:19:51.770
+Mark Dallas: I guess just let me know, right, if you think we need to change the structure of the… of the…
+
+210
+00:19:51.950 --> 00:19:53.839
+Mark Dallas: Repo,
+
+211
+00:19:53.840 --> 00:20:00.889
+Michel Vargas: To the… to the folder that you store the examples from the flat files?
+
+212
+00:20:00.890 --> 00:20:02.919
+Mark Dallas: It's, yeah, it's outputs, yeah.
+
+213
+00:20:04.340 --> 00:20:09.030
+Mark Dallas: So basically, what I have is the call agendas, what I'm kind of using to…
+
+214
+00:20:09.680 --> 00:20:15.169
+Mark Dallas: Structure our internal calls, and also the calls with the client. And then, this is the mapping.
+
+215
+00:20:15.760 --> 00:20:22.930
+Michel Vargas: Okay, but… but… yeah, that is one question that I have. So, we only have the mapping, we don't have, like, this specific file for…
+
+216
+00:20:23.460 --> 00:20:26.160
+Michel Vargas: What file shared by the customer.
+
+217
+00:20:26.470 --> 00:20:29.029
+Mark Dallas: I did…
+
+218
+00:20:29.740 --> 00:20:36.809
+Mark Dallas: Yeah, that's… so there is an example here of, like, an 850 flat… This is… this is an X12. So here's the Costco flat file.
+
+219
+00:20:37.030 --> 00:20:43.840
+Mark Dallas: Yes, so we have that here. I guess this is what it looks like, the raw file, and then this is where it's parsed.
+
+220
+00:20:44.490 --> 00:20:46.529
+Mark Dallas: So, yeah, here's the raw.
+
+221
+00:20:48.450 --> 00:20:49.220
+Michel Vargas: Okay.
+
+222
+00:20:53.580 --> 00:20:58.069
+Mark Dallas: And… yeah, if it would be helpful, I can get some more examples.
+
+223
+00:21:00.740 --> 00:21:05.180
+Mark Dallas: of, those flat files.
+
+224
+00:21:09.130 --> 00:21:10.909
+Mark Dallas: Yeah, and here's another…
+
+225
+00:21:11.060 --> 00:21:23.909
+Mark Dallas: flat file. This one's, I think, maybe there's two different formats, maybe we should… yeah, I don't know if we should put these together, but there's the kind of pipe-delineated flat file that Walmart uses. Again, we're not doing Walmart yet, but we will need to do that.
+
+226
+00:21:24.180 --> 00:21:28.900
+Mark Dallas: And then I think there's the… oh, this is Pipelineated 2. Yeah, that's right.
+
+227
+00:21:29.920 --> 00:21:34.040
+Mark Dallas: So I think… I think… He mentioned another possibility, but…
+
+228
+00:21:34.140 --> 00:21:39.430
+Mark Dallas: they decided that that wasn't gonna apply, so I think everything should be the pipe delineated.
+
+229
+00:21:40.060 --> 00:21:44.510
+Mark Dallas: Raw file.
+
+230
+00:21:44.510 --> 00:21:53.270
+Michel Vargas: Okay, maybe we can… Request to the customer some of the… some flat files, but directly created by them.
+
+231
+00:21:54.440 --> 00:21:55.469
+Michel Vargas: But if not…
+
+232
+00:21:56.560 --> 00:22:04.219
+Michel Vargas: But maybe if we can try, it will be useful for us to make some additional steps on the integration. But if not, we will just…
+
+233
+00:22:05.070 --> 00:22:09.830
+Michel Vargas: Make the test with there, once that we have the integration.
+
+234
+00:22:10.380 --> 00:22:11.260
+Michel Vargas: Running.
+
+235
+00:22:12.100 --> 00:22:22.970
+Mark Dallas: Yes. So I think, and I have a call with them today, so I'll ask for some more 850s, basically a pair, right? Of, hey, here's the 850 from Costco, and here's the pair
+
+236
+00:22:23.150 --> 00:22:30.239
+Mark Dallas: you know, flat file that you received in ERMS. So that way we can look at those two, have some examples.
+
+237
+00:22:30.680 --> 00:22:32.280
+Michel Vargas: Yeah, this would be…
+
+238
+00:22:32.810 --> 00:22:40.549
+Mark Dallas: But I think it's really kind of a pretty simple file, really. If you look at the data, you know, it's not super complex.
+
+239
+00:22:40.750 --> 00:22:48.260
+Mark Dallas: And then once we can… so the good… the great thing about this is, once we can build the initial 850,
+
+240
+00:22:49.760 --> 00:22:57.290
+Mark Dallas: to flat file, we have the server stood up, and we drop that file on a server where they can pick it up. Then it'll be over to them.
+
+241
+00:22:57.570 --> 00:22:59.770
+Mark Dallas: to,
+
+242
+00:23:00.700 --> 00:23:12.710
+Mark Dallas: ingest that into their system and give us the outputs. So if we can just get the first stage done, the 850 parsing and translator, I guess, even if there is any translation to be done.
+
+243
+00:23:12.870 --> 00:23:14.260
+Mark Dallas: I guess there is, so…
+
+244
+00:23:14.440 --> 00:23:20.039
+Mark Dallas: Once that's done, then it'll give us a breather, right, before they're ready with the next piece.
+
+245
+00:23:20.790 --> 00:23:22.590
+Michel Vargas: Okay, got it.
+
+246
+00:23:24.130 --> 00:23:32.219
+Michel Vargas: Yeah, because they need to build the flat files that we will receive in the folder to generate the A56 and the A10s.
+
+247
+00:23:32.220 --> 00:23:34.060
+Mark Dallas: Exactly, yes.
+
+248
+00:23:34.230 --> 00:23:41.319
+Mark Dallas: And it probably will take them a minute to do that. So, if we can just push on this piece, even, like, this week, to get this out.
+
+249
+00:23:42.720 --> 00:23:44.330
+Mark Dallas: I think that would be great.
+
+250
+00:23:45.610 --> 00:23:50.409
+Mark Dallas: And then, yeah, then it'll be over to them, give us a little breather, and then we can
+
+251
+00:23:50.740 --> 00:23:52.299
+Mark Dallas: Figure out the next stages.
+
+252
+00:23:52.650 --> 00:23:56.079
+Mark Dallas: So… Couple of other things. One is…
+
+253
+00:23:57.130 --> 00:24:09.869
+Mark Dallas: JIRA tickets. I'm kind of assuming, Michelle, that you would want to create those, so you can kind of structure the work in a way that makes sense to you. If you don't care, you know, I can… I could create the JIRA tickets, but I think…
+
+254
+00:24:09.870 --> 00:24:17.519
+Michel Vargas: Okay, no, I already created the ZRA tickets for the projects, inside of the user history that you shared yesterday.
+
+255
+00:24:17.520 --> 00:24:18.400
+Mark Dallas: Okay, great.
+
+256
+00:24:18.650 --> 00:24:21.010
+Michel Vargas: It was… let me check…
+
+257
+00:24:25.910 --> 00:24:27.689
+Michel Vargas: I couldn't see it.
+
+258
+00:24:27.990 --> 00:24:28.939
+Michel Vargas: Give me a sec.
+
+259
+00:24:30.000 --> 00:24:32.520
+Mark Dallas: Yeah, no worries, let me pull up this…
+
+260
+00:24:32.940 --> 00:24:39.480
+Michel Vargas: Okay, it's under the OLP 909… 509.
+
+261
+00:24:40.570 --> 00:24:48.970
+Mark Dallas: Okay, let me… I got too many screens open here, but let's see, I think I've got a… Okay…
+
+262
+00:24:50.600 --> 00:24:53.890
+Mark Dallas: OLP509.
+
+263
+00:24:55.930 --> 00:25:00.639
+Michel Vargas: That is the user history that I created, that is under the epic that you created.
+
+264
+00:25:00.640 --> 00:25:02.870
+Mark Dallas: I see, yeah, so here's the epic.
+
+265
+00:25:02.970 --> 00:25:04.669
+Mark Dallas: Yeah, that I made. Okay.
+
+266
+00:25:05.290 --> 00:25:13.440
+Michel Vargas: Yeah, this user history is related with the change on the MagicPass version 3 that I need to set to generate the…
+
+267
+00:25:13.460 --> 00:25:26.250
+Michel Vargas: New authentication, and the system-to-system integration, that is the new kind of integration that we will support, that is the one that we are not going to store the canonical data into the system.
+
+268
+00:25:26.490 --> 00:25:30.119
+Michel Vargas: Because we don't… we don't need that for… for this customer.
+
+269
+00:25:30.340 --> 00:25:31.210
+Michel Vargas: Yeah.
+
+270
+00:25:31.210 --> 00:25:31.909
+Mark Dallas: Yeah. Okay.
+
+271
+00:25:33.900 --> 00:25:36.769
+Mark Dallas: So this is the… yeah. And is this…
+
+272
+00:25:37.560 --> 00:25:41.469
+Mark Dallas: I guess this applies to both the 850 and the 856?
+
+273
+00:25:41.660 --> 00:25:44.820
+Mark Dallas: Well, yeah, to and from, order fold.
+
+274
+00:25:44.820 --> 00:25:46.430
+Michel Vargas: Okay, yeah.
+
+275
+00:25:46.830 --> 00:25:59.969
+Mark Dallas: Okay, and then we would just track the work, you know, as we get through each of these transaction types in there. I wonder, I think probably what we should do, and maybe I even created these, I don't know, is…
+
+276
+00:26:00.970 --> 00:26:03.820
+Mark Dallas: It says Matt Lutz, I guess that was me.
+
+277
+00:26:04.260 --> 00:26:09.770
+Mark Dallas: Yeah, so I guess I created these. So I might need to move these under… a…
+
+278
+00:26:11.300 --> 00:26:14.599
+Mark Dallas: like, Costco have one story, and then have…
+
+279
+00:26:14.820 --> 00:26:18.459
+Mark Dallas: The subtasks under it, I think is what I need to do.
+
+280
+00:26:19.030 --> 00:26:32.120
+Michel Vargas: Yeah, but yeah, and only in this case, because we don't have, like, the… all the trading partners at the same time. If we have all the trading partners at the same time, maybe we can group by transaction.
+
+281
+00:26:32.120 --> 00:26:42.679
+Mark Dallas: Yeah, but because we don't, though, yeah. So I'll probably do… I'll create one Costco story, or probably change this to the Costco story, and then have these as subtasks underneath it.
+
+282
+00:26:42.680 --> 00:26:50.400
+Michel Vargas: You can… these 3-4 ones to… to… to Subtesk, and it's something that, like, Oscar and I will.
+
+283
+00:26:50.510 --> 00:26:51.270
+Michel Vargas: Yep.
+
+284
+00:26:51.520 --> 00:26:52.040
+Mark Dallas: Yep.
+
+285
+00:26:52.410 --> 00:26:57.280
+Mark Dallas: Okay, well, great, so… Okay. Mauricio, any questions from your side?
+
+286
+00:26:58.270 --> 00:27:00.370
+Mauricio Cabrera: No, so far? Nope.
+
+287
+00:27:02.650 --> 00:27:03.220
+Mark Dallas: Good.
+
+288
+00:27:04.270 --> 00:27:05.600
+Mark Dallas: Hopefully,
+
+289
+00:27:07.030 --> 00:27:13.950
+Mark Dallas: We have what we need. Okay, so I think, yes, the only thing pending from my side then, Michel, is to get you some 850…
+
+290
+00:27:14.810 --> 00:27:18.219
+Mark Dallas: Flat file pairs, some more examples.
+
+291
+00:27:18.720 --> 00:27:22.919
+Mark Dallas: Hopefully after the call today's this afternoon, and then I'll share those with you.
+
+292
+00:27:26.170 --> 00:27:28.959
+Mark Dallas: update these JIRA stories, and I guess that's it.
+
+293
+00:27:29.070 --> 00:27:30.650
+Mark Dallas: Right? Anything else you need?
+
+294
+00:27:32.460 --> 00:27:37.320
+Michel Vargas: We're good. Mauricio, do you have any meeting right now, or can I just…
+
+295
+00:27:39.230 --> 00:27:43.780
+Michel Vargas: Can we just meet to take a look on this? I have one hour.
+
+296
+00:27:43.780 --> 00:27:45.339
+Mauricio Cabrera: No, no, I'm free.
+
+297
+00:27:45.760 --> 00:27:47.589
+Michel Vargas: Okay, I will send you the invite.
+
+298
+00:27:49.440 --> 00:27:54.550
+Mark Dallas: Alright, gentlemen, thank you for the time, and yep, just keep me updated in…
+
+299
+00:27:54.910 --> 00:27:57.419
+Mark Dallas: Slack or Jira, as you progress.
+
+300
+00:27:58.500 --> 00:27:59.080
+Michel Vargas: Sure.
+
+301
+00:27:59.370 --> 00:28:03.310
+Michel Vargas: Yeah, don't forget to send the general message, so…
+
+302
+00:28:03.410 --> 00:28:07.389
+Michel Vargas: We can show if someone can help us with the plugin.
+
+303
+00:28:09.580 --> 00:28:11.359
+Mark Dallas: Which one? The login for…
+
+304
+00:28:11.360 --> 00:28:12.700
+Michel Vargas: We're bold.
+
+305
+00:28:12.930 --> 00:28:15.149
+Mark Dallas: Oh, yeah, yeah, for… yes.
+
+306
+00:28:15.310 --> 00:28:18.730
+Mark Dallas: That's right, for APTI and their EDI system, yeah.
+
+307
+00:28:19.780 --> 00:28:22.280
+Mark Dallas: Okay, yep, will do. Thanks, guys.
+
+308
+00:28:22.940 --> 00:28:23.509
+Michel Vargas: See you.
